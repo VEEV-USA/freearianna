@@ -157,7 +157,7 @@ const LandingLayout = () => {
                                 justify='center'
                             >
                                 <Col>
-                                    <CircleButton>
+                                    <CircleButton target='_blank' href='https://twitter.com/freearianna'>
                                         <TwitterIcon width={22} color='#ffffff'/>
                                     </CircleButton>
                                 </Col>

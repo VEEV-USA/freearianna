@@ -1,12 +1,57 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ActionFormCard from "./style/form-card";
-import {Button, Checkbox, Form, Input, Progress, Space} from "antd";
+import {Button, Checkbox, Form, Input, Progress, Space, message} from "antd";
+import {snsClient} from "../../../../untils/aws";
+import { SubscribeCommand} from "@aws-sdk/client-sns";
 
 const {Item} = Form;
 
+
+
 const TakeActionForm = () => {
-    const finishHandler = (value) => {
-        console.log(value)
+
+    const [loading, setLoading] = useState(false);
+    const [checked, setChecked] = useState(false);
+    const finishHandler = (data) => {
+        setLoading(true)
+        //TODO: SNS SERVICE SETTINGS
+        const params = {
+            Protocol: 'email',
+            TopicArn: "arn:aws:sns:us-east-1:095719380237:freearianna",
+            Endpoint: data.email,
+        };
+
+        snsClient.send(new SubscribeCommand(params))
+            .then((res) => {
+                console.log(res, "SUCCESS")
+                message.success('Your email was registered in our subscribe list.')
+            })
+            .catch((err) => {
+                console.log(err, 'ERROR')
+            })
+            .finally(()=>{
+                setLoading(false);
+            })
+
+        const phoneParams = {
+            Protocol: 'sms',
+            TopicArn: "arn:aws:sns:us-east-1:095719380237:freearianna",
+            Endpoint: data.phone,
+        };
+
+        setLoading(true)
+        snsClient.send(new SubscribeCommand(phoneParams))
+            .then((res) => {
+                console.log(res, "SUCCESS")
+                message.success('Your phone number was registered in our subscribe list.')
+            })
+            .catch((err) => {
+                console.log(err, 'ERROR')
+            })
+            .finally(()=>{
+                setLoading(false)
+            })
+
     }
     return (
         <ActionFormCard>
@@ -54,7 +99,9 @@ const TakeActionForm = () => {
                             <Input size='large' placeholder='Phone'/>
                         </Item>
                         <Item>
-                            <Checkbox>
+                            <Checkbox
+                                onChange={(event) => {setChecked(event.target.checked)}}
+                            >
                                 Receive mobile alerts from VEEV App on behalf of FreeArianna.org. Recurring messages.
                                 Msg & data rates may apply. Text STOP to 668366 to stop receiving messages. Text HELP to
                                 668366 for more information.
@@ -67,6 +114,8 @@ const TakeActionForm = () => {
                                 size='large'
                                 block
                                 htmlType='submit'
+                                loading={loading}
+                                disabled={!checked}
                             >
                                 Sign
                             </Button>
