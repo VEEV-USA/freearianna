@@ -13,6 +13,9 @@ const ActionFormCard = styled(Card)`
     font-size: 28px;
     margin-bottom: 32px;
   }
+  @media(max-width: 768px) {
+    padding: 0;
+  }
 `
 
 export default ActionFormCard

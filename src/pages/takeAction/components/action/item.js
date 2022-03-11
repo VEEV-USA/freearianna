@@ -1,16 +1,20 @@
 import React from 'react';
-import {Col, Row, Space} from "antd";
+import {Grid, Space} from "antd";
 import {ActionContent, LicenseString, PersonFullName, PersonName} from "./style/name";
 import ActionItemWrap from "./style/item-wrap";
 
+const {useBreakpoint} = Grid;
+
 const TakeActionItem = ({person}) => {
+    const breakpoints = useBreakpoint();
+
     return (
         <ActionItemWrap>
             <img
                 src={person.img}
                 alt={person.name}
-                width={110}
-                height={110}
+                width={breakpoints.md ? 110 : 70}
+                height={breakpoints.md ? 110 : 70}
                 style={{
                     borderRadius: 200,
                     objectFit: 'cover'

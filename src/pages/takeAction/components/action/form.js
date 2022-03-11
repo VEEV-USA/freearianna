@@ -16,7 +16,7 @@ const TakeActionForm = () => {
                 style={{width: '100%'}}
             >
                 <Progress
-                    percent={50}
+                    percent={403/500*100}
                     strokeWidth={20}
                     showInfo={false}
                     strokeColor='#CE3DAF'
