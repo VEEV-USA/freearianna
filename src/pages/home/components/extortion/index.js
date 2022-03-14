@@ -5,35 +5,38 @@ import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";
 import CardTitle from "../../../../components/heading/card";
 import Cover1 from '../../../../assets/pdf/bj1.jpg'
+import Cover2 from '../../../../assets/pdf/nathalieferro2.jpg'
+import Cover3 from '../../../../assets/pdf/nathalieferro1.jpg'
+import Cover4 from '../../../../assets/pdf/reshmakumar-fraud.jpg'
 
 const data = [
     {
         cover: Cover1,
-        pdf: '/',
+        pdf: `${window.location.origin}/pdf/bj1.pdf`,
         title: 'False Billing',
         items: [
             'Cynthia Lie (License #177986)',
             'Scott Reno (License #315247)'
         ]
     }, {
-        cover: Cover1,
-        pdf: '/',
+        cover: Cover2,
+        pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
         title: 'Extortion Payments',
         items: [
             'Brenda Joy (BJ) Fadem (License #118819)',
             'Katrina Ohde (License #254049)'
         ]
     }, {
-        cover: Cover1,
-        pdf: '/',
+        cover: Cover3,
+        pdf: `${window.location.origin}/pdf/nathalieferro1.pdf`,
         title: 'Committing Fraud Upon The Court',
         items: [
             'Nathalie Lezama Ferro (License #268398)',
             'Shalini Venktash (LMFT License #84805)'
         ]
     }, {
-        cover: Cover1,
-        pdf: '/',
+        cover: Cover4,
+        pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
         title: 'Fraud & Siphoning Assets',
         items: [
             'Kevin Boileau (License #131837)',
@@ -67,9 +70,9 @@ const HomeExtortion = () => {
                                                 rel="noreferrer"
                                                 style={{display: 'block', width: '100%'}}
                                                 target='_blank'
-                                                href={`${window.location.origin}/pdf/bj1.pdf`}
+                                                href={dat.pdf}
                                             >
-                                                <img src={Cover1} alt=""/>
+                                                <img src={dat.cover} alt=""/>
                                             </a>
                                         }
                                         bordered={false}
@@ -78,7 +81,7 @@ const HomeExtortion = () => {
                                         <CardTitle>
                                             <a
                                                 rel="noreferrer"
-                                                href={`${window.location.origin}/pdf/bj1.pdf`}
+                                                href={dat.pdf}
                                                 target='_blank'
                                             >
                                                 {dat.title}

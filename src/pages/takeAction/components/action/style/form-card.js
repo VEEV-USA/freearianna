@@ -13,6 +13,11 @@ const ActionFormCard = styled(Card)`
     font-size: 28px;
     margin-bottom: 32px;
   }
+  h3{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
   @media(max-width: 768px) {
     padding: 0;
   }

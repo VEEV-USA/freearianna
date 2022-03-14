@@ -163,6 +163,14 @@ const GlobalStyles = createGlobalStyle`
     &.pdf-card {
       background: none;
       border: none;
+      .ant-card-body{
+        padding: 32px 0;
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+      }
       .ant-card-cover{
         border: 1px solid #333;
         outline: 3px solid #333;

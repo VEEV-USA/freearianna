@@ -3,6 +3,8 @@ import styled from "styled-components";
 const LogoText = styled.h1`
   margin: 0;
   line-height: 1;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 32px;
   a {
     color: #ffffff;
     font-family: 'Kaushan Script', cursive;
