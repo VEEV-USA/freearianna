@@ -12,7 +12,7 @@ const HamburgerButton = styled(Button)`
   border-color: transparent!important;
   box-shadow: none;
   span {
-    font-size: 38px;
+    font-size: 24px;
     color: #ffffff;
     transition: all 0.3s;
   }

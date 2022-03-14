@@ -5,6 +5,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     margin: 0;
   }
+
+  img {
+    max-width: 100%;
+  }
   
   a {
     color: #CE3DAF;
@@ -23,6 +27,9 @@ const GlobalStyles = createGlobalStyle`
       align-items: center;
       padding: 0;
       height: 72px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     
     .ant-layout-footer {
@@ -77,7 +84,7 @@ const GlobalStyles = createGlobalStyle`
   
   .ant-menu{
     border-right: none;
-    .ant-menu-item{
+    .ant-menu-item {
       font-size: 22px;
       height: 52px;
       display: flex;
@@ -88,9 +95,15 @@ const GlobalStyles = createGlobalStyle`
       :hover {
         color: #f7ce07;
       }
+      a {
+        color: #CE3DAF;
+      }
       &.ant-menu-item-selected {
         background-color: #CE3DAF;
-        color: #ffffff;
+        color: #ffffff!important;
+        a {
+          color: #ffffff;
+        }
       }
       &.btn {
         background-color: #f7ce07;
@@ -112,6 +125,55 @@ const GlobalStyles = createGlobalStyle`
     .ant-drawer-header{
       border-bottom: 0;
       box-shadow: 1px 1px 4px gray;
+    }
+  }
+  
+  .ant-card {
+    &.criminal-card {
+      padding: 0;
+      border: none;
+      text-align: center;
+      .ant-card-body {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        img {
+          width: 182px;
+          height: 182px;
+          //border-bottom-left-radius: 32px;
+          //border-top-right-radius: 32px;
+          //border-top-left-radius: 32px;
+          border-radius: 182px;
+          max-width: 100%;
+          margin-bottom: 12px;
+          //box-shadow: rgba(255, 0, 0, 0.4) 2px 2px, rgba(255, 0, 0, 0.3) 4px 4px, rgba(255, 0, 0, 0.2) 6px 6px, rgba(255, 0, 0, 0.1) 8px 8px, rgba(255, 0, 0, 0.05) 10px 10px;
+        }
+        h3 {
+          font-size: 24px;
+          margin-bottom: 8px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 16px;
+          color: #000000;
+          line-height: 1.4;
+        }
+      }
+    }
+    &.pdf-card {
+      background: none;
+      border: none;
+      .ant-card-cover{
+        border: 1px solid #333;
+        outline: 3px solid #333;
+        outline-offset: 2px;
+        cursor: alias;
+        a {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
     }
   }
 `

@@ -4,12 +4,10 @@ import {Button, Checkbox, Form, Input, Progress, Space, message} from "antd";
 import {snsClient} from "../../../../untils/aws";
 import { SubscribeCommand} from "@aws-sdk/client-sns";
 
-const {Item} = Form;
-
-
+const {Item, useForm} = Form;
 
 const TakeActionForm = () => {
-
+    const [form] = useForm();
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
     const finishHandler = (data) => {
@@ -31,6 +29,7 @@ const TakeActionForm = () => {
             })
             .finally(()=>{
                 setLoading(false);
+                form.resetFields();
             })
 
         const phoneParams = {
@@ -49,7 +48,8 @@ const TakeActionForm = () => {
                 console.log(err, 'ERROR')
             })
             .finally(()=>{
-                setLoading(false)
+                setLoading(false);
+                form.resetFields();
             })
 
     }
@@ -72,6 +72,7 @@ const TakeActionForm = () => {
                     <Form
                         layout='vertical'
                         onFinish={finishHandler}
+                        form={form}
                     >
                         <Item
                             name='firstName'

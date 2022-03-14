@@ -11,9 +11,12 @@ const CircleButton = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-size: 20px;
   :hover, :focus, :active {
     background-color: #fb02c5;
     border-color: #fb02c5;
+    color: #fff;
   }
 `
 
