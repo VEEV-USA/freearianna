@@ -17,7 +17,7 @@ const LandingLayout = () => {
     return (
         <Layout>
             <LayoutHeader/>
-            <Content>
+            <Content style={{minHeight: 'calc(100vh - 154px)'}}>
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
                     <Route path='/kids' element={<KidsPage/>}/>
