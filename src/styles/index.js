@@ -43,8 +43,12 @@ const GlobalStyles = createGlobalStyle`
     &.ant-btn-primary {
       background-color: #f7ce07;
       border-color: #f7ce07;
-      color: #000000;
+      color: #CE3DAF;
       font-weight: bold;
+      :hover {
+        background-color: #ffffff;
+        border-color: #ffffff;
+      }
     }
     &.ant-btn-link {
       color: #ffffff;
@@ -182,6 +186,9 @@ const GlobalStyles = createGlobalStyle`
           }
         }
       }
+    }
+    .ant-card-body {
+      padding: 21px 12px;
     }
   }
 `

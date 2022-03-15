@@ -84,26 +84,56 @@ const TakeActionForm = () => {
                             >
                                 <Item
                                     name='firstName'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Firstname is required'
+                                        }
+                                    ]}
                                 >
                                     <Input size='large' placeholder='First Name'/>
                                 </Item>
                                 <Item
                                     name='lastName'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Lastname is required'
+                                        }
+                                    ]}
                                 >
                                     <Input size='large' placeholder='Last Name'/>
                                 </Item>
                                 <Item
                                     name='email'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Email is required'
+                                        }
+                                    ]}
                                 >
                                     <Input size='large' placeholder='Email'/>
                                 </Item>
                                 <Item
                                     name='zipcode'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Zipcode is required'
+                                        }
+                                    ]}
                                 >
                                     <Input size='large' placeholder='Zip Code'/>
                                 </Item>
                                 <Item
                                     name='phone'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Phone number is required'
+                                        }
+                                    ]}
                                 >
                                     <Input size='large' placeholder='Phone'/>
                                 </Item>

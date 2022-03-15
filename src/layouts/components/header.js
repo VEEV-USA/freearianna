@@ -144,8 +144,11 @@ const LayoutHeader = () => {
                                     >
                                         <Menu
                                             onClick={navigateHandler}
+                                            selectedKeys={
+                                            [...location.pathname.split('/'), ...location.hash.split(' ')]
+                                            }
                                         >
-                                            <Menu.Item key=''>
+                                            <Menu.Item key='#arianna'>
                                                 <NavHashLink
                                                     to="/#arianna"
                                                 >

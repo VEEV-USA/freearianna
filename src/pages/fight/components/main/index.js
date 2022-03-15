@@ -109,7 +109,11 @@ const FightMain = () => {
                                         <Card
                                             bordered={false}
                                             style={{textAlign: 'center'}}
-                                            cover={<img src={Img1} alt=''/>}
+                                            cover={
+                                            <div style={{position: 'relative', paddingTop: '56.25%'}}>
+                                                <img src={Img1} height={210} alt='' style={{position: 'absolute', height: '100%', top: '0', left: 0, width: '100%'}}/>
+                                            </div>
+                                            }
                                         >
                                             <CardTitle>
                                                 Arianna's Painting
@@ -117,6 +121,15 @@ const FightMain = () => {
                                             <P1>
                                                 Picture perfect. Just beautiful.
                                             </P1>
+                                        </Card>
+                                        <Card
+                                            bordered={false}
+                                            style={{textAlign: 'center'}}
+                                            cover={<img src={Img2} alt=''/>}
+                                        >
+                                            <CardTitle>
+                                                Arianna Poster
+                                            </CardTitle>
                                         </Card>
                                     </Col>
                                     <Col lg={{span: 12}} span={24}>
@@ -136,17 +149,6 @@ const FightMain = () => {
                                                 Costa, Kevin Boileau, Joe Perez, Shalini Venktash, child abusers Reshma
                                                 Kumar, Vikaash Kumar & Canadian pedophile Ganraj Kumar.
                                             </P1>
-                                        </Card>
-                                    </Col>
-                                    <Col lg={{span: 12}} span={24}>
-                                        <Card
-                                            bordered={false}
-                                            style={{textAlign: 'center'}}
-                                            cover={<img src={Img2} alt=''/>}
-                                        >
-                                            <CardTitle>
-                                                Arianna Poster
-                                            </CardTitle>
                                         </Card>
                                     </Col>
                                 </Row>

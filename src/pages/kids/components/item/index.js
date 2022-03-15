@@ -1,62 +1,71 @@
 import React from 'react';
-import HomeExtortionWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
-import SectionTitle from "../../../../components/heading/section";
-import {Card, Col, Row, Space} from "antd";
+import Image1 from '../../../../assets/img/cynthialie.png'
+import {Avatar, Card, Col, Row, Space} from "antd";
+import Media from "../../../../components/media";
+import P1 from "../../../../components/paragraph";
+import Cover1 from "../../../../assets/pdf/bj1.jpg";
+import Cover2 from "../../../../assets/pdf/nathalieferro2.jpg";
+import Cover3 from "../../../../assets/pdf/nathalieferro1.jpg";
+import Cover4 from "../../../../assets/pdf/reshmakumar-fraud.jpg";
 import CardTitle from "../../../../components/heading/card";
-import Cover1 from '../../../../assets/pdf/bj1.jpg'
-import Cover2 from '../../../../assets/pdf/nathalieferro2.jpg'
-import Cover3 from '../../../../assets/pdf/nathalieferro1.jpg'
-import Cover4 from '../../../../assets/pdf/reshmakumar-fraud.jpg'
+import KidsItemWrap from "./style/wrap";
+
 
 const data = [
     {
         cover: Cover1,
         pdf: `${window.location.origin}/pdf/bj1.pdf`,
-        title: 'False Billing',
+        title: 'Rape Charges',
         items: [
-            'Cynthia Lie (License #177986)',
-            'Scott Reno (License #315247)'
+            'Rape charges',
         ]
     }, {
         cover: Cover2,
         pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
-        title: 'Extortion Payments',
+        title: 'Extortion Charges',
         items: [
-            'Brenda Joy (BJ) Fadem (License #118819)',
-            'Katrina Ohde (License #254049)'
+            'test',
         ]
     }, {
         cover: Cover3,
         pdf: `${window.location.origin}/pdf/nathalieferro1.pdf`,
-        title: 'Committing Fraud Upon The Court',
+        title: 'Bribery Charges',
         items: [
-            'Nathalie Lezama Ferro (License #268398)',
-            'Shalini Venktash (LMFT License #84805)'
+            'test',
         ]
     }, {
         cover: Cover4,
         pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
-        title: 'Fraud & Siphoning Assets',
+        title: 'Sexual Abuse',
         items: [
-            'Kevin Boileau (License #131837)',
-            'Joe Perez Corrupt San Jose Police'
+            'test',
         ]
     }
 ]
 
-const HomeExtortion = () => {
+
+const KidsItem = ({person}) => {
+
     return (
-        <HomeExtortionWrap>
+        <KidsItemWrap>
             <Container>
                 <Space
                     direction='vertical'
                     size={32}
                     style={{width: '100%'}}
                 >
-                    <SectionTitle>
-                        Extortion Payments of $700,000
-                    </SectionTitle>
+                    <Media>
+                        <Avatar src={person.img} size={200}/>
+                        <div>
+                            <h3>
+                                {person.name}
+                            </h3>
+                            <P1>
+                                {person.action}
+                            </P1>
+                        </div>
+                    </Media>
                     <Row
                         gutter={[40, 40]}
                     >
@@ -101,8 +110,8 @@ const HomeExtortion = () => {
                     </Row>
                 </Space>
             </Container>
-        </HomeExtortionWrap>
+        </KidsItemWrap>
     );
 };
 
-export default HomeExtortion;
+export default KidsItem;

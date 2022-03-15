@@ -6,7 +6,7 @@ const ActionFormCard = styled(Card)`
   box-shadow: none;
   border: none;
   background-color: #e1d6d6;
-  border-radius: 0;
+  border-radius: 12px;
   padding: 12px;
   h2 {
     text-align: center;
