@@ -20,7 +20,9 @@ const LayoutHeader = () => {
     const navigateHandler = (data) => {
         console.log(data.key)
         setVisible(false);
-        navigate(data.key)
+        if (data.key !== '#arianna') {
+            navigate(data.key)
+        }
     }
 
     useEffect(() => {
@@ -28,8 +30,8 @@ const LayoutHeader = () => {
             setScroll(window.scrollY)
         })
 
-        if(location.hash !== '#arianna') {
-            window.scrollTo(0,0)
+        if (location.hash !== '#arianna') {
+            window.scrollTo(0, 0)
         }
 
         return window.removeEventListener("scroll", () => {
@@ -145,7 +147,7 @@ const LayoutHeader = () => {
                                         <Menu
                                             onClick={navigateHandler}
                                             selectedKeys={
-                                            [...location.pathname.split('/'), ...location.hash.split(' ')]
+                                                [...location.pathname.split('/'), ...location.hash.split(' ')]
                                             }
                                         >
                                             <Menu.Item key='#arianna'>
