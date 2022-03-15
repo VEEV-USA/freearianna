@@ -68,13 +68,13 @@ const TakeActionForm = () => {
                         size={12}
                         style={{width: '100%'}}
                     >
-                        <Progress
+                        {/* <Progress
                             percent={403/500*100}
                             strokeWidth={20}
                             showInfo={false}
                             strokeColor='#CE3DAF'
                         />
-                        <p style={{textAlign: 'center'}}>403 of 500 signatures</p>
+                        <p style={{textAlign: 'center'}}>403 of 500 signatures</p> */}
                         <div>
                             <h2>Sign This Petition</h2>
                             <Form

@@ -5,7 +5,7 @@ const ActionFormCard = styled(Card)`
   min-height: 100%;
   box-shadow: none;
   border: none;
-  background-color: #e1d6d6;
+  background-color: #F7E3E4;
   border-radius: 12px;
   padding: 12px;
   h2 {

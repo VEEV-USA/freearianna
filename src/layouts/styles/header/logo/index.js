@@ -10,7 +10,7 @@ const LogoText = styled.h1`
     font-family: 'Kaushan Script', cursive;
     font-size: 32px;
     :focus, :hover {
-      color: #e9a4ed;
+      color: #ffffff;
       text-decoration: none;
     }
   }
