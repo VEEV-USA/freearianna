@@ -8,8 +8,9 @@ const KidsBanner = () => {
         <KidsBannerWrap>
             <Container>
                 <SectionTitle>
-                    <b>Locking up black people is BIG MONEY.</b> USA is out of blacks to lockup, so they are after you,
-                    your kids & family!
+                    <b>Locking up black people is BIG MONEY.</b>
+                    <br/>USA is out of blacks to LOCKUP, so they are after you &
+                    your kids.
                 </SectionTitle>
             </Container>
         </KidsBannerWrap>
