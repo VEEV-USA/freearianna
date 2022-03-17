@@ -38,12 +38,12 @@ const criminals = [
     {
         img: Image5,
         name: 'BJ Fadem',
-        action: "BJ's mother wanted a boy so BJ had many sex surgeries to be a man. BJ despises men, kids and has spent his life destroying them."
+        action: "BJ's mom wanted a man. Has regular sex surgeries to be a man. Despises men, spends his life destroying men."
     },
     {
         img: Image6,
         name: 'Nathalie Ferro',
-        action: "An extortionist that profits by trolling family courts. Goes by numerous names to hide her fraudulent schemes."
+        action: "Extortionist that profits by trolling family courts. Goes by numerous names to hide her fraudulent schemes."
     },
     {
         img: Image7,
@@ -79,12 +79,12 @@ const HomeCriminals = () => {
                         Criminals Covering Up Sexual Abuse of Arianna
                     </SectionTitle>
                     <Row
-                        gutter={[32, 32]}
+                        gutter={[0, 32]}
                         justify='center'
                     >
                         {
                             criminals.map((criminal, key) => (
-                                <Col xl={{span: 5}} md={{span: 8}} sm={{span: 12}} span={24} key={key} >
+                                <Col xl={{span: 4}} md={{span: 7}} sm={{span: 16}} span={24} key={key} >
                                     <Card className='criminal-card' bordered={false}>
                                         <img src={criminal.img} alt={criminal.name}/>
                                         <h3>

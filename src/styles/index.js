@@ -134,20 +134,20 @@ const GlobalStyles = createGlobalStyle`
   
   .ant-card {
     &.criminal-card {
-      padding: 0;
+      padding: 30;
       border: none;
       text-align: center;
       .ant-card-body {
-        padding: 0;
+        padding: 50;
         border: none;
         box-shadow: none;
         img {
-          width: 182px;
-          height: 182px;
+          width: 150px;
+          height: 150px;
           //border-bottom-left-radius: 32px;
           //border-top-right-radius: 32px;
           //border-top-left-radius: 32px;
-          border-radius: 182px;
+          border-radius: 150px;
           max-width: 100%;
           margin-bottom: 12px;
           //box-shadow: rgba(255, 0, 0, 0.4) 2px 2px, rgba(255, 0, 0, 0.3) 4px 4px, rgba(255, 0, 0, 0.2) 6px 6px, rgba(255, 0, 0, 0.1) 8px 8px, rgba(255, 0, 0, 0.05) 10px 10px;
