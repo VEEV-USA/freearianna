@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import KidsCynthiaWrap, {KidsCynthiaWrap1} from "./style/wrap";
+import Wrap, {Wrap1} from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import Image from '../../../../assets/img/cynthialie2.png'
@@ -47,20 +47,20 @@ const data = [
 ]
 
 
-const KidsCynthia = () => {
+const KidsCriminal1 = () => {
 
     return (
         <Fragment>
-            <KidsCynthiaWrap>
+            <Wrap>
                 <Container>
                     <SectionTitle>
                         Cynthia Lie Runs A Criminal Enterprise Using The Courts Profiting From Pedophiles & False
                         Domestic Violence
                     </SectionTitle>
                 </Container>
-            </KidsCynthiaWrap>
+            </Wrap>
             <img src={Image} alt="" style={{width: '100%', height: 200}}/>
-            <KidsCynthiaWrap1>
+            <Wrap1>
                 <Container>
                     <Media>
                         <Avatar src={Image1} size={200}/>
@@ -119,7 +119,7 @@ const KidsCynthia = () => {
                         attempted murder, false billing, child trafficking using the courts.
                     </P1>
                 </Container>
-            </KidsCynthiaWrap1>
+            </Wrap1>
             <Container style={{marginTop: 21}}>
                 <Row
                     gutter={[40, 40]}
@@ -168,4 +168,4 @@ const KidsCynthia = () => {
     );
 };
 
-export default KidsCynthia;
+export default KidsCriminal1;
