@@ -16,7 +16,7 @@ export const Wrap0 = styled.div`
 
 export const Wrap1 = styled.div`
   padding: 32px 0;
-  background: linear-gradient(to top,#fff,#ccc987);
+  background: linear-gradient(to top,#fff,#EFF1F4);
 `
 
 export default Wrap
