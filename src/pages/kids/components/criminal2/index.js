@@ -56,7 +56,7 @@ const KidsCriminal2 = () => {
                         <Avatar src={Image1} size={200}/>
                         <div>
                             <h3>
-                                Brenda "BJ" Fadem
+                                Brenda Joy "BJ" Fadem
                             </h3>
                             <P1>
                                 Cynthia Lie, is in serious and egregious civil rights and color of law violations. Lie
