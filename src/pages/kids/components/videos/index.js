@@ -30,7 +30,7 @@ const KidsVideos = () => {
                     </Row>
                     <div>
                         <P1>
-                            Joe Biden, spent his entire life trying to be President. He has done every dispicable, vile,
+                            Joe Biden, spent his entire life profiting by seperating black kids from their parent's particularly father's with his VAWA bill, destroying families with his Crime Bill and now vacinating kids using emergency powers. He has done every dispicable, vile,
                             inhumane, racist acts to achieve his goal. In 1994, Joe Biden struck gold with the
                             <a
                                 target='_blank'

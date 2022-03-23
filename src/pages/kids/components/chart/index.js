@@ -14,7 +14,7 @@ const KidsChart = () => {
                     Crime Bill Targeted Black Men VAWA Targeted Black Women
                 </SectionTitle>
                 <P1>
-                    Who do you think paid for Hunter Biden's $7000 sunglasses? You did!. Seeing the riches the Biden
+                    You paid for Hunter Biden's $7000 sunglasses! Seeing the riches the Biden
                     Crime Family was racking in locking up black men, the Clinton's decided to build their own empire
                     targeting black women with <a
                     href='https://www.saveservices.org/2021/03/vawa-long-standing-and-widespread-waste-fraud-and-abuse/'
