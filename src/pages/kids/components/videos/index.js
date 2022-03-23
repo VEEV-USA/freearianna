@@ -31,7 +31,7 @@ const KidsVideos = () => {
                     <div>
                         <P1>
                             Joe Biden, spent his entire life profiting by seperating black kids from their parent's particularly father's with his VAWA bill, destroying families with his Crime Bill and now vacinating kids using emergency powers. He has done every dispicable, vile,
-                            inhumane, racist acts to achieve his goal. In 1994, Joe Biden struck gold with the
+                            inhumane, racist acts to achieve his goal. In 1994, Joe Biden struck gold with the 
                             <a
                                 target='_blank'
                                 href='https://www.vox.com/policy-and-politics/2019/6/20/18677998/joe-biden-1994-crime-bill-law-mass-incarceration'
