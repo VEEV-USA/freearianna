@@ -5,6 +5,8 @@ import Container from "../../../../components/paper/container";
 import {Col, Row, Space} from "antd";
 import P1 from "../../../../components/paragraph";
 
+import BlackMenSavedImage from '../../../../assets/img/blackmensaved.png'
+
 const KidsVideos = () => {
     return (
         <KidsVideosWrap>
@@ -47,6 +49,9 @@ const KidsVideos = () => {
                         </P1>
                         <P1>
                             Joe Biden's, Crime Bill targeted <b>black males</b> because they are easy targets, easy money for Industrial Prison Complex, who in turn pay Joe Biden.
+                        </P1>
+                        <P1>
+                            <img src={BlackMenSavedImage} alt="Black men lockedup by Joe Biden's Crime Bill and VAWA"/>
                         </P1>
                     </div>
                 </Space>

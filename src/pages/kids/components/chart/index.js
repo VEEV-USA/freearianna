@@ -10,7 +10,6 @@ const KidsChart = () => {
     return (
         <KidsChartWrap>
             <Container>
-                <img src={ChartImage} alt="Divorce industry revenue since bill clinton made 'kids for cash' law"/>
                 <SectionTitle>
                     Crime Bill Targeted Black Men VAWA Targeted Black Women
                 </SectionTitle>
@@ -25,6 +24,7 @@ const KidsChart = () => {
                     wealth transfer from parents to lawyers, judges, DAs, police, therapists, bogus experts using their
                     kids.
                 </P1>
+                <img src={ChartImage} alt="Divorce industry revenue since bill clinton made 'kids for cash' law"/>
             </Container>
         </KidsChartWrap>
     );

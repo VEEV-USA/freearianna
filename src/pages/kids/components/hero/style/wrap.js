@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const KidsHeroWrap = styled.div`
   background-color: #f7eaf4;
-  padding: 72px 0;
+  padding: 32px 0;
   text-align: center;
   h4 {
     margin-top: -20px;

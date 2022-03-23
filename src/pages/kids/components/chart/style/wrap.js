@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const KidsChartWrap = styled.div`
-  padding: 72px 0 32px;
+  padding: 52px 0 32px;
   text-align: center;
   img {
     width: 100%;
