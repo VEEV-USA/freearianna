@@ -36,7 +36,7 @@ const KidsVideos = () => {
                                 target='_blank'
                                 href='https://www.vox.com/policy-and-politics/2019/6/20/18677998/joe-biden-1994-crime-bill-law-mass-incarceration'
                             >
-                                1994 Crime Bill, the largest Crime Bill in US history
+                                 1994 Crime Bill, the largest Crime Bill in US history
                             </a>.
                         </P1>
                         <P1>
