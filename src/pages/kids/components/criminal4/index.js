@@ -23,21 +23,21 @@ const data = [
         ]
     }, {
         cover: Cover2,
-        pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
+        pdf: `${window.location.origin}/pdf/kevinboileau2.pdf`,
         title: 'Extortion Charges',
         items: [
             'jkjk jkkjkjkjkl',
         ]
     }, {
         cover: Cover3,
-        pdf: `${window.location.origin}/pdf/kevinboileau1.pdf`,
+        pdf: `${window.location.origin}/pdf/kevinboileau3.pdf`,
         title: 'Bribery Charges',
         items: [
             'tjkjkj j jkjkjlest',
         ]
     }, {
         cover: Cover4,
-        pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
+        pdf: `${window.location.origin}/pdf/kevinboileau4.pdf`,
         title: 'Sexual Abuse',
         items: [
             'test',
