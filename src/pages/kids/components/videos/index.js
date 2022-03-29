@@ -30,22 +30,16 @@ const KidsVideos = () => {
                     </Row>
                     <div>
                         <P1>
-                            Joe Biden, spent his entire life profiting by seperating black kids from their parent's particularly father's with his VAWA bill, destroying families with his Crime Bill and now vacinating kids using emergency powers. He has done every dispicable, vile,
-                            inhumane, racist acts to achieve his goal. In 1994, Joe Biden struck gold with the <a  
+                            Joe Biden, has spent his entire life profiting by separating black kids from their parent's, removing father's from homes with his VAWA bill, destroying and decimating families with his Crime Bill all sponsored by the Industrial Prison Complex. Now he is using emergency powers to vaccinate kids on behalf of BIG Pharma. He has done every despicable, vile, inhumane, racist act to make for profit. In 1994, Joe Biden struck gold with the <a  
                             href='https://www.vox.com/policy-and-politics/2019/6/20/18677998/joe-biden-1994-crime-bill-law-mass-incarceration' target='_blank'
                             > 1994 Crime Bill, the largest Crime Bill in US history
-                            </a>.
+                            </a>. More blacks have been locked up under Joe Biden's Crime Bill than All of SLAVERY!
                         </P1>
                         <P1>
-                            Joe Biden, was the Private Industrial Prison Complex's sales man in Washington. He used his
-                            position to write legistlation that profited the Industrial Prison Complex. The legistation
-                            forcibly locked up innoccent people for profit. The legistlation was used as a vehicle to
-                            transfer tax payer dollars starting with $12 billion a year into the pockets of Industrial
-                            Prison Complex. To date as much as $1 Trillion in public tax payer funds have been
-                            transferred.
+                            Joe Biden, was the Private Industrial Prison Complex's salesman in Washington. He used his position to write legislation that profited the Industrial Prison Complex. The legislation forcibly locked up innocent people for profit. The legislation was used as a vehicle to transfer tax payer dollars, $12 billion in 1994, to the Industrial Prison Complex. To date as much as $1 Trillion in public taxpayer funds have been transferred.
                         </P1>
                         <P1>
-                            Joe Biden's, Crime Bill targeted <b>black males</b> because they are easy targets, easy money for Industrial Prison Complex, who in turn pay Joe Biden.
+                        Joe Biden's, Crime Bill targeted <b>black males</b> because they are easy targets, easy money for the Industrial Prison Complex, who in turn pay Joe Biden. Here are some of the black men that have had their lives and their childrens' lives destroyed and their families decimated by Joe Biden's 1994 Crime Bill.
                         </P1>
                         <P1>
                             <img src={BlackMenSavedImage} alt="Black men lockedup by Joe Biden's Crime Bill and VAWA"/>
