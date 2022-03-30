@@ -6,7 +6,7 @@ import Image1 from '../../../../assets/img/joeperez.jpg'
 import {Avatar, Card, Col, Row} from "antd";
 import Media from "../../../../components/media";
 import P1 from "../../../../components/paragraph";
-import Cover1 from "../../../../assets/img/joeperez.png";
+import Cover1 from "../../../../assets/img/joeperez.png"
 import CardTitle from "../../../../components/heading/card";
 
 const data = [
