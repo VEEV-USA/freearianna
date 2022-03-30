@@ -7,21 +7,17 @@ import {Avatar, Card, Col, Row} from "antd";
 import Media from "../../../../components/media";
 import P1 from "../../../../components/paragraph";
 import Cover1 from "../../../../assets/img/joeperez.png";
-import Cover2 from "../../../../assets/pdf/nathalieferro2.jpg";
-import Cover3 from "../../../../assets/pdf/nathalieferro1.jpg";
-import Cover4 from "../../../../assets/pdf/reshmakumar-fraud.jpg";
 import CardTitle from "../../../../components/heading/card";
-
 
 const data = [
     {
         cover: Cover1,
         pdf: `https://www.mercurynews.com/2020/06/29/san-jose-man-exonerated-after-17-years-behind-bars-sues-for-wrongful-conviction/`,
-        title: 'Wrongful conviction by corrupt cop exonerated after 17 years',
+        title: 'Man Framed by Corrupt Cop Exonerated After 17 Years',
         items: [
             'Rape charges'
         ]
-     }, // {
+     }, //{
     //     cover: Cover2,
     //     pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
     //     title: 'Extortion Charges',
@@ -88,7 +84,7 @@ const KidsCriminal6 = () => {
                                             target='_blank'
                                             href={dat.pdf}
                                         >
-                                            <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/>
+                                            <img src={dat.cover} height={ 'auto' } style={{objectFit: 'cover', width: '100%'}} alt=""/>
                                         </a>
                                     }
                                     bordered={false}
