@@ -1,5 +1,5 @@
 import React from 'react';
-import FightMainWrap from "./style/wrap";
+import AboutMainWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";
@@ -12,9 +12,9 @@ import Img2 from "../../../../assets/img/arianna-poster200.png"
 import Img3 from "../../../../assets/img/isaac.jpg"
 
 
-const FightMain = () => {
+const AboutMain = () => {
     return (
-        <FightMainWrap>
+        <AboutMainWrap>
             <Container>
                 <Space
                     direction='vertical'
@@ -22,7 +22,7 @@ const FightMain = () => {
                     style={{width: '100%'}}
                 >
                     {/* <SectionTitle>
-                        The Fight Against Child Trafficking, Corruption, Fraud & Abuse
+                        The Free Arianna Movement
                     </SectionTitle> */}
                     <Row
                         gutter={[32, 32]}
@@ -33,29 +33,15 @@ const FightMain = () => {
                                 style={{width: '100%'}}
                                 size={32}
                             >
-                                <div
+                                {/* <div
                                     style={{
                                         position: 'relative',
                                         paddingTop: '56.25%',
                                     }}
                                 >
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FADVOCATEUSA%2Fvideos%2F339240747959343%2F&show_text=false&width=560&t=0"
-                                        width="100%"
-                                        height="100%"
-                                        style={{
-                                            border: 'none',
-                                            overflow: 'hidden',
-                                            position: 'absolute',
-                                            left: '0',
-                                            top: '0'
-                                        }}
-                                        scrolling="no"
-                                        frameBorder="0"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                                        allowFullScreen={true}
-                                    />
-                                </div>
+                                    
+                                    
+                                </div> */}
                                 <div>
                                     <CardTitle style={{textAlign: 'left'}}>
                                         Hollywood March For Kids
@@ -199,8 +185,8 @@ const FightMain = () => {
                     </Row>
                 </Space>
             </Container>
-        </FightMainWrap>
+        </AboutMainWrap>
     );
 };
 
-export default FightMain;
+export default AboutMain;
