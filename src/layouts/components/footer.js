@@ -1,16 +1,43 @@
-import React from 'react';
 import {Button, Col, Grid, Layout, Row} from "antd";
 import Container from "../../components/paper/container";
 import CircleButton from "../../components/button/circle";
 import {TwitterIcon} from "../../components/icons/social";
 import Copyright from "../../components/paragraph/copyright";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import React, {Fragment, useEffect, useState} from 'react';
+import LogoText, {LogoTextLight} from "../styles/header/logo";
+
 
 const {Footer} = Layout
 const {useBreakpoint} = Grid;
 
 const LayoutFooter = () => {
-
+    const [visible, setVisible] = useState(false);
+    const [scroll, setScroll] = useState(0);
     const breakpoints = useBreakpoint();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const navigateHandler = (data) => {
+        console.log(data.key)
+        setVisible(false);
+        if (data.key !== '#arianna') {
+            navigate(data.key)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY)
+        })
+
+        if (location.hash !== '#arianna') {
+            window.scrollTo(0, 0)
+        }
+
+        return window.removeEventListener("scroll", () => {
+        })
+    }, [location])
 
     return (
         <Footer>
@@ -27,13 +54,20 @@ const LayoutFooter = () => {
                             style={{justifyContent: breakpoints.lg ? "flex-start" : "center"}}
                         >
                             <Col>
-                                <Button type='text'>
+                                <Button type='link'
+                                    onClick={() => { navigate('/fight') }}
+                                    className={location.pathname === '/fight' && 'inactive'} style={{color: '#CE3DAF'}} >
                                     About
                                 </Button>
                             </Col>
                             <Col>
                                 <Button type='text'>
-                                    Privacy
+                                    {/* Privacy */}
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button type='text'>
+                                    {/* Terms */}
                                 </Button>
                             </Col>
                         </Row>
