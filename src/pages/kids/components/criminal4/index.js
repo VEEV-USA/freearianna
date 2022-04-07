@@ -6,10 +6,10 @@ import Image1 from '../../../../assets/img/kevin.jpg'
 import {Avatar, Card, Col, Row} from "antd";
 import Media from "../../../../components/media";
 import P1 from "../../../../components/paragraph";
-import Cover1 from "../../../../assets/pdf/bj1.jpg";
-import Cover2 from "../../../../assets/pdf/nathalieferro2.jpg";
-import Cover3 from "../../../../assets/pdf/nathalieferro1.jpg";
-import Cover4 from "../../../../assets/pdf/reshmakumar-fraud.jpg";
+import Cover1 from "../../../../assets/pdf/kb1.png";
+import Cover2 from "../../../../assets/pdf/kb2.png";
+import Cover3 from "../../../../assets/pdf/kb3.png";
+import Cover4 from "../../../../assets/pdf/kb4.png";
 import CardTitle from "../../../../components/heading/card";
 
 
