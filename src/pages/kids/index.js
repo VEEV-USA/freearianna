@@ -10,6 +10,7 @@ import KidsCriminal4 from "./components/criminal4";
 import KidsCriminal5 from "./components/criminal5";
 import KidsCriminal6 from "./components/criminal6";
 import KidsCriminal7 from "./components/criminal7";
+import KidsCriminalTest from "./components/criminalTest";
 import KidsItem from "./components/item";
 import Image1 from "../../assets/img/gk.png";
 import Image2 from "../../assets/img/reshmakumar.png";
@@ -70,6 +71,7 @@ const KidsPage = () => {
             <KidsCriminal5/>
             <KidsCriminal6/>
             <KidsCriminal7/>
+            <KidsCriminalTest/>
             {/* {
                 criminals.map((criminal, key)=>(
                     <KidsItem person={criminal} key={key}/>
