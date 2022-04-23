@@ -4,22 +4,24 @@ import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";
 import CardTitle from "../../../../components/heading/card";
-import Cover1 from '../../../../assets/pdf/bj1.jpg'
-import Cover2 from '../../../../assets/pdf/nathalieferro2.jpg'
-import Cover3 from '../../../../assets/pdf/nathalieferro1.jpg'
-import Cover4 from '../../../../assets/pdf/reshmakumar-fraud.jpg'
+//import Cover1 from '../../../../assets/pdf/bj1.jpg'
+//import Cover2 from '../../../../assets/pdf/nathalieferro2.jpg'
+//import Cover3 from '../../../../assets/pdf/nathalieferro1.jpg'
+//import Cover4 from '../../../../assets/pdf/reshmakumar-fraud.jpg'
 
 const data = [
     {
-        cover: Cover1,
-        pdf: `${window.location.origin}/pdf/bj1.pdf`,
+        // cover: Cover1,
+        cover: `pdf/bjfadem1.pdf`,
+        pdf: `${window.location.origin}/pdf/bjfadem1.pdf`,
         title: 'False Billing',
         items: [
             'Cynthia Lie (License #177986)',
             'Scott Reno (License #315247)'
         ]
     }, {
-        cover: Cover2,
+        // cover: Cover2,
+        cover: 'pdf/nathalieferro2.pdf',
         pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
         title: 'Extortion Payments',
         items: [
@@ -27,7 +29,8 @@ const data = [
             'Katrina Ohde (License #254049)'
         ]
     }, {
-        cover: Cover3,
+        //cover: Cover3,
+        cover: `pdf/nathalieferro1.pdf`,
         pdf: `${window.location.origin}/pdf/nathalieferro1.pdf`,
         title: 'Committing Fraud Upon The Court',
         items: [
@@ -35,7 +38,8 @@ const data = [
             'Shalini Venktash (LMFT License #84805)'
         ]
     }, {
-        cover: Cover4,
+        //cover: Cover4,
+        cover: `pdf/reshmakumar-fraud.pdf`,
         pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
         title: 'Fraud & Siphoning Assets',
         items: [
@@ -72,7 +76,8 @@ const HomeExtortion = () => {
                                                 target='_blank'
                                                 href={dat.pdf}
                                             >
-                                                <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/>
+                                                <embed src={dat.cover} type="application/pdf" height={'300'} width={'100%'} />
+                                                {/* <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/> */}
                                             </a>
                                         }
                                         bordered={false}
