@@ -6,37 +6,37 @@ import Image1 from '../../../../assets/img/nathalie.jpg'
 import {Avatar, Card, Col, Row} from "antd";
 import Media from "../../../../components/media";
 import P1 from "../../../../components/paragraph";
-import Cover1 from "../../../../assets/pdf/bj1.jpg";
-import Cover2 from "../../../../assets/pdf/nathalieferro2.jpg";
-import Cover3 from "../../../../assets/pdf/nathalieferro1.jpg";
-import Cover4 from "../../../../assets/pdf/reshmakumar-fraud.jpg";
+// import Cover1 from "../../../../assets/pdf/bj1.jpg";
+// import Cover2 from "../../../../assets/pdf/nathalieferro2.jpg";
+// import Cover3 from "../../../../assets/pdf/nathalieferro1.jpg";
+// import Cover4 from "../../../../assets/pdf/reshmakumar-fraud.jpg";
 import CardTitle from "../../../../components/heading/card";
 
 
 const data = [
     {
-        cover: Cover1,
-        pdf: `${window.location.origin}/pdf/bj1.pdf`,
+        cover: `pdf/bjfadem1.pdf`,
+        pdf: `${window.location.origin}/pdf/bjfadem1.pdf`,
         title: 'Rape Charges',
         items: [
             'Rape charges',
         ]
     }, {
-        cover: Cover2,
+        cover: `pdf/bjfadem1.pdf`,
         pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
         title: 'Extortion Charges',
         items: [
             'test',
         ]
     }, {
-        cover: Cover3,
+        cover: `pdf/bjfadem1.pdf`,
         pdf: `${window.location.origin}/pdf/nathalieferro1.pdf`,
         title: 'Bribery Charges',
         items: [
             'test',
         ]
     }, {
-        cover: Cover4,
+        cover: `pdf/bjfadem1.pdf`,
         pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
         title: 'Sexual Abuse',
         items: [
@@ -89,8 +89,9 @@ const KidsCriminal3 = () => {
                                             target='_blank'
                                             href={dat.pdf}
                                         >
-                                            <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/>
-                                        </a>
+                                             <embed src={dat.cover} type="application/pdf" height={'300'} width={'100%'} />
+                                                {/* <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/> */}
+                                            </a>
                                     }
                                     bordered={false}
                                     className='pdf-card'
