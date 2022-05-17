@@ -6,6 +6,7 @@ import LayoutFooter from "./components/footer";
 import HomePage from "../pages/home";
 import TakeActionPage from "../pages/takeAction";
 import KidsPage from "../pages/kids";
+import RecallPage from "../pages/recall";
 import FightPage from "../pages/fight";
 import {ArrowUpOutlined} from "@ant-design/icons";
 import CircleButton from "../components/button/circle";
@@ -23,6 +24,7 @@ const LandingLayout = () => {
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
                     <Route path='/kids' element={<KidsPage/>}/>
+                    <Route path='/recall' element={<RecallPage/>}/>
                     <Route path='/fight' element={<FightPage/>}/>
                     <Route path='/take-action' element={<TakeActionPage/>}/>
                     <Route path='/donate' element={<DonatePage/>}/>

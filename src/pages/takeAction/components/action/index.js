@@ -18,7 +18,7 @@ const data = [
         name: 'Cynthia Lie',
         fullName: 'Cynthia Lie',
         license: '177986',
-        content: <p>Abuse of discrestion, collusion, racism, feminist, anti Trump, anti men.</p>
+        content: <p>Abuse of discrestion, collusion, racism, feminist, anti Trump, anti men. <a href='recall'>Sign Petition</a></p>
     },
     {
         img: Image2,
@@ -109,7 +109,7 @@ const TakeActionContent = () => {
                 <Row
                     gutter={[40, 52]}
                 >
-                    <Col lg={{span: 15}} span={24}>
+                    <Col lg={{span: 17}} span={24}>
                         <Space
                             direction='vertical'
                             size={42}
@@ -121,9 +121,9 @@ const TakeActionContent = () => {
                             }
                         </Space>
                     </Col>
-                    <Col lg={{span: 9}} span={24}>
+                    {/* <Col lg={{span: 9}} span={24}>
                         <TakeActionForm/>
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </TakeActionWrap>

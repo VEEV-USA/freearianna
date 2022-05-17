@@ -10,7 +10,7 @@ const TakeActionHero = () => {
             <TakeActionHeroWrap>
                 <Container>
                     <TakeActionHeroText>
-                        Cynthia Lie & Co Run A Criminal Enterprise Using The Courts Profiting From Pedophiles & False Domestic
+                        Cynthia Lie Runs A Criminal Enterprise Using The Courts Profiting From Pedophiles & False Domestic
                         Violence, Destorying Kids, Extorting Money From Parents & Hiding Behind Judicial Immunity
                     </TakeActionHeroText>
                 </Container>

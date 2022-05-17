@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react'
-import TakeActionHero from "./components/hero";
+import TakeActionHero2 from "./components/hero2";
 import TakeActionContent from "./components/action";
 
 
 export const TakeActionPage = () => {
     return (
         <Fragment>
-            <TakeActionHero/>
+            <TakeActionHero2/>
             <TakeActionContent/>
         </Fragment>
     )
