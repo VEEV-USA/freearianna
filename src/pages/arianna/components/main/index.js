@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutMainWrap from "./style/wrap";
+import AriannaMainWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";
@@ -12,9 +12,9 @@ import Img2 from "../../../../assets/img/arianna-poster200.png"
 import Img3 from "../../../../assets/img/isaac.jpg"
 
 
-const AboutMain = () => {
+const AriannaMain = () => {
     return (
-        <AboutMainWrap>
+        <AriannaMainWrap>
             <Container>
                 <Space
                     direction='vertical'
@@ -185,8 +185,8 @@ const AboutMain = () => {
                     </Row>
                 </Space>
             </Container>
-        </AboutMainWrap>
+        </AriannaMainWrap>
     );
 };
 
-export default AboutMain;
+export default AriannaMain;

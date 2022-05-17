@@ -10,7 +10,7 @@ import FightPage from "../pages/fight";
 import {ArrowUpOutlined} from "@ant-design/icons";
 import CircleButton from "../components/button/circle";
 import DonatePage from "../pages/donate";
-import AboutPage from "../pages/about";
+import AriannaPage from "../pages/arianna";
 
 
 const {Content} = Layout
@@ -26,7 +26,7 @@ const LandingLayout = () => {
                     <Route path='/fight' element={<FightPage/>}/>
                     <Route path='/take-action' element={<TakeActionPage/>}/>
                     <Route path='/donate' element={<DonatePage/>}/>
-                    <Route path='/about' element={<AboutPage/>}/>
+                    <Route path='/arianna' element={<AriannaPage/>}/>
                 </Routes>
             </Content>
             <LayoutFooter/>

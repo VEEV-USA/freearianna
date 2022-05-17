@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import FightMain from "./components/main";
-import KidsHero from "../about/components/hero";
+import KidsHero from "../arianna/components/hero";
 
 const FightPage = () => {
     return (

@@ -151,9 +151,7 @@ const LayoutHeader = () => {
                                             }
                                         >
                                             <Menu.Item key='#arianna'>
-                                                <NavHashLink
-                                                    to="/#arianna"
-                                                >
+                                                <NavHashLink to="/#arianna">
                                                     ARIANNA'S STORY
                                                 </NavHashLink>
                                             </Menu.Item>
