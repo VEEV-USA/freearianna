@@ -9,12 +9,12 @@ const KidsHero = () => {
         <KidsHeroWrap>
             <Container>
                 <SectionTitle>
-                    Text
+                    Criminals Covering Up Sexual Abuse of Arianna for Profit
                 </SectionTitle>
-                <h4>Text</h4>
-                <P1>
+                <h4>Recall, Prosecute & Lockup Them Up</h4>
+                {/* <P1>
                     Text
-                </P1>
+                </P1> */}
             </Container>
         </KidsHeroWrap>
     );

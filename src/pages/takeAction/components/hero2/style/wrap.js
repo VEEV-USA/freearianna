@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const KidsHeroWrap = styled.div`
-  background-color: #f7eaf4;
+  background-color: #f7ce07;
   padding: 32px 0;
   text-align: center;
   h4 {
