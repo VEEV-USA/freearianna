@@ -18,7 +18,7 @@ const data = [
         name: 'Cynthia Lie',
         fullName: 'Cynthia Lie',
         license: '177986',
-        content: <p>Abuse of discrestion, collusion, racism, feminist, anti Trump, anti men. <a href='recall'>Sign Petition</a></p>
+        content: <p>Corrupt judge colluded with pedophile's attorney & DA to cover up sexual abuse of Arianna for personal gain.</p>
     },
     {
         img: Image2,
@@ -121,9 +121,9 @@ const TakeActionContent = () => {
                             }
                         </Space>
                     </Col>
-                    {/* <Col lg={{span: 9}} span={24}>
+                    <Col lg={{span: 7}} span={24}>
                         <TakeActionForm/>
-                    </Col> */}
+                    </Col>
                 </Row>
             </Container>
         </TakeActionWrap>

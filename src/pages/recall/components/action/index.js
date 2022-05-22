@@ -189,7 +189,7 @@ return (
                                 with corrupt unscrupulous lawyers, district attorneys and used the law to cover up child
                                 sex abuse and to protect a pedophile for personal, financial and political benefit. Lie
                                 allowed BJ Fadem, Nathalie Ferro and Scott Reno to abuse the courts, use it as a vehicle
-                                to file false charges and drain their clients.
+                                to file false charges and drain their clients. Abuse of discrestion, collusion, racism, feminist, anti Trump, anti men.
                             </P1>
                         </div>
                     </Media>

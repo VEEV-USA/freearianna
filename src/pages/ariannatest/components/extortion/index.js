@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeExtortionWrap from "./style/wrap";
+import AriannaExtortionWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";

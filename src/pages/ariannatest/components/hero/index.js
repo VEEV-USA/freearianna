@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import HeroWrap from "./style/wrap";
+import AriannaHeroWrap from "./style/wrap";
 import BgImage from '../../../../assets/img/arianna-poster600.jpg'
 import HeroTitle, {HeroSubtitle} from "./style/title";
 import HeroCount from "./style/count";

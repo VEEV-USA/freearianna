@@ -2,6 +2,7 @@ import React from 'react';
 import {Grid, Space} from "antd";
 import {ActionContent, LicenseString, PersonFullName, PersonName} from "./style/name";
 import ActionItemWrap from "./style/item-wrap";
+import TakeActionForm from "./form";
 
 const {useBreakpoint} = Grid;
 
@@ -35,6 +36,7 @@ const TakeActionItem = ({person}) => {
                 <ActionContent>
                     {person.content}
                 </ActionContent>
+                <TakeActionForm/>
             </div>
         </ActionItemWrap>
     );

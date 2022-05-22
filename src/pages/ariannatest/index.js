@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import AriannaHero from "./components/hero";
 import AriannaStory from "./components/story";
-import HomeCriminals from "../home/components/criminals";
+import AriannaCriminals from "../home/components/criminals";
 import AriannaExtortion from "./components/extortion";
 import AriannaMine from "./components/mine";
 import AriannaShare from "./components/share";
@@ -11,14 +11,14 @@ import AriannaLast from "./components/last";
 const AriannaPage = () => {
     return (
         <Fragment>
-            {/* <AriannaHero/>
-            <AriannaStory/> */}
-            <HomeCriminals/>
-            {/* <AriannaExtortion/>
+            {/* <AriannaHero/> */}
+            <AriannaStory/>
+            <AriannaCriminals/>
+            <AriannaExtortion/>
             <AriannaMine/>
             <AriannaShare/>
             <AriannaTable/>
-            <AriannaLast/> */}
+            <AriannaLast/>
         </Fragment>
     );
 };

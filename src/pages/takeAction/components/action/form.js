@@ -68,14 +68,15 @@ const TakeActionForm = () => {
                         size={12}
                         style={{width: '100%'}}
                     >
-                        {/* <Progress
+                        <Progress
                             percent={403/500*100}
                             strokeWidth={20}
                             showInfo={false}
                             strokeColor='#CE3DAF'
                         />
-                        <p style={{textAlign: 'center'}}>403 of 500 signatures</p> */}
-                        <div>
+                        <p style={{textAlign: 'center'}}>403 of 500 signatures</p>
+                        <a href='recall'><h2 style={{textAlign: 'center'}}>Sign Petition</h2></a>
+                        {/* <div>
                             <h2>Sign This Petition</h2>
                             <Form
                                 layout='vertical'
@@ -160,23 +161,23 @@ const TakeActionForm = () => {
                                     </Button>
                                 </Item>
                             </Form>
-                        </div>
+                        </div> */}
                     </Space>
                 ) :(
-                    <div style={{textAlign: 'center'}}>
-                        <SectionTitle>
+                    <div>
+                        {/* <SectionTitle>
                             <b>Thank You</b>
-                        </SectionTitle>
-                        <h3>
+                        </SectionTitle> */}
+                        {/* <h3>
                             For signing my petition, I will send you periodic updates.
-                        </h3>
-                        <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
+                        </h3> */}
+                        {/* <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
                             Love Arianna
-                        </LogoText>
-                        <img src={Banner1} alt="" style={{marginBottom: 32}}/>
+                        </LogoText> */}
+                        {/* <img src={Banner1} alt="" style={{marginBottom: 32}}/>
                         <Button type='primary' size='large' onClick={()=>{navigate('/donate')}}>
                             DONATE
-                        </Button>
+                        </Button> */}
                     </div>
                 )
             }
