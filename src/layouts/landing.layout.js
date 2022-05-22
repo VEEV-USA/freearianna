@@ -11,7 +11,7 @@ import FightPage from "../pages/fight";
 import {ArrowUpOutlined} from "@ant-design/icons";
 import CircleButton from "../components/button/circle";
 import DonatePage from "../pages/donate";
-import AriannaPage from "../pages/ariannatest";
+import AriannaPage from "../pages/arianna";
 
 
 const {Content} = Layout
