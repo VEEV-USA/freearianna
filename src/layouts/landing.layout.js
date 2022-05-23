@@ -6,6 +6,7 @@ import LayoutFooter from "./components/footer";
 import HomePage from "../pages/home";
 import TakeActionPage from "../pages/takeAction";
 import KidsPage from "../pages/kids";
+import RecallnowPage from "../pages/recallnow";
 import RecallPage from "../pages/recall";
 import FightPage from "../pages/fight";
 import {ArrowUpOutlined} from "@ant-design/icons";
@@ -24,6 +25,7 @@ const LandingLayout = () => {
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
                     <Route path='/kids' element={<KidsPage/>}/>
+                    <Route path='/recallnow' element={<RecallnowPage/>}/>
                     <Route path='/recall' element={<RecallPage/>}/>
                     <Route path='/fight' element={<FightPage/>}/>
                     <Route path='/take-action' element={<TakeActionPage/>}/>

@@ -1,23 +1,23 @@
-import React, {Fragment} from 'react';
-import RecallHeroWrap from "./style/wrap";
-import RecallHeroText from "./style/text";
+import React from 'react';
+import KidsHeroWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
-import BloodImage from '../../../../assets/img/cynthialie2.png';
+import SectionTitle from "../../../../components/heading/section";
+import P1 from "../../../../components/paragraph";
 
-const RecallHero = () => {
+const KidsHero = () => {
     return (
-        <Fragment>
-            <RecallHeroWrap>
-                <Container>
-                    <RecallHeroText>
-                        Cynthia Lie Runs A Criminal Enterprise Using The Courts Profiting From Pedophiles, False Domestic
-                        Violence, Tears Families Apart, Extorts Their Money, Destroys Kids & Hides Behind Judicial Immunity
-                    </RecallHeroText>
-                </Container>
-            </RecallHeroWrap>
-            <img src={BloodImage} alt="" style={{width: '100%', height: 150}}/>
-        </Fragment>
+        <KidsHeroWrap>
+            <Container>
+                <h4>Free Arianna Movement</h4>
+                <SectionTitle>
+                It is Your duty to Recall corrupt frauds, profiting by destroying lives under the pretense of serving the public. 
+                </SectionTitle>
+                {/* <h1>
+                Fighting Against Child Trafficking, Corruption, Fraud & Abuse
+                </h1> */}
+            </Container>
+        </KidsHeroWrap>
     );
 };
 
-export default RecallHero;
+export default KidsHero;

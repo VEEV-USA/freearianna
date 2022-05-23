@@ -1,15 +1,14 @@
-import React, {Fragment} from 'react'
-import RecallHero from "./components/hero";
-import RecallContent from "./components/action";
+import React, {Fragment} from 'react';
+import AriannaMain from "./components/main";
+import KidsHero from "./components/hero";
 
-
-export const RecallPage = () => {
+const AriannaPage = () => {
     return (
         <Fragment>
-            <RecallHero/>
-            <RecallContent/>
+            <KidsHero/>
+            <AriannaMain/>
         </Fragment>
-    )
-}
+    );
+};
 
-export default RecallPage
+export default AriannaPage;

@@ -27,7 +27,7 @@ const FightMain = () => {
                     <Row
                         gutter={[32, 32]}
                     >
-                        <Col lg={{span: 15}} span={24}>
+                        <Col lg={{span: 17}} span={24}>
                             <Space
                                 direction='vertical'
                                 style={{width: '100%'}}
@@ -154,7 +154,7 @@ const FightMain = () => {
                                 </Row>
                             </Space>
                         </Col>
-                        <Col lg={{span: 9}} span={24}>
+                        <Col lg={{span: 7}} span={24}>
                             <ActionFormCard>
                                 <CardTitle>
                                     20,904,371

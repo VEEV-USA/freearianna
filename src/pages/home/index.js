@@ -7,18 +7,23 @@ import HomeMine from "./components/mine";
 import HomeShare from "./components/share";
 import HomeTable from "./components/table";
 import HomeLast from "./components/last";
+import TakeActionContent from '../takeAction/components/action';
+import TakeActionHero2 from "../takeAction/components/hero2";
+
 
 const HomePage = () => {
     return (
         <Fragment>
             <HomeHero/>
-            <HomeStory/>
+            <TakeActionHero2/>
+            <TakeActionContent/>
+            {/* <HomeStory/>
             <HomeCriminals/>
             <HomeExtortion/>
             <HomeMine/>
             <HomeShare/>
             <HomeTable/>
-            <HomeLast/>
+            <HomeLast/> */}
         </Fragment>
     );
 };

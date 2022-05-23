@@ -62,7 +62,7 @@ const LayoutHeader = () => {
                                 <Row
                                     gutter={20}
                                 >
-                                    <Col>
+                                    {/* <Col>
                                         <NavHashLink
                                             to="/#arianna"
                                         >
@@ -72,6 +72,17 @@ const LayoutHeader = () => {
                                                 ARIANNA'S STORY
                                             </Button>
                                         </NavHashLink>
+                                    </Col> */}
+                                    <Col>
+                                        <Button
+                                            type='link'
+                                            onClick={() => {
+                                                navigate('/arianna')
+                                            }}
+                                            className={location.pathname === '/arianna' && 'active'}
+                                        >
+                                            ARIANNA'S STORY
+                                        </Button>
                                     </Col>
                                     <Col>
                                         <Button
@@ -95,7 +106,7 @@ const LayoutHeader = () => {
                                             THE FIGHT
                                         </Button>
                                     </Col>
-                                    <Col>
+                                    {/* <Col>
                                         <Button
                                             type='link'
                                             onClick={() => {
@@ -104,6 +115,17 @@ const LayoutHeader = () => {
                                             className={location.pathname === '/take-action' && 'active'}
                                         >
                                             TAKE ACTION
+                                        </Button>
+                                    </Col> */}
+                                    <Col>
+                                        <Button
+                                            type='link'
+                                            onClick={() => {
+                                                navigate('/recall')
+                                            }}
+                                            className={location.pathname === '/recall' && 'active'}
+                                        >
+                                            RECALL
                                         </Button>
                                     </Col>
                                     <Col>
@@ -161,8 +183,11 @@ const LayoutHeader = () => {
                                             <Menu.Item key='fight'>
                                                 THE FIGHT
                                             </Menu.Item>
-                                            <Menu.Item key='take-action'>
+                                            {/* <Menu.Item key='take-action'>
                                                 TAKE ACTION
+                                            </Menu.Item> */}
+                                            <Menu.Item key='recall'>
+                                                RECALL
                                             </Menu.Item>
                                             <Menu.Item key='donate' className='btn'>
                                                 DONATE

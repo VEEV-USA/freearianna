@@ -75,7 +75,7 @@ const TakeActionForm = () => {
                             strokeColor='#CE3DAF'
                         />
                         <p style={{textAlign: 'center'}}>403 of 500 signatures</p>
-                        <a href='recall'><h2 style={{textAlign: 'center'}}>Sign Petition</h2></a>
+                        <a href='recallnow'><h2 style={{textAlign: 'center'}}>Sign Petition</h2></a>
                         {/* <div>
                             <h2>Sign This Petition</h2>
                             <Form
