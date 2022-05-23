@@ -75,7 +75,17 @@ const TakeActionForm = () => {
                             strokeColor='#CE3DAF'
                         />
                         <p style={{textAlign: 'center'}}>403 of 500 signatures</p>
-                        <a href='recallnow'><h2 style={{textAlign: 'center'}}>Sign Petition</h2></a>
+                        <Button
+                            type='primary'
+                            size='large'
+                            block
+                            htmlType='submit'
+                            loading={loading}
+                            onClick={()=>{navigate('/recallnow')}} 
+                            //disabled={!checked}
+                        >
+                            Sign Petition
+                        </Button>
                         {/* <div>
                             <h2>Sign This Petition</h2>
                             <Form

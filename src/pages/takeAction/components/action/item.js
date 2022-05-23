@@ -36,8 +36,8 @@ const TakeActionItem = ({person}) => {
                 <ActionContent>
                     {person.content}
                 </ActionContent>
-                <TakeActionForm/>
             </div>
+            <div><TakeActionForm/></div>
         </ActionItemWrap>
     );
 };

@@ -172,8 +172,13 @@ const LayoutHeader = () => {
                                                 [...location.pathname.split('/'), ...location.hash.split(' ')]
                                             }
                                         >
-                                            <Menu.Item key='#arianna'>
+                                            {/* <Menu.Item key='#arianna'>
                                                 <NavHashLink to="/#arianna">
+                                                    ARIANNA'S STORY
+                                                </NavHashLink>
+                                            </Menu.Item> */}
+                                            <Menu.Item key='arianna'>
+                                                <NavHashLink to="/arianna">
                                                     ARIANNA'S STORY
                                                 </NavHashLink>
                                             </Menu.Item>
