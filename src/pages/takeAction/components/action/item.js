@@ -21,7 +21,7 @@ const TakeActionItem = ({person}) => {
                     objectFit: 'cover'
                 }}
             />
-            <div>
+            <div style={{width:'100%'}}>
                 <PersonName>
                     {person.name}
                 </PersonName>
