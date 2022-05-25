@@ -10,7 +10,7 @@ const HomeShare = () => {
     return (
         <Container>
             <HomeShareWrap>
-                <SectionTitle style={{color: '#155724'}}>
+                <SectionTitle style={{color: '#000'}}>
                     #FreeArianna "Lock Up These Criminals"
                 </SectionTitle>
                 <Space
