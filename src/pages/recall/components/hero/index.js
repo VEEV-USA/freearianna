@@ -12,10 +12,10 @@ const KidsHero = () => {
                 {/* <SectionTitle>
                 It is Your duty to Recall corrupt frauds, profiting by destroying lives under the pretense of serving the public. 
                 </SectionTitle> */}
-                <h1>
+                <h5>
                 It's your duty to recall corrupt frauds profiting by destroying lives under the pretense of serving them.
-                <br/>- Daya Baran
-                </h1>
+                <p style={{textAlign: 'center', color: 'black'}}><i>- Daya Baran</i></p>
+                </h5>
             </Container>
         </KidsHeroWrap>
     );
