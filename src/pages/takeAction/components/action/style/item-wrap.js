@@ -6,6 +6,7 @@ const ActionItemWrap = styled.div`
   grid-gap: 12px;
   @media(max-width: 768px) {
     grid-template-columns: 70px auto;
+    display: grid;
   }
 `
 
