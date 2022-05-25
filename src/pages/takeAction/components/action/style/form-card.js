@@ -10,7 +10,7 @@ const ActionFormCard = styled(Card)`
   padding: 0px;
   h2 {
     text-align: center;
-    font-size: 28px;
+    //font-size: 28px;
     margin-bottom: 0px;
   }
   h3{

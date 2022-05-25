@@ -84,7 +84,8 @@ const TakeActionForm = () => {
                             onClick={()=>{navigate('/recallnow')}} 
                             //disabled={!checked}
                         >
-                            Sign Petition
+                            <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>
+                            
                         </Button>
                         {/* <div>
                             <h2>Sign This Petition</h2>

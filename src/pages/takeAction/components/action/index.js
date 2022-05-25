@@ -109,7 +109,7 @@ const TakeActionContent = () => {
                 <Row
                     gutter={[40, 52]}
                 >
-                    <Col sm={6} md={12} lg={{span: 24}} span={24}>
+                    <Col lg={{span: 24}} span={24}>
                         <Space
                             direction='vertical'
                             size={42}

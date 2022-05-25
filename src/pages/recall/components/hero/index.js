@@ -8,13 +8,14 @@ const KidsHero = () => {
     return (
         <KidsHeroWrap>
             <Container>
-                <h4>Free Arianna Movement</h4>
-                <SectionTitle>
+                <h4>Start A Recall</h4>
+                {/* <SectionTitle>
                 It is Your duty to Recall corrupt frauds, profiting by destroying lives under the pretense of serving the public. 
-                </SectionTitle>
-                {/* <h1>
-                Fighting Against Child Trafficking, Corruption, Fraud & Abuse
-                </h1> */}
+                </SectionTitle> */}
+                <h1>
+                It's your duty to recall corrupt frauds profiting by destroying lives under the pretense of serving them.
+                <br/>- Daya Baran
+                </h1>
             </Container>
         </KidsHeroWrap>
     );

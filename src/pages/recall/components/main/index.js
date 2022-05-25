@@ -33,7 +33,8 @@ const AriannaMain = () => {
                                     {/* 20,904,371 */}
                                 </CardTitle>
                                 <CardTitle style={{marginBottom: 32}}>
-                                    Ongoing Recalls
+                                    Ongoing Recalls<br/><br/>
+                                    <img src="https://happywall-img-gallery.imgix.net/8533/usa_map_in_fun_colors_display.jpg"></img>
                                 </CardTitle>
                                 {/* <a
                                     rel='noreferrer'

@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
-import AriannaHero from "./components/hero";
-import AriannaStory from "./components/story";
+import AriannaHero from "../home/components/hero";
+import AriannaStory from "../home/components/story";
 import AriannaCriminals from "../home/components/criminals";
-import AriannaExtortion from "./components/extortion";
-import AriannaMine from "./components/mine";
-import AriannaShare from "./components/share";
-import AriannaTable from "./components/table";
-import AriannaLast from "./components/last";
+import AriannaExtortion from "../home/components/extortion";
+import AriannaMine from "../home/components/mine";
+import AriannaShare from "../home/components/share";
+import AriannaTable from "../home/components/table";
+import AriannaLast from "../home/components/last";
 
 const AriannaPage = () => {
     return (

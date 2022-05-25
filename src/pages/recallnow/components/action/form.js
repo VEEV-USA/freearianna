@@ -155,7 +155,7 @@ const TakeActionForm = () => {
                                         loading={loading}
                                         disabled={!checked}
                                     >
-                                        Sign
+                                        <p style={{textAlign: 'center', color: 'black'}}>Sign</p>
                                     </Button>
                                 </Item>
                             </Form>

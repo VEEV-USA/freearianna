@@ -28,42 +28,42 @@ const criminals = [
     {
         img: Image3,
         name: 'Vikaash Kumar',
-        action: <p>Poisoned Arianna's dad Daya Baran so he would die and would not be able to testify against Ganraj Kumar.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>Poisoned Arianna's dad Daya Baran so he would die and would not be able to testify against Ganraj Kumar.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image4,
         name: 'Cynthia Lie',
-        action: <p>Corrupt judge colluded with pedophile's attorney & DA to cover up sexual abuse of Arianna for personal gain.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>Corrupt judge colluded with pedophile's attorney & DA to cover up sexual abuse of Arianna for personal gain.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image5,
         name: 'BJ Fadem',
-        action: <p>BJ's mom wanted a man. Has regular sex surgeries to be a man. Despises men, spends his life destroying men.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>BJ's mom wanted a man. Has regular sex surgeries to be a man. Despises men, spends his life destroying men.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image6,
         name: 'Nathalie Ferro',
-        action: <p>Extortionist that profits by trolling family courts. Goes by numerous names to hide her fraudulent schemes.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>Extortionist that profits by trolling family courts. Goes by numerous names to hide her fraudulent schemes.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image7,
         name: 'Katrina Ohde',
-        action: <p>A corrupt district attorney in San Jose, Santa Clara County, California that has betrayed the public trust. Must be disbarred.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>A corrupt district attorney in San Jose, Santa Clara County, California that has betrayed the public trust. Must be disbarred.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image8,
         name: 'Joe Perez',
-        action: <p>A dirty cop on the take. Currently being sued for falslifying evidence that sent an innocent man to prison for 17 years.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>A dirty cop on the take. Currently being sued for falslifying evidence that sent an innocent man to prison for 17 years.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image9,
         name: 'Kevin Boileau',
-        action: <p>Disbarred in Washington but licensed in California as an expert in women for raping and extorting money from women.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>Disbarred in Washington but licensed in California as an expert in women for raping and extorting money from women.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image10,
         name: 'Shalini Venktash',
-        action: <p>Falsifies court orders for corrupts lawyers to seperate kids & parents, extort every penny from parents to see their kids.<br/><a href='recall'>Sign Petition</a></p>
+        action: <p>Falsifies court orders for corrupts lawyers to seperate kids & parents, extort every penny from parents to see their kids.<br/><a href='recallnow'>Sign Petition</a></p>
     }
 ]
 
