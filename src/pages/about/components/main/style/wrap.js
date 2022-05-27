@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const AriannaMainWrap = styled.div`
+const AboutMainWrap = styled.div`
   padding: 52px 0;
 `
 
-export default AriannaMainWrap
+export default AboutMainWrap

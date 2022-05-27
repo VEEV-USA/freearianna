@@ -1,23 +1,23 @@
 import React from 'react';
-import KidsHeroWrap from "./style/wrap";
+import EventsWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import P1 from "../../../../components/paragraph";
 
-const KidsHero = () => {
+const EventsHero = () => {
     return (
-        <KidsHeroWrap>
+        <EventsWrap>
             <Container>
-                <h4>Free Arianna Movement</h4>
                 <SectionTitle>
-                A Voice For The Voiceless 
+                    Campaign
                 </SectionTitle>
-                <h5>
-                Fighting Against Corruption, Fraud, Abuse of Power
-                </h5>
+                <h4>Events & Webinars</h4>
+                <P1>
+                    {/* Text */}
+                </P1>
             </Container>
-        </KidsHeroWrap>
+        </EventsWrap>
     );
 };
 
-export default KidsHero;
+export default EventsHero;

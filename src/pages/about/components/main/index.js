@@ -1,5 +1,5 @@
 import React from 'react';
-import AriannaMainWrap from "./style/wrap";
+import AboutMainWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";
@@ -12,9 +12,9 @@ import Img2 from "../../../../assets/img/arianna-poster200.png"
 import Img3 from "../../../../assets/img/isaac.jpg"
 
 
-const AriannaMain = () => {
+const AboutMain = () => {
     return (
-        <AriannaMainWrap>
+        <AboutMainWrap>
             <Container>
                 <Space
                     direction='vertical'
@@ -22,26 +22,40 @@ const AriannaMain = () => {
                     style={{width: '100%'}}
                 >
                     {/* <SectionTitle>
-                        The Free Arianna Movement
+                        The Fight Against Child Trafficking, Corruption, Fraud & Abuse
                     </SectionTitle> */}
                     <Row
                         gutter={[32, 32]}
                     >
-                        <Col lg={{span: 15}} span={24}>
+                        <Col lg={{span: 17}} span={24}>
                             <Space
                                 direction='vertical'
                                 style={{width: '100%'}}
                                 size={32}
                             >
-                                {/* <div
+                                <div
                                     style={{
                                         position: 'relative',
                                         paddingTop: '56.25%',
                                     }}
                                 >
-                                    
-                                    
-                                </div> */}
+                                    <iframe
+                                        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FADVOCATEUSA%2Fvideos%2F339240747959343%2F&show_text=false&width=560&t=0"
+                                        width="100%"
+                                        height="100%"
+                                        style={{
+                                            border: 'none',
+                                            overflow: 'hidden',
+                                            position: 'absolute',
+                                            left: '0',
+                                            top: '0'
+                                        }}
+                                        scrolling="no"
+                                        frameBorder="0"
+                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                        allowFullScreen={true}
+                                    />
+                                </div>
                                 <div>
                                     <CardTitle style={{textAlign: 'left'}}>
                                         Hollywood March For Kids
@@ -140,7 +154,7 @@ const AriannaMain = () => {
                                 </Row>
                             </Space>
                         </Col>
-                        <Col lg={{span: 9}} span={24}>
+                        <Col lg={{span: 7}} span={24}>
                             <ActionFormCard>
                                 <CardTitle>
                                     20,904,371
@@ -185,8 +199,8 @@ const AriannaMain = () => {
                     </Row>
                 </Space>
             </Container>
-        </AriannaMainWrap>
+        </AboutMainWrap>
     );
 };
 
-export default AriannaMain;
+export default AboutMain;

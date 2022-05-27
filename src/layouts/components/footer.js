@@ -51,10 +51,14 @@ const LayoutFooter = () => {
                         <Row
                             gutter={20}
                             justify="center"
-                            style={{justifyContent: breakpoints.lg ? "flex-start" : "center"}}
-                        >
+                            style={{justifyContent: breakpoints.lg ? "flex-start" : "center"}}>
                             <Col>
-                                <Button type='text' onClick={() => { navigate('/fight') }}>
+                                <Button type='text' onClick={() => { navigate('/') }}>
+                                Home
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button type='text' onClick={() => { navigate('/about') }}>
                                 About
                                 </Button>
                             </Col>
