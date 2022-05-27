@@ -63,6 +63,11 @@ const LayoutFooter = () => {
                                 </Button>
                             </Col>
                             <Col>
+                                <Button type='text' onClick={() => { navigate('/events') }}>
+                                Events
+                                </Button>
+                            </Col>
+                            <Col>
                                 <Button type='text' onClick={() => { navigate('/take-action') }}> 
                                 Take Action
                                 </Button>
