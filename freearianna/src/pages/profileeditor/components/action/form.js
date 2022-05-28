@@ -23,13 +23,13 @@ const getBase64 = (file) =>
 
 
 
-const TakeActionForm = ({  setAlert,
+const TakeActionForm = ({  
+    setAlert,
     createUser,
     alertContent,
     history,
-    createSuccess,
     isLoading,
-    error
+    error,
 }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -37,6 +37,7 @@ const TakeActionForm = ({  setAlert,
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [createSuccess,setCreateSuccess] = useState(false);
     const [previewVisible, setPreviewVisible] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [previewTitle, setPreviewTitle] = useState('');
@@ -94,8 +95,8 @@ const TakeActionForm = ({  setAlert,
     const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = userData;
     const handleCreate = async(e) => {
         e.preventDefault();
-        const createprofile = await dispatch(createProfile({ firstname, lastname,full_name,license,signatures_Require, case_name, email, address, zipcode, phone, state,country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 }));
-        console.log("create",createprofile)
+        const createprofile = await dispatch(createProfile({ firstname, lastname,full_name,license,signatures_Require, case_name, email, address, zipcode, phone, state,country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 }),setCreateSuccess);
+        console.log("createSuccess",createprofile)
     };
 
   

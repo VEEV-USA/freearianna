@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 // Route Middleware
 app.use('/api/users', users);
 
-const db = 'https://cloud.mongodb.com/v2/6291323ed7eba700568bdcaf';
+const db = 'mongodb://localhost:27017/userlist';
 mongoose
   .connect(db, {
     useNewUrlParser: true,

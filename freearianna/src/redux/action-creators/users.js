@@ -55,7 +55,7 @@ const createUserSuccess = userData => {
 const createProfileSuccess = userData => {
   return {
     type: 'CREATE_PROFILE_SUCCESS',
-    payload: userData
+    payload: {userData:userData}
   };
 };
 
@@ -85,7 +85,7 @@ export const createUser = userData => dispatch => {
     .catch(err => dispatch(createUserError(err)));
 };
 
-export const createProfile = userData => dispatch => {
+export const createProfile = (userData, setCreateSuccess) => dispatch => {
   dispatch(createProfileStart());
   const config = {
     headers: {
@@ -94,7 +94,7 @@ export const createProfile = userData => dispatch => {
   };
   axios
     .post('http://localhost:5000/api/users/createprofile', userData, config)
-    .then(res => dispatch(createProfileSuccess(res.data)))
+    .then(res => {dispatch(createProfileSuccess(res.data)); return true})
     .catch(err => dispatch(createProfileError(err)));
     
 };
@@ -216,12 +216,25 @@ const getUserStart = () => {
     payload: {}
   };
 };
+const getProfileStart = () => {
+  return {
+    type: 'GET_PROFILE_START',
+    payload: {}
+  };
+};
 
 const getUserSuccess = userData => {
   // console.log(userData);
   return {
     type: 'GET_USER_SUCCESS',
     payload: { user: userData }
+  };
+};
+const getProfileSuccess = userData => {
+  // console.log(userData);
+  return {
+    type: 'GET_Profile_SUCCESS',
+    payload: { profile: userData }
   };
 };
 
@@ -240,6 +253,18 @@ export const getUser = (id, setUserData) => dispatch => {
       const { firstname, lastname, sex, age } = res.data;
       const userData = { firstname, lastname, sex, age };
       dispatch(getUserSuccess(userData));
+      setUserData(userData);
+    })
+    .catch(err => dispatch(getUserError(err)));
+};
+export const getProfile = (id, setUserData) => dispatch => {
+  dispatch(getProfileStart());
+  axios
+    .get(`http://localhost:5000/api/users/profile/${id}`)
+    .then(res => {
+      const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = res.data;
+      const userData = { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 };
+      dispatch(getProfileSuccess(userData));
       setUserData(userData);
     })
     .catch(err => dispatch(getUserError(err)));

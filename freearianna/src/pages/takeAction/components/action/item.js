@@ -12,7 +12,7 @@ const TakeActionItem = ({person}) => {
     return (
         <ActionItemWrap>
             <img
-                src={person.img}
+                src={person.user_avatar}
                 alt={person.name}
                 width={breakpoints.md ? 110 : 70}
                 height={breakpoints.md ? 110 : 70}
@@ -23,22 +23,22 @@ const TakeActionItem = ({person}) => {
             />
             <div style={{width:'100%'}}>
                 <PersonName>
-                    {person.name}
+                    {person.full_name}
                 </PersonName>
                 <Space>
                     <PersonFullName>
-                        {person.fullName}
+                        {person.full_name}
                     </PersonFullName>
                     <LicenseString>
                         ({person.lmft && 'LMFT '}License # {person.license})
                     </LicenseString>
                 </Space>
                 <ActionContent>
-                    {person.content}
+                    {person.page_contents}
                 </ActionContent>
             </div>
             <div> </div>
-            <div style={{width:'*'}}><TakeActionForm/></div>
+            <div style={{width:'*'}}><TakeActionForm person={person}/></div>
         </ActionItemWrap>
     );
 };

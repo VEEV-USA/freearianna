@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import ActionFormCard from "./style/form-card";
 import {Button, Checkbox, Form, Input, Progress, Space, message} from "antd";
 import {snsClient} from "../../../../untils/aws";
@@ -6,16 +6,19 @@ import { SubscribeCommand} from "@aws-sdk/client-sns";
 import SectionTitle from "../../../../components/heading/section";
 import LogoText from "../../../../layouts/styles/header/logo";
 import Banner1 from '../../../../assets/img/arianna-poster300.jpg'
+
 import {useNavigate} from "react-router-dom";
 
 const {Item, useForm} = Form;
 
-const TakeActionForm = () => {
+const TakeActionForm = ({person,getUser}) => {
     const navigate = useNavigate();
+    const person_id = person._id;
     const [form] = useForm();
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
     const [success, setSuccess] = useState(false);
+
     const finishHandler = (data) => {
         setLoading(true)
         //TODO: SNS SERVICE SETTINGS
@@ -59,6 +62,10 @@ const TakeActionForm = () => {
             })
 
     }
+
+//    useEffect(()=>{
+//     getUser(person)
+//    })
     return (
         <ActionFormCard>
             {
@@ -76,12 +83,13 @@ const TakeActionForm = () => {
                         />
                         <p style={{textAlign: 'center'}}>403 of 500 signatures</p>
                         <Button
+                            
                             type='primary'
                             size='large'
                             block
                             htmlType='submit'
                             loading={loading}
-                            onClick={()=>{navigate('/recallnow')}} 
+                            onClick={()=>{navigate('/recallnow',{ state: person_id })}} 
                             //disabled={!checked}
                         >
                             <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>

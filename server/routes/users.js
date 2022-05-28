@@ -5,7 +5,7 @@ const RecallUser = require('../models/recalluser');
 const Profile = require('../models/profile');
 
 router.get('/', (req, res) => {
-  User.find()
+  Profile.find()
     .then(users => res.status(200).json(users))
     .catch(err => res.status(404).json({ error: 'No user found' }));
 });
@@ -13,6 +13,12 @@ router.get('/', (req, res) => {
 // Incase we need this API
 router.get('/:userId', (req, res) => {
   User.findById({ _id: req.params.userId })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(404).json({ error: 'No user found by this id' }));
+});
+
+router.get('/profile/:userId', (req, res) => {
+  Profile.findById({ _id: req.params.userId })
     .then(user => res.status(200).json(user))
     .catch(err => res.status(404).json({ error: 'No user found by this id' }));
 });
@@ -208,6 +214,10 @@ router.post('/createprofile', (req, res) => {
   const newProfile = new Profile({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
+    full_name: req.body.full_name,
+    license: req.body.license,
+    signatures_Require: req.body.signatures_Require,
+    case_name: req.body.case_name,
     email: req.body.email,
     phone: req.body.phone,
     zipcode: req.body.zipcode,
