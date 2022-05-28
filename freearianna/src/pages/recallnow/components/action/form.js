@@ -25,7 +25,6 @@ const TakeActionForm = ({  setAlert,
     person,
     preUserData,
     alertContent,
-    history,
     createSuccess,
     isLoading,
     error
@@ -52,11 +51,12 @@ const TakeActionForm = ({  setAlert,
     userData.person = person
     },[])
         
-    const { firstname, lastname, email,zipcode,user_state, phone, address} = userData;
+    const { firstname, lastname, email,zipcode,user_state, phone} = userData;
   
   const handleCreate = (e) => {
     e.preventDefault();
-    dispatch(updateUser(userData,history));
+    console.log("Update",userData)
+    dispatch(updateUser(userData,navigate));
 
   };
 

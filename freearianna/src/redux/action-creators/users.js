@@ -179,6 +179,7 @@ export const editUser = (userData, history, initEdit) => dispatch => {
 };
 
 export const updateUser = (userData,navigate) => dispatch => {
+  console.log("ddddd",userData)
   dispatch(editProfileStart());
   const config = {
     headers: {
