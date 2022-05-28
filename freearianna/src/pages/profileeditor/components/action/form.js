@@ -153,147 +153,15 @@ const TakeActionForm = ({  setAlert,
                 size={100}
                 style={{width: '100%'}}>
                 <div>
-                    <h2>Create Profile</h2>
+                    <h2>Recall Entry Form</h2>
                     <Form
                         layout='vertical'
-                    >   
-                            <Space >
-                                {/* <Item
-                                    name='firstName'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Firstname is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' name='firstname' value={firstname} onChange={e => handleChange(e)} placeholder='First Name'/>
-                                </Item>
-                                <Item
-                                    name='lastName'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Lastname is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' name='lastname'  value={lastname} onChange={e => handleChange(e)} placeholder='Last Name'/>
-                                </Item>
-                                <Item
-                                    name='email'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Email is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' name='email' value={email} onChange={e => handleChange(e)} placeholder='Email'/>
-                                </Item>
-                                <Item
-                                    name='zipcode'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Zipcode is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' name='zipcode'  value={zipcode} onChange={e => handleChange(e)} placeholder='Zip Code'/>
-                                </Item>
-                            </Space>
-                        <Space>
-                        <Item
-                            name='phone'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='phone'  value={phone} onChange={e => handleChange(e)} placeholder='Phone Number'/>
-                        </Item>
-                        <Item
-                            name='state'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='state'  value={state} onChange={e => handleChange(e)} placeholder='State'/>
-                        </Item>
-                        <Item
-                            name='country'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='country'  value={country} onChange={e => handleChange(e)} placeholder='Country'/>
-                        </Item>
-                        <Item>
-                            <Select name="address"  style={{width: '110%'}} onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a address">
-                            { addressData.map((data,index) =>(
-                                    <Option value={data.name} name="address" key={index}>{data.name}</Option>
-                                ))
-                            }
-                                
-                            </Select>
-
-                        </Item>
-                         */}
-                            <Item
-                            name='full_name'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='full_name'  value={full_name} onChange={e => handleChange(e)} placeholder='Name'/>
-                        </Item>
-                        <Item
-                            name='signatures_Require'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='signatures_Require'  value={signatures_Require} onChange={e => handleChange(e)} placeholder='Signatures Require'/>
-                        </Item>
-                        <Item
-                            name='license'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='license'  value={license} onChange={e => handleChange(e)} placeholder='License'/>
-                        </Item>
-                        <Item
-                            name='case'
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'phone is required'
-                                }
-                            ]}
-                        >
-                            <Input size='large' name='case'  value={case_name} onChange={e => handleChange(e)} placeholder='Case'/>
-                        </Item>
-                        </Space>
-                            <Upload
+                    >
+                        <div>
+                            <h2>Banner Text</h2>
+                            <textarea name="page_title" value={page_title} onChange={e => handleTextareaChange(e)} style={{width:"100%"}}/>
+                        </div>
+                        <Upload
                                 action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                 listType="picture-card"
                                 fileList={fileList}
@@ -311,11 +179,52 @@ const TakeActionForm = ({  setAlert,
                                 src={previewImage}
                                 />
                             </Modal>
-                        <div>
-                            <h2>Page Title</h2>
-                            <textarea name="page_title" value={page_title} onChange={e => handleTextareaChange(e)} style={{width:"100%"}}/>
-                        </div>
-                            
+                            <Space >
+                            <Item
+                            name='full_name'
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'required'
+                                }
+                            ]}
+                        >
+                            <Input size='large' name='full_name'  value={full_name} onChange={e => handleChange(e)} placeholder='Name of Recallee'/>
+                        </Item>
+                        <Item
+                            name='signatures_Require'
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'required'
+                                }
+                            ]}
+                        >
+                            <Input size='large' name='signatures_Require'  value={signatures_Require} onChange={e => handleChange(e)} placeholder='Signatures Require'/>
+                        </Item>
+                        <Item
+                            name='license'
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'phone is required'
+                                }
+                            ]}
+                        >
+                            <Input size='large' name='license'  value={license} onChange={e => handleChange(e)} placeholder='License'/>
+                        </Item>
+                        <Item
+                            name='case_name'
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'phone is required'
+                                }
+                            ]}
+                        >
+                            <Input size='large' name='case_name'  value={case_name} onChange={e => handleChange(e)} placeholder='Case'/>
+                        </Item>
+                        </Space>
                         <div>
                             <h2>Page Contents</h2>
                             <textarea name="page_contents" value={page_contents}  onChange={e => handleTextareaChange(e)} style={{width:"100%",height:"200px"}}/>
@@ -335,8 +244,6 @@ const TakeActionForm = ({  setAlert,
                             <Input size='large' name='pdf4_title'  value={pdf4_title} onChange={e => handleChange(e)} placeholder='Pdf4 Title'/>
                             <input type="file" name="pdf4" onChange={e=>pdfUpload(e)} />
                         </Space>
-                        
-                        
                         <Item>
                             <Checkbox
                                 onChange={(event) => {setChecked(event.target.checked)}}
