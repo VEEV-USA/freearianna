@@ -30,7 +30,6 @@ const data = [
 ]
 
 const TakeActionContent = ({person,getProfile,user}) => {
-    console.log('person_id',person)
     const [userData, setUserData] = useState({
         firstname: '',
         lastname: '',
@@ -61,11 +60,7 @@ const TakeActionContent = ({person,getProfile,user}) => {
         getProfile(person,setUserData);
 
     },[])
-console.log("safsdfadfs",userData)
-function NewTab() { 
-    window.open( 
-        userData.pdf1, "_blank");
-}
+
 return (
         <Fragment>
             {/* <Wrap>
@@ -97,7 +92,7 @@ return (
                     </P1>
                     </Col>
                     <Col lg={{span: 7}} span={24}>
-                        <TakeActionForm/>
+                        <TakeActionForm person={person} preUserData={userData} />
                     </Col>
                     </Row>
                 </Container>
@@ -131,7 +126,7 @@ return (
                                             href={userData.pdf1}
                                             target='_blank'
                                         >
-                                            {userData.pdf1_title1}
+                                            {userData.pdf1_title}
                                         </a>
                                     </CardTitle>
                                     

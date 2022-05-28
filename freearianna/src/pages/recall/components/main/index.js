@@ -1,17 +1,16 @@
 import React,{useState,useEffect} from 'react';
 import AriannaMainWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
-import SectionTitle from "../../../../components/heading/section";
 import {Card, Col, Row, Space} from "antd";
-import VideoPlayer from "../../../../components/player";
 import CardTitle from "../../../../components/heading/card";
-import P1 from "../../../../components/paragraph";
 import ActionFormCard from "../../../takeAction/components/action/style/form-card";
-import Img1 from "../../../../assets/img/painting.jpg"
-import Img2 from "../../../../assets/img/arianna-poster200.png"
-import Img3 from "../../../../assets/img/isaac.jpg"
 import USAMap from "react-usa-map";
 import states from "./states.json";
+import { useDispatch,connect } from 'react-redux';
+import { createProfile } from '../../../../redux/action-creators/users';
+import {  } from '../../../../redux/action-creators/users';
+
+
 
 const AriannaMain = () => {
     // const color = "red"

@@ -27,7 +27,6 @@ const TakeActionForm = ({
     setAlert,
     createUser,
     alertContent,
-    history,
     isLoading,
     error,
 }) => {
@@ -95,8 +94,7 @@ const TakeActionForm = ({
     const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = userData;
     const handleCreate = async(e) => {
         e.preventDefault();
-        const createprofile = await dispatch(createProfile({ firstname, lastname,full_name,license,signatures_Require, case_name, email, address, zipcode, phone, state,country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 }),setCreateSuccess);
-        console.log("createSuccess",createprofile)
+        const createprofile = await dispatch(createProfile({ firstname, lastname,full_name,license,signatures_Require, case_name, email, address, zipcode, phone, state,country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 },navigate));
     };
 
   
@@ -145,7 +143,7 @@ const TakeActionForm = ({
         setUserData({ ...userData, [e.target.name]: pdfFile })
 
     }
-    console.log("userData",userData)
+    console.log("www",userData)
 
     return (
         <ActionFormCard>
@@ -190,7 +188,7 @@ const TakeActionForm = ({
                                 }
                             ]}
                         >
-                            <Input size='large' name='full_name'  value={full_name} onChange={e => handleChange(e)} placeholder='Name of Recallee'/>
+                            <Input size='large' name='full_name'  value={full_name} onChange={e => handleChange(e)} placeholder='Full Name'/>
                         </Item>
                         <Item
                             name='signatures_Require'
@@ -208,7 +206,7 @@ const TakeActionForm = ({
                             rules={[
                                 {
                                     required: true,
-                                    message: 'phone is required'
+                                    message: 'license is required'
                                 }
                             ]}
                         >
@@ -219,7 +217,7 @@ const TakeActionForm = ({
                             rules={[
                                 {
                                     required: true,
-                                    message: 'phone is required'
+                                    message: 'case_name is required'
                                 }
                             ]}
                         >
@@ -277,16 +275,13 @@ const TakeActionForm = ({
 
 const mapStateToProps = state => {
     return {
-      alertContent: state.alert.alertContent,
-      createSuccess: state.createUser.createSuccess,
-      isLoading: state.createUser.isLoading,
-      error: state.createUser.error
+      createSuccess: state.createProfile.success,
     };
   };
   
   const mapDispatchToProps = dispatch => {
     return {
-      createProfile: data => dispatch(createProfile(data))
+      createProfile: (data, navigate) => dispatch(createProfile(data,navigate))
     };
   };
   

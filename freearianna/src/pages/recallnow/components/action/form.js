@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ActionFormCard from "./style/form-card";
 import {Button, Checkbox, Form, Input, Progress, Space, message, Select } from "antd";
 import {snsClient} from "../../../../untils/aws";
@@ -8,88 +8,56 @@ import LogoText from "../../../../layouts/styles/header/logo";
 import Banner1 from '../../../../assets/img/arianna-poster300.jpg'
 import {useNavigate} from "react-router-dom";
 import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import addressData from './address.json';
 // import toast, { Toaster } from "https://cdn.skypack.dev/react-hot-toast@2.2.0";
 // toast.success('Successfully Create!');
 
-import { createUser, initUser } from '../../../../redux/action-creators/users';
+import { createUser,updateUser, initUser ,getProfile} from '../../../../redux/action-creators/users';
 import { setAlert } from '../../../../redux/action-creators/alert';
+
 // import { Loading, Alert } from './utils';
 
 const {Item, useForm} = Form;
 const { Option } = Select;
 
 const TakeActionForm = ({  setAlert,
-    createUser,
+    person,
+    preUserData,
     alertContent,
     history,
     createSuccess,
     isLoading,
     error
 }) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [form] = useForm();
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
     const [success, setSuccess] = useState(false);
-    // const finishHandler = (data) => {
-    //     setLoading(true)
-    //     //TODO: SNS SERVICE SETTINGS
-    //     const params = {
-    //         Protocol: 'email',
-    //         TopicArn: "arn:aws:sns:us-east-1:095719380237:freearianna",
-    //         Endpoint: data.email,
-    //     };
-
-    //     snsClient.send(new SubscribeCommand(params))
-    //         .then((res) => {
-    //             console.log(res, "SUCCESS")
-    //         })
-    //         .catch((err) => {
-    //             console.log(err, 'ERROR');
-    //             setSuccess(true);
-    //         })
-    //         .finally(()=>{
-    //             setLoading(false);
-    //             form.resetFields();
-    //         })
-
-    //     const phoneParams = {
-    //         Protocol: 'sms',
-    //         TopicArn: "arn:aws:sns:us-east-1:095719380237:freearianna",
-    //         Endpoint: data.phone,
-    //     };
-
-    //     setLoading(true)
-    //     snsClient.send(new SubscribeCommand(phoneParams))
-    //         .then((res) => {
-    //             console.log(res, "SUCCESS")
-    //             setSuccess(true);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err, 'ERROR')
-    //         })
-    //         .finally(()=>{
-    //             setLoading(false);
-    //             form.resetFields();
-    //         })
-
-    // }
-    // const stdSex = ['f', 'm', 'female', 'male'];
     const [userData, setUserData] = useState({
         firstname: '',
         lastname: '',
+        user_state:'',
         email:'',
-        zipcode:'',
+        zipcode:0,
         address:'',
-        phone:'',
-        // password: '',
-        // repeat: ''
+        phone:0,
+        person:""
+
     });
-  const { firstname, lastname, email, zipcode, address, phone } = userData;
-  const handleCreate = e => {
+
+    useEffect(()=>{
+    userData.person = person
+    },[])
+        
+    const { firstname, lastname, email,zipcode,user_state, phone, address} = userData;
+  
+  const handleCreate = (e) => {
     e.preventDefault();
-    createUser({ firstname, lastname, email, address, zipcode, phone });
+    dispatch(updateUser(userData,history));
+
   };
 
   
@@ -102,7 +70,6 @@ const TakeActionForm = ({  setAlert,
   const handleOnChange = (value, event) => {
     setUserData({ ...userData, address: value });      
 }
-console.log("add",userData)
 
     return (
         <ActionFormCard>
@@ -180,6 +147,17 @@ console.log("add",userData)
                                 >
                                     <Input size='large' name='phone'  value={phone} onChange={e => handleChange(e)} placeholder='Phone Number'/>
                                 </Item>
+                                <Item
+                                    name='user_state'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'phone is required'
+                                        }
+                                    ]}
+                                >
+                                    <Input size='large' name='user_state'  value={user_state} onChange={e => handleChange(e)} placeholder='State'/>
+                                </Item>
 
                                 <Select name="address" style={{ width: "100%"}}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a address">
                                 { addressData.map((data,index) =>(
@@ -249,9 +227,9 @@ const mapStateToProps = state => {
   
   const mapDispatchToProps = dispatch => {
     return {
-      setAlert: alert => dispatch(setAlert(alert)),
-      createUser: data => dispatch(createUser(data)),
-      initUser: () => dispatch(initUser())
+   
+      updateUser: (data, navigate) => dispatch(updateUser(data, navigate))
+      
     };
   };
   

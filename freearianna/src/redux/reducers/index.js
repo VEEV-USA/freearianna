@@ -5,11 +5,13 @@ import editUser from './edituser';
 // import deleteUser from './deleteuser';
 import alert from './alert';
 import getUser from './getuser';
+import createProfile from './createprofile';
 
 const reducer = combineReducers({
   users,
   createUser,
   editUser,
+  createProfile,
   // deleteUser,
   getUser,
   alert

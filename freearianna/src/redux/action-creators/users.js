@@ -85,7 +85,8 @@ export const createUser = userData => dispatch => {
     .catch(err => dispatch(createUserError(err)));
 };
 
-export const createProfile = (userData, setCreateSuccess) => dispatch => {
+export const createProfile = (userData, navigate) => dispatch => {
+  console.log("navigae", navigate);
   dispatch(createProfileStart());
   const config = {
     headers: {
@@ -94,7 +95,11 @@ export const createProfile = (userData, setCreateSuccess) => dispatch => {
   };
   axios
     .post('http://localhost:5000/api/users/createprofile', userData, config)
-    .then(res => {dispatch(createProfileSuccess(res.data)); return true})
+    .then(res => {
+      dispatch(createProfileSuccess(res.data)); 
+      console.log("ddd",navigate)
+      navigate('/')
+    })
     .catch(err => dispatch(createProfileError(err)));
     
 };
@@ -121,6 +126,12 @@ const editUserStart = () => {
     payload: {}
   };
 };
+const editProfileStart = () => {
+  return {
+    type: 'EDIT_PROFILE_START',
+    payload: {}
+  };
+};
 
 const editUserSuccess = userData => {
   // data: user obj: {fn, ln, sex, age, pw}
@@ -129,10 +140,22 @@ const editUserSuccess = userData => {
     payload: userData
   };
 };
-
+const editProfileSuccess = userData => {
+  // data: user obj: {fn, ln, sex, age, pw}
+  return {
+    type: 'EDIT_PROFILE_SUCCESS',
+    payload: userData
+  };
+};
 const editUserError = err => {
   return {
     type: 'EDIT_USER_ERROR',
+    payload: { error: err }
+  };
+};
+const editProfileError = err => {
+  return {
+    type: 'EDIT_PROFILE_ERROR',
     payload: { error: err }
   };
 };
@@ -153,6 +176,24 @@ export const editUser = (userData, history, initEdit) => dispatch => {
       initEdit();
     })
     .catch(err => dispatch(editUserError(err)));
+};
+
+export const updateUser = (userData,navigate) => dispatch => {
+  dispatch(editProfileStart());
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  axios
+    .put(`http://localhost:5000/api/users/updateProfile/${userData.person}`, userData, config)
+    .then(res => {
+      dispatch(editProfileSuccess(res.data));
+      // other method:
+      navigate.push('/');
+      // initEdit();
+    })
+    .catch(err => dispatch(editProfileError(err)));
 };
 
 // -------

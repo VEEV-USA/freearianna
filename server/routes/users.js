@@ -185,6 +185,22 @@ router.put('/:userId', (req, res) => {
     .catch(err => res.status(500).json({ error: 'Failed to edit' }));
 });
 
+router.put('updateProfile/:userId', (req, res) => {
+  Profile.findByIdAndUpdate(req.params.userId, {
+    $set: {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      phone: req.body.phone,
+      zipcode: req.body.zipcode,
+      address: req.body.address,
+      state: req.body.user_state
+    }
+  })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json({ error: 'Failed to edit' }));
+});
+
 // Delete user
 router.delete('/:userId', (req, res) => {
   User.findByIdAndDelete({ _id: req.params.userId })
