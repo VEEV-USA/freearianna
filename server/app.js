@@ -23,17 +23,37 @@ app.use(function(req, res, next) {
 // Route Middleware
 app.use('/api/users', users);
 
-// const db = 'mongodb://localhost:27017/userlist';
-const db = 'https://cloud.mongodb.com/v2/6291323ed7eba700568bdcaf#clusters';
+const db = 'mongodb://localhost:27017/userlist';
+// const db = 'https://cloud.mongodb.com/v2/6291323ed7eba700568bdcaf#clusters';
 
-mongoose
-  .connect(db, {
+// mongoose
+//   .connect(db, {
+//     useNewUrlParser: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true
+//   })
+//   .then(console.log('MongoDB connected'))
+//   .catch(err => console.log(err)); // Maybe return res code 500
+
+const url = `mongodb+srv://root:root@cluster0.xxrel.mongodb.net/test
+`;
+
+const connectionParams={
     useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  })
-  .then(console.log('MongoDB connected'))
-  .catch(err => console.log(err)); // Maybe return res code 500
+    useCreateIndex: true,
+    useUnifiedTopology: true 
+}
+mongoose.connect(url,connectionParams)
+    .then( () => {
+        console.log('Connected to the database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. n${err}`);
+    })
+
+
+
+
 
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
