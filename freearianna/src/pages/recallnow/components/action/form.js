@@ -23,7 +23,6 @@ const { Option } = Select;
 
 const TakeActionForm = ({  setAlert,
     person,
-    preUserData,
     alertContent,
     createSuccess,
     isLoading,
@@ -43,19 +42,22 @@ const TakeActionForm = ({  setAlert,
         zipcode:0,
         address:'',
         phone:0,
+        current_sign:0,
         person:""
 
     });
 
     useEffect(()=>{
-    userData.person = person
+    userData.person = person._id
+    if(person.current_sign){
+        userData.current_sign = person.current_sign;
+    }
+
     },[])
-        
-    const { firstname, lastname, email,zipcode,user_state, phone} = userData;
+    const { firstname, lastname, email,zipcode,user_state, current_sign, phone} = userData;
   
   const handleCreate = (e) => {
     e.preventDefault();
-    console.log("Update",userData)
     dispatch(updateUser(userData,navigate));
 
   };
@@ -80,12 +82,12 @@ const TakeActionForm = ({  setAlert,
                         size={12}
                         style={{width: '100%'}}>
                             <Progress
-                            percent={403/500*100}
+                            percent={person.current_sign/person.signatures_Require*100}
                             strokeWidth={20}
                             showInfo={false}
                             strokeColor='#CE3DAF'
                         />
-                        <p style={{textAlign: 'center'}}>403 of 500 signatures</p> 
+                        <p style={{textAlign: 'center'}}>{person.current_sign} of {person.signatures_Require} signatures</p> 
                         <div>
                             <h2>Sign Petition</h2>
                             <Form
@@ -158,14 +160,16 @@ const TakeActionForm = ({  setAlert,
                                 >
                                     <Input size='large' name='user_state'  value={user_state} onChange={e => handleChange(e)} placeholder='State'/>
                                 </Item>
-
-                                <Select name="address" style={{ width: "100%"}}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a address">
-                                { addressData.map((data,index) =>(
-                                        <Option value={data.name} name="address" key={index}>{data.name}</Option>
-                                    ))
-                                }
-                                    
-                                </Select>
+                                <div>
+                                    <Select name="address" style={{ width: "100%"}}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a address">
+                                    { addressData.map((data,index) =>(
+                                            <Option value={data.name} name="address" key={index}>{data.name}</Option>
+                                        ))
+                                    }
+                                        
+                                    </Select>
+                                </div>
+                                
                                
                                 <Item>
                                     <Checkbox

@@ -14,9 +14,6 @@ import Image7 from '../../../../assets/img/shalinivenktash.png'
 import TakeActionForm from "./form";
 import { setUserList } from '../../../../redux/action-creators/users';
 
-
-
-
 const TakeActionContent = ({
     users,
     setUserList
@@ -26,7 +23,6 @@ const TakeActionContent = ({
     useEffect(() => {
         setUserList();
       }, [])
-console.log(users)
     return (
         <TakeActionWrap>
             <Container>

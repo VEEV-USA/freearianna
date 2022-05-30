@@ -29,38 +29,7 @@ const data = [
     }
 ]
 
-const TakeActionContent = ({person,getProfile,user}) => {
-    const [userData, setUserData] = useState({
-        firstname: '',
-        lastname: '',
-        full_name: '',
-        license: '',
-        signatures_Require: '',
-        case_name:'',
-        email:'',
-        zipcode:0,
-        address:'',
-        phone:0,
-        state:'',
-        country: '',
-        user_avatar:'',
-        page_title:'',
-        page_contents:'',
-        pdf1:'',
-        pdf1_title:"",
-        pdf2_title:"",
-        pdf3_title:"",
-        pdf4_title:"",
-        pdf2:'',
-        pdf3:'',
-        pdf4:'',
-
-    });
-    useEffect(()=>{
-        getProfile(person,setUserData);
-
-    },[])
-
+const TakeActionContent = ({person}) => {
 return (
         <Fragment>
             {/* <Wrap>
@@ -77,22 +46,23 @@ return (
                     <Row gutter={[40, 52]} >
                     <Col lg={{span: 17}} span={24}>
                     <Media>
-                        <Avatar src={userData.user_avatar} size={200}/>
+                        <Avatar src={person.user_avatar} size={200}/>
                         <div>
                             <h3>
-                                {userData.full_name}
+                                {person.full_name}
                             </h3>
+                            <p>{person.country}&nbsp;&nbsp;&nbsp;{person.state}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;</p>
                             <P1>
-                                {userData.page_title}
+                                {person.page_title}
                             </P1>
                         </div>
                     </Media>
                     <P1>
-                        {userData.page_contents}
+                        {person.page_contents}
                     </P1>
                     </Col>
                     <Col lg={{span: 7}} span={24}>
-                        <TakeActionForm person={person} preUserData={userData} />
+                        <TakeActionForm person={person} />
                     </Col>
                     </Row>
                 </Container>
@@ -111,9 +81,9 @@ return (
                                             rel="noreferrer"
                                             style={{display: 'block', width: '100%'}}
                                             target='_blank'
-                                            href={userData.pdf1}
+                                            href={person.pdf1}
                                         >
-                                            <embed src={userData.pdf1} type="application/pdf" height={'300'} width={'100%'} />
+                                            <embed src={person.pdf1} type="application/pdf" height={'300'} width={'100%'} />
                                             {/* <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/> */}
                                         </a>
                                     }
@@ -123,10 +93,10 @@ return (
                                     <CardTitle>
                                         <a
                                             rel="noreferrer"
-                                            href={userData.pdf1}
+                                            href={person.pdf1}
                                             target='_blank'
                                         >
-                                            {userData.pdf1_title}
+                                            {person.pdf1_title}
                                         </a>
                                     </CardTitle>
                                     
@@ -147,9 +117,9 @@ return (
                                             rel="noreferrer"
                                             style={{display: 'block', width: '100%'}}
                                             target='_blank'
-                                            href={userData.pdf2}
+                                            href={person.pdf2}
                                         >
-                                            <embed src={userData.pdf2} type="application/pdf" height={'300'} width={'100%'} />
+                                            <embed src={person.pdf2} type="application/pdf" height={'300'} width={'100%'} />
                                             {/* <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/> */}
                                         </a>
                                     }
@@ -160,10 +130,10 @@ return (
                                     
                                         <a
                                             rel="noreferrer"
-                                            href={userData.pdf2}
+                                            href={person.pdf2}
                                             target='_blank'
                                         >
-                                            {userData.pdf2_title}
+                                            {person.pdf2_title}
                                         </a>
                                     </CardTitle>
                                     
@@ -184,9 +154,9 @@ return (
                                             rel="noreferrer"
                                             style={{display: 'block', width: '100%'}}
                                             target='_blank'
-                                            href={userData.pdf3}
+                                            href={person.pdf3}
                                         >
-                                            <embed src={userData.pdf3} type="application/pdf" height={'300'} width={'100%'} />
+                                            <embed src={person.pdf3} type="application/pdf" height={'300'} width={'100%'} />
                                             {/* <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/> */}
                                         </a>
                                     }
@@ -196,10 +166,10 @@ return (
                                     <CardTitle >
                                         <a
                                             rel="noreferrer"
-                                            href={userData.pdf3}
+                                            href={person.pdf3}
                                             target='iframe_a'
                                         >
-                                            {userData.pdf3_title}
+                                            {person.pdf3_title}
                                         </a>
                                     </CardTitle>
                                     
@@ -220,9 +190,9 @@ return (
                                             rel="noreferrer"
                                             style={{display: 'block', width: '100%'}}
                                             target='_blank'
-                                            href={userData.pdf4}
+                                            href={person.pdf4}
                                         >
-                                            <embed src={userData.pdf4} type="application/pdf" height={'300'} width={'100%'} />
+                                            <embed src={person.pdf4} type="application/pdf" height={'300'} width={'100%'} />
                                             {/* <img src={dat.cover} height={300} style={{objectFit: 'cover', width: '100%'}} alt=""/> */}
                                         </a>
                                     }
@@ -232,10 +202,10 @@ return (
                                     <CardTitle>
                                         <a
                                             rel="noreferrer"
-                                            href={userData.pdf4}
+                                            href={person.pdf4}
                                             target='_blank'
                                         >
-                                            {userData.pdf4_title}
+                                            {person.pdf4_title}
                                         </a>
                                     </CardTitle>
                                     

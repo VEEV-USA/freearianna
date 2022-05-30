@@ -86,7 +86,6 @@ export const createUser = userData => dispatch => {
 };
 
 export const createProfile = (userData, navigate) => dispatch => {
-  console.log("navigae", navigate);
   dispatch(createProfileStart());
   const config = {
     headers: {
@@ -97,7 +96,6 @@ export const createProfile = (userData, navigate) => dispatch => {
     .post('http://localhost:5000/api/users/createprofile', userData, config)
     .then(res => {
       dispatch(createProfileSuccess(res.data)); 
-      console.log("ddd",navigate)
       navigate('/')
     })
     .catch(err => dispatch(createProfileError(err)));
@@ -179,7 +177,6 @@ export const editUser = (userData, history, initEdit) => dispatch => {
 };
 
 export const updateUser = (userData,navigate) => dispatch => {
-  console.log("ddddd",userData)
   dispatch(editProfileStart());
   const config = {
     headers: {
@@ -190,9 +187,8 @@ export const updateUser = (userData,navigate) => dispatch => {
     .put(`http://localhost:5000/api/users/updateProfile/${userData.person}`, userData, config)
     .then(res => {
       dispatch(editProfileSuccess(res.data));
-      // other method:
-      navigate.push('/');
-      // initEdit();
+
+      navigate('/recall')
     })
     .catch(err => dispatch(editProfileError(err)));
 };
@@ -264,6 +260,12 @@ const getProfileStart = () => {
     payload: {}
   };
 };
+const findProfileStart = () => {
+  return {
+    type: 'FIND_PROFILE_START',
+    payload: {}
+  };
+};
 
 const getUserSuccess = userData => {
   // console.log(userData);
@@ -275,7 +277,7 @@ const getUserSuccess = userData => {
 const getProfileSuccess = userData => {
   // console.log(userData);
   return {
-    type: 'GET_Profile_SUCCESS',
+    type: 'GET_PROFILE_SUCCESS',
     payload: { profile: userData }
   };
 };
@@ -301,13 +303,27 @@ export const getUser = (id, setUserData) => dispatch => {
 };
 export const getProfile = (id, setUserData) => dispatch => {
   dispatch(getProfileStart());
+
   axios
     .get(`http://localhost:5000/api/users/profile/${id}`)
     .then(res => {
-      const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = res.data;
-      const userData = { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 };
+      const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,current_sign,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = res.data;
+      const userData = { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,current_sign,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 };
       dispatch(getProfileSuccess(userData));
       setUserData(userData);
+    })
+    .catch(err => dispatch(getUserError(err)));
+};
+
+
+
+export const findProfile = (address, setUserData) => dispatch => {
+  dispatch(findProfileStart());
+  axios
+    .get(`http://localhost:5000/api/users/findprofile/${address}`)
+    .then(res => {
+      setUserData(res.data);
+      return res.data
     })
     .catch(err => dispatch(getUserError(err)));
 };

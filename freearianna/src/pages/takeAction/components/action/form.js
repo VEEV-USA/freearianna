@@ -76,12 +76,12 @@ const TakeActionForm = ({person,getUser}) => {
                         style={{width: '100%'}}
                     >
                         <Progress
-                            percent={403/500*100}
+                            percent={person.current_sign/person.signatures_Require*100}
                             strokeWidth={20}
                             showInfo={false}
                             strokeColor='#CE3DAF'
                         />
-                        <p style={{textAlign: 'center'}}>403 of 500 signatures</p>
+                        <p style={{textAlign: 'center'}}>{person.current_sign} of {person.signatures_Require} signatures</p>
                         <Button
                             
                             type='primary'
@@ -89,7 +89,7 @@ const TakeActionForm = ({person,getUser}) => {
                             block
                             htmlType='submit'
                             loading={loading}
-                            onClick={()=>{navigate('/recallnow',{ state: person_id })}} 
+                            onClick={()=>{navigate('/recallnow',{ state: person })}} 
                             //disabled={!checked}
                         >
                             <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>

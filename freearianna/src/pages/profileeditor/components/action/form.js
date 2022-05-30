@@ -160,24 +160,49 @@ const TakeActionForm = ({
                             <h2>Banner Text</h2>
                             <textarea name="page_title" value={page_title} onChange={e => handleTextareaChange(e)} style={{width:"100%"}}/>
                         </div>
+                        <Space>
                         <Upload
-                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                listType="picture-card"
-                                fileList={fileList}
-                                onPreview={handlePreview}
-                                onChange={handleImageChange}
-                            >
-                                {fileList.length >= 1 ? null : uploadButton}
-                            </Upload>
-                            <Modal visible={previewVisible} title={previewTitle} footer={null} onCancel={handleCancel}>
-                                <img
-                                alt="example"
-                                style={{
-                                    width: '100%',
-                                }}
-                                src={previewImage}
-                                />
-                            </Modal>
+                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                            listType="picture-card"
+                            fileList={fileList}
+                            onPreview={handlePreview}
+                            onChange={handleImageChange}
+                        >
+                            {fileList.length >= 1 ? null : uploadButton}
+                        </Upload>
+
+                        <Modal visible={previewVisible} title={previewTitle} footer={null} onCancel={handleCancel}>
+                            <img
+                            alt="example"
+                            style={{
+                                width: '100%',
+                            }}
+                            src={previewImage}
+                            />
+                        </Modal>
+                        <Item
+                            name='country'
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'required'
+                                }
+                            ]}
+                        >
+                            <Input size='large' name='country'  value={country} onChange={e => handleChange(e)} placeholder='Country'/>
+                        </Item>
+                        <Item
+                            name='state'
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'required'
+                                }
+                            ]}
+                        >
+                            <Input size='large' name='state'  value={state} onChange={e => handleChange(e)} placeholder='State'/>
+                        </Item>
+                        </Space>
                             <Space >
                             <Item
                             name='full_name'

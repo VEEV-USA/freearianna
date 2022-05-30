@@ -128,6 +128,7 @@ const LayoutHeader = () => {
                                             RECALL
                                         </Button>
                                     </Col>
+                                
                                     <Col>
                                         <Button
                                             type='primary'
@@ -193,6 +194,9 @@ const LayoutHeader = () => {
                                             </Menu.Item> */}
                                             <Menu.Item key='recall'>
                                                 RECALL
+                                            </Menu.Item>
+                                            <Menu.Item key='profileeditor'>
+                                                PROFILEEDITOR
                                             </Menu.Item>
                                             <Menu.Item key='donate' className='btn'>
                                                 DONATE

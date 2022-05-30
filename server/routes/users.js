@@ -171,35 +171,21 @@ router.post('/recall', (req, res) => {
 
 
 // Edit user
-router.put('/:userId', (req, res) => {
-  User.findByIdAndUpdate(req.params.userId, {
-    $set: {
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      sex: req.body.sex,
-      age: req.body.age,
-      password: req.body.password
-    }
-  })
-    .then(user => res.status(200).json(user))
-    .catch(err => res.status(500).json({ error: 'Failed to edit' }));
-});
+// router.put('/:userId', (req, res) => {
+//   User.findByIdAndUpdate(req.params.userId, {
+//     $set: {
+//       firstname: req.body.firstname,
+//       lastname: req.body.lastname,
+//       sex: req.body.sex,
+//       age: req.body.age,
+//       password: req.body.password
+//     }
+//   })
+//     .then(user => res.status(200).json(user))
+//     .catch(err => res.status(500).json({ error: 'Failed to edit' }));
+// });
 
-router.put('updateProfile/:userId', (req, res) => {
-  Profile.findByIdAndUpdate(req.params.userId, {
-    $set: {
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      email: req.body.email,
-      phone: req.body.phone,
-      zipcode: req.body.zipcode,
-      address: req.body.address,
-      state: req.body.user_state
-    }
-  })
-    .then(user => res.status(200).json(user))
-    .catch(err => res.status(500).json({ error: 'Failed to edit' }));
-});
+
 
 // Delete user
 router.delete('/:userId', (req, res) => {
@@ -209,22 +195,7 @@ router.delete('/:userId', (req, res) => {
 });
 
 
-router.get('/findaddress/?address', (req, res) => {
-  var query = req.params.query;
-console.log("req");
-  // RecallUser.find({
-  //     'address': query
-  // }, function(err, result) {
-  //     if (err) throw err;
-  //     if (result) {
-  //         res.json(result)
-  //     } else {
-  //         res.send(JSON.stringify({
-  //             error : 'Error'
-  //         }))
-  //     }
-  // })
-})
+
 
 router.post('/createprofile', (req, res) => {
   const newProfile = new Profile({
@@ -233,6 +204,7 @@ router.post('/createprofile', (req, res) => {
     full_name: req.body.full_name,
     license: req.body.license,
     signatures_Require: req.body.signatures_Require,
+    current_sign: 0,
     case_name: req.body.case_name,
     email: req.body.email,
     phone: req.body.phone,
@@ -258,5 +230,40 @@ router.post('/createprofile', (req, res) => {
     .catch(err => res.status(500).json({ error: 'Failed to create' + err }));
 });
 
+
+router.put('/updateProfile/:userId', (req, res) => {
+  
+  Profile.findByIdAndUpdate(req.params.userId, {
+    $set: {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      phone: req.body.phone,
+      zipcode: req.body.zipcode,
+      address: req.body.address,
+      current_sign: req.body.current_sign+1,
+      state: req.body.user_state
+    }
+  })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json({ error: 'Failed to edit' }));
+});
+
+
+router.get('/findprofile/:query', (req, res) => {
+  const query = req.params.query;
+  Profile.find({
+      'address': query
+  }, function(err, result) {
+      if (err) throw err;
+      if (result) {
+          res.json(result)
+      } else {
+          res.send(JSON.stringify({
+              error : 'Error'
+          }))
+      }
+  })
+})
 
 module.exports = router;

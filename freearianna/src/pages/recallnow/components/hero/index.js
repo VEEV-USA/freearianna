@@ -36,7 +36,7 @@ const RecallHero = ({person,getProfile}) => {
 
     });
     useEffect(()=>{
-        getProfile(person,setUserData);
+        getProfile(person._id,setUserData);
 
     },[])
   
@@ -47,7 +47,7 @@ const RecallHero = ({person,getProfile}) => {
             <RecallHeroWrap>
                 <Container>
                     <RecallHeroText>
-                        {userData.page_title}
+                        {userData.page_title.slice(0, 200)}
                     </RecallHeroText>
                 </Container>
             </RecallHeroWrap>
