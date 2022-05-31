@@ -10,6 +10,7 @@ import {useNavigate} from "react-router-dom";
 import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import addressData from './address.json';
+import Donate from '../../../donate'
 // import toast, { Toaster } from "https://cdn.skypack.dev/react-hot-toast@2.2.0";
 // toast.success('Successfully Create!');
 
@@ -59,6 +60,7 @@ const TakeActionForm = ({  setAlert,
   const handleCreate = (e) => {
     e.preventDefault();
     dispatch(updateUser(userData,navigate));
+    setSuccess(true);
 
   };
 
@@ -200,18 +202,22 @@ const TakeActionForm = ({  setAlert,
                 ) :(
                     <div style={{textAlign: 'center'}}>
                         <SectionTitle>
-                            <b>Thank You</b>
+                            <Progress
+                                percent={person.current_sign/person.signatures_Require*100}
+                                strokeWidth={20}
+                                showInfo={false}
+                                strokeColor='#CE3DAF'
+                            />
                         </SectionTitle>
-                        <h3>
-                            For signing my petition, I will send you periodic updates.
-                        </h3>
-                        <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
+                        <p style={{textAlign: 'center'}}>{person.current_sign+1} of {person.signatures_Require} signatures</p> 
+                        {/* <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
                             Love Arianna
-                        </LogoText>
-                        <img src={Banner1} alt="" style={{marginBottom: 32}}/>
+                        </LogoText> */}
+                        {/* <img src={Banner1} alt="" style={{marginBottom: 32}}/> */}
                         <Button type='primary' size='large' onClick={()=>{navigate('/donate')}}>
-                            DONATE
+                            Share
                         </Button>
+                        <Donate />
                     </div>
                 )
             }

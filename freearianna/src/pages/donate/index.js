@@ -27,8 +27,9 @@ const DonatePage = () => {
                 flexFlow: 'column',
                 gridGap: '72px'
             }}>
-                <img src={Code} alt="" width={300}/>
                 <div id='donate-button'/>
+
+                <img src={Code} alt="" width={300}/>
             </div>
         </Container>
     );

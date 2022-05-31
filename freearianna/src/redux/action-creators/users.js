@@ -96,7 +96,7 @@ export const createProfile = (userData, navigate) => dispatch => {
     .post('http://localhost:5000/api/users/createprofile', userData, config)
     .then(res => {
       dispatch(createProfileSuccess(res.data)); 
-      navigate('/')
+      navigate('/recallnow',{ state: res.data })
     })
     .catch(err => dispatch(createProfileError(err)));
     
@@ -188,7 +188,7 @@ export const updateUser = (userData,navigate) => dispatch => {
     .then(res => {
       dispatch(editProfileSuccess(res.data));
 
-      navigate('/recall')
+      // navigate('/recall')
     })
     .catch(err => dispatch(editProfileError(err)));
 };
