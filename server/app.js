@@ -35,7 +35,7 @@ app.use('/api/users', users);
 //   .then(console.log('MongoDB connected'))
 //   .catch(err => console.log(err)); // Maybe return res code 500
 
-const url = `mongodb+srv://root:<password>@cluster0.lbdtqsd.mongodb.net/test
+const url = `mongodb+srv://root:root@cluster0.lbdtqsd.mongodb.net/test
 `;
 
 
