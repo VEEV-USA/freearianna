@@ -93,6 +93,7 @@ const TakeActionForm = ({
   
     const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = userData;
     const handleCreate = async(e) => {
+        console.log("ssss",userData)
         e.preventDefault();
         const createprofile = await dispatch(createProfile({ firstname, lastname,full_name,license,signatures_Require, case_name, email, address, zipcode, phone, state,country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 },navigate));
     };
@@ -120,32 +121,36 @@ const TakeActionForm = ({
         setUserData({ ...userData, [e.target.name]: e.target.value });
     }
     const fileType=['application/pdf'];
-    const pdfUpload =(e)=>{
+    const pdfUpload = async(e)=>{
         
-        console.log("pdf1",e.target.files[0]);
-
-        if(e.target.files[0]){
-            console.log("ssssssssss",e.target.files[0].type)
-        if(e.target.files[0]&&fileType.includes(e.target.files[0].type)){
-            let reader = new FileReader();
-                reader.readAsDataURL(e.target.files[0]);
-                reader.onloadend = (e) =>{
-                setPdfFile(e.target.result);
-                setPdfFileError('');
+        let selectedFile=e.target.files[0];
+        let filepdf = ""
+            if(selectedFile){
+                if(selectedFile&&fileType.includes(selectedFile.type)){
+                    let reader = new FileReader();
+                        reader.readAsDataURL(selectedFile);
+                        reader.onloadend = (e) =>{
+                        console.log("event_target2",e.target.result)
+                        setPdfFile(e.target.result);
+                        filepdf = e.target.result
+                        setPdfFileError('');
+                        }
                 }
-        }
-        else{
-            setPdfFile(null);
-            setPdfFileError('Please select valid pdf file');
-        }
-        }
-        else{
-        console.log('select your file');
-        }
-        console.log("pdfFile",pdfFile)
-        setUserData({ ...userData, [e.target.name]: pdfFile })
+                else{
+                    setPdfFile(null);
+                    setPdfFileError('Please select valid pdf file');
+                }
+                }
+                else{
+                console.log('select your file');
+                }
+        setTimeout(() => {
+            setUserData({ ...userData, [e.target.name]: filepdf })
+        }, 500);
+        
 
     }
+   
     console.log("www",userData)
 
     return (

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import ActionFormCard from "./style/form-card";
-import {Button, Checkbox, Form, Input, Progress, Space, message, Select } from "antd";
+import {ActionFormCard, AntSelect} from "./style/form-card";
+import {Button, Checkbox, Form, Input, Progress, Space, message,InputNumber, Select } from "antd";
 import {snsClient} from "../../../../untils/aws";
 import { SubscribeCommand} from "@aws-sdk/client-sns";
 import SectionTitle from "../../../../components/heading/section";
@@ -13,7 +13,6 @@ import addressData from './address.json';
 import Donate from '../../../donate'
 // import toast, { Toaster } from "https://cdn.skypack.dev/react-hot-toast@2.2.0";
 // toast.success('Successfully Create!');
-
 import { createUser,updateUser, initUser ,getProfile} from '../../../../redux/action-creators/users';
 import { setAlert } from '../../../../redux/action-creators/alert';
 
@@ -138,7 +137,7 @@ const TakeActionForm = ({  setAlert,
                                         }
                                     ]}
                                 >
-                                    <Input size='large' name='zipcode'  value={zipcode} onChange={e => handleChange(e)} placeholder='Zip Code'/>
+                                    <InputNumber size='large' name='zipcode' style={{width: '100%'}}  value={zipcode} onChange={e => handleChange(e)} placeholder='Zip Code'/>
                                 </Item>
                                 <Item
                                     name='phone'
@@ -149,27 +148,27 @@ const TakeActionForm = ({  setAlert,
                                         }
                                     ]}
                                 >
-                                    <Input size='large' name='phone'  value={phone} onChange={e => handleChange(e)} placeholder='Phone Number'/>
+                                    <InputNumber size='large' style={{width: '100%'}}  name='phone'  value={phone} onChange={e => handleChange(e)} placeholder='Phone Number'/>
                                 </Item>
                                 <Item
                                     name='user_state'
                                     rules={[
                                         {
                                             required: true,
-                                            message: 'phone is required'
+                                            message: 'Address is required'
                                         }
                                     ]}
                                 >
-                                    <Input size='large' name='user_state'  value={user_state} onChange={e => handleChange(e)} placeholder='State'/>
+                                    <Input size='large' name='user_state'  value={user_state} onChange={e => handleChange(e)} placeholder='Address'/>
                                 </Item>
                                 <div>
-                                    <Select name="address" style={{ width: "100%"}}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a address">
+                                    <AntSelect name="address" style={{ width: "100%" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
                                     { addressData.map((data,index) =>(
                                             <Option value={data.name} name="address" key={index}>{data.name}</Option>
                                         ))
                                     }
                                         
-                                    </Select>
+                                    </AntSelect>
                                 </div>
                                 
                                
