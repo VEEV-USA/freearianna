@@ -21,6 +21,9 @@ const TakeActionItem = ({person}) => {
                     objectFit: 'cover'
                 }}
             />
+            {/* <ItemContent>
+
+            </ItemContent> */}
             <div style={{width:'100%'}}>
                 <PersonName>
                     {person.full_name}
@@ -30,14 +33,14 @@ const TakeActionItem = ({person}) => {
                         {person.full_name}
                     </PersonFullName>
                     <LicenseString>
-                        ({person.lmft && 'LMFT '}License # {person.license})
+                    {person.state}&nbsp;&nbsp;&nbsp;{person.country}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;{person.case_name}
+
                     </LicenseString>
                 </Space>
                 <ActionContent>
                     {person.page_contents.slice(0, 260)} ... ...
                 </ActionContent>
             </div>
-            <div> </div>
             <div style={{width:'*'}}><TakeActionForm person={person}/></div>
         </ActionItemWrap>
     );

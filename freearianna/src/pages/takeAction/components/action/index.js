@@ -33,6 +33,7 @@ const TakeActionContent = ({
                         <Space
                             direction='vertical'
                             size={42}
+                            style={{width:'100%'}}
                         >
                             {
                                 users.map((person, index) => (

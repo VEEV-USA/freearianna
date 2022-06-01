@@ -34,7 +34,8 @@ const TakeActionItem = ({person}) => {
                     </LicenseString>
                 </Space>
                 <ActionContent>
-                    {person.page_contents.slice(0, 260)} ... ...
+                    <p>{person.page_contents.slice(0, 260)} ... ...</p>
+                    
                 </ActionContent>
             </div>
             <div> </div>

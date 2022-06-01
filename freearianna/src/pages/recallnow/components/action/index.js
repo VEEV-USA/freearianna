@@ -51,7 +51,7 @@ return (
                             <h3>
                                 {person.full_name}
                             </h3>
-                            <p>{person.country}&nbsp;&nbsp;&nbsp;{person.state}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;</p>
+                            <p>{person.state}&nbsp;&nbsp;&nbsp;{person.country}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;{person.case_name}</p>
                             <P1>
                                 {person.page_title}
                             </P1>

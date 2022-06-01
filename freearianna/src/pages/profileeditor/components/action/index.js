@@ -12,39 +12,6 @@ import TakeActionForm from "./form";
 import CardTitle from "../../../../components/heading/card";
 
 
-const data = [
-    {
-        cover: `pdf/bjfadem1.pdf`,
-        pdf: `${window.location.origin}/pdf/bjfadem1.pdf`,
-        title: 'Rape Charges',
-        items: [
-            'Rape charges',
-        ]
-    }, {
-        cover: `pdf/bjfadem1.pdf`,
-        pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
-        title: 'Extortion Charges',
-        items: [
-            'test',
-        ]
-    }, {
-        cover: `pdf/bjfadem1.pdf`,
-        pdf: `${window.location.origin}/pdf/nathalieferro1.pdf`,
-        title: 'Bribery Charges',
-        items: [
-            'test',
-        ]
-    }, {
-        cover: `pdf/bjfadem1.pdf`,
-        pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
-        title: 'Sexual Abuse',
-        items: [
-            'test',
-        ]
-    }
-
-]
-
 const TakeActionContent = () => {
 
 return (

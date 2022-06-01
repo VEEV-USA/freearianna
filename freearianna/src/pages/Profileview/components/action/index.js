@@ -21,7 +21,7 @@ const TakeActionContent = ({
     person
 }) => {
     const dispatch = useDispatch();
-
+    
 
     const [userData, setUserData] = useState([])
 
@@ -40,6 +40,7 @@ const TakeActionContent = ({
                         <Space
                             direction='vertical'
                             size={42}
+                            style={{width:'100%'}}
                         >
                             {
                                 userData.map((person, index) => (

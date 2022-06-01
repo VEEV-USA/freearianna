@@ -232,7 +232,7 @@ router.post('/createprofile', (req, res) => {
 
 
 router.put('/updateProfile/:userId', (req, res) => {
-  
+
   Profile.findByIdAndUpdate(req.params.userId, {
     $set: {
       firstname: req.body.firstname,
@@ -253,7 +253,7 @@ router.put('/updateProfile/:userId', (req, res) => {
 router.get('/findprofile/:query', (req, res) => {
   const query = req.params.query;
   Profile.find({
-      'address': query
+      'state': query
   }, function(err, result) {
       if (err) throw err;
       if (result) {

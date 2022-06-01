@@ -54,7 +54,7 @@ const TakeActionForm = ({  setAlert,
     }
 
     },[])
-    const { firstname, lastname, email,zipcode,user_state, current_sign, phone} = userData;
+    const { firstname, lastname, email,zipcode,user_state, address, current_sign, phone} = userData;
   
   const handleCreate = (e) => {
     e.preventDefault();
@@ -71,7 +71,7 @@ const TakeActionForm = ({  setAlert,
 //     setUserData({...userData,[address]:e.target.value});
 //   };
   const handleOnChange = (value, event) => {
-    setUserData({ ...userData, address: value });      
+    setUserData({ ...userData, user_state: value });      
 }
 
     return (
@@ -151,7 +151,7 @@ const TakeActionForm = ({  setAlert,
                                     <InputNumber size='large' style={{width: '100%'}}  name='phone'  value={phone} onChange={e => handleChange(e)} placeholder='Phone Number'/>
                                 </Item>
                                 <Item
-                                    name='user_state'
+                                    name='address'
                                     rules={[
                                         {
                                             required: true,
@@ -159,12 +159,12 @@ const TakeActionForm = ({  setAlert,
                                         }
                                     ]}
                                 >
-                                    <Input size='large' name='user_state'  value={user_state} onChange={e => handleChange(e)} placeholder='Address'/>
+                                    <Input size='large' name='address'  value={address} onChange={e => handleChange(e)} placeholder='Address'/>
                                 </Item>
                                 <div>
-                                    <AntSelect name="address" style={{ width: "100%" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
+                                    <AntSelect name="user_state" style={{ width: "100%" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
                                     { addressData.map((data,index) =>(
-                                            <Option value={data.name} name="address" key={index}>{data.name}</Option>
+                                            <Option value={data.name} name="user_state" key={index}>{data.name}</Option>
                                         ))
                                     }
                                         
@@ -202,7 +202,7 @@ const TakeActionForm = ({  setAlert,
                     <div style={{textAlign: 'center'}}>
                         <SectionTitle>
                             <Progress
-                                percent={person.current_sign/person.signatures_Require*100}
+                                percent={person.current_sign+1/person.signatures_Require*100}
                                 strokeWidth={20}
                                 showInfo={false}
                                 strokeColor='#CE3DAF'
