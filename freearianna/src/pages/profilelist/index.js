@@ -17,7 +17,7 @@ const ProfileList = () => {
     const person = location.state;
     return (
         <Fragment>
-            <TakeActionHero2/>
+            <TakeActionHero2 person={person}/>
             <TakeActionContent person={person}/>
             {/* <HomeStory/>
             <HomeCriminals/>

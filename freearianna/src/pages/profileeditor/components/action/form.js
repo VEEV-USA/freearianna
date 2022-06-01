@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import ActionFormCard from "./style/form-card";
 import {Button, Checkbox,Popconfirm, Form, Input, Col, Row, Space,Modal, Upload , Select,message , } from "antd";
 import {useNavigate} from "react-router-dom";
@@ -121,37 +121,30 @@ const TakeActionForm = ({
         setUserData({ ...userData, [e.target.name]: e.target.value });
     }
     const fileType=['application/pdf'];
-    const pdfUpload = async(e)=>{
+    const pdfUpload = async(event)=>{
         
-        let selectedFile=e.target.files[0];
-        let filepdf = ""
-            if(selectedFile){
-                if(selectedFile&&fileType.includes(selectedFile.type)){
-                    let reader = new FileReader();
-                        reader.readAsDataURL(selectedFile);
-                        reader.onloadend = (e) =>{
-                        console.log("event_target2",e.target.result)
-                        setPdfFile(e.target.result);
-                        filepdf = e.target.result
-                        setPdfFileError('');
-                        }
-                }
-                else{
-                    setPdfFile(null);
-                    setPdfFileError('Please select valid pdf file');
-                }
-                }
-                else{
-                console.log('select your file');
-                }
-        setTimeout(() => {
-            setUserData({ ...userData, [e.target.name]: filepdf })
-        }, 500);
-        
-
+        let selectedFile=event.target.files[0];
+       
+        if(selectedFile){
+            if(selectedFile&&fileType.includes(selectedFile.type)){
+                let reader = new FileReader();
+                    reader.readAsDataURL(selectedFile);
+                    reader.onloadend = (e) =>{
+                    setUserData({ ...userData, [event.target.name]: e.target.result })
+                    setPdfFileError('');
+                    }
+            }
+            else{
+                setPdfFile(null);
+                setPdfFileError('Please select valid pdf file');
+            }
+        }
+        else{
+        console.log('select your file');
+        }
     }
-   
-    console.log("www",userData)
+
+
 
     return (
         <ActionFormCard>

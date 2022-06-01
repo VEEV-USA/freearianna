@@ -9,7 +9,6 @@ const KidsHeroWrap = styled.div`
     font-size: 45px;
     font-weight: 700;
     letter-spacing: 3px;
-    text-transform: uppercase;
     margin-bottom: 12px;
   }
 `

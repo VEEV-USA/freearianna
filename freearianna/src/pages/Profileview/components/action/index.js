@@ -19,17 +19,17 @@ import { findProfile } from '../../../../redux/action-creators/users';
 
 const TakeActionContent = ({
     person
-
 }) => {
     const dispatch = useDispatch();
 
-    console.log("person--view",person)
+
     const [userData, setUserData] = useState([])
 
   useEffect(()=>{
      dispatch(findProfile(person,setUserData));
 
   },[])
+
     return (
         <TakeActionWrap>
             <Container>
