@@ -14,6 +14,7 @@ import CircleButton from "../components/button/circle";
 import DonatePage from "../pages/donate";
 import AriannaPage from "../pages/arianna";
 import ProfileEditor from '../pages/profileeditor';
+import Profilelist from '../pages/profilelist';
 
 
 
@@ -34,6 +35,7 @@ const LandingLayout = () => {
                     <Route path='/donate' element={<DonatePage/>}/>
                     <Route path='/arianna' element={<AriannaPage/>}/>
                     <Route path='/profileeditor' element={<ProfileEditor/>}/>
+                    <Route path='/profilelist' element={<Profilelist/>}/>
                 </Routes>
             </Content>
             <LayoutFooter/>

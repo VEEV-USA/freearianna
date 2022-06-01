@@ -8,14 +8,17 @@ import USAMap from "react-usa-map";
 import states from "./states.json";
 import { useDispatch,connect } from 'react-redux';
 import { findProfile } from '../../../../redux/action-creators/users';
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 
+    
 
 
 
 const AriannaMain = () => {
     // const color = "red"
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
     const [usa, setUsa] = useState([])
     const [userData, setUserData] = useState([])
     const [something, setSomething] = useState({})
@@ -25,7 +28,9 @@ const AriannaMain = () => {
     },[usa])
     const mapHandler = async(event) => {
         const address = event.target.dataset.name;
-        const data = await dispatch(findProfile(address,setUserData));
+        await dispatch(findProfile(address,setUserData));
+       
+        navigate('/profilelist',{ state: address })
         
     };
     const statesFilling = () => {
