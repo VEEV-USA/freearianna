@@ -121,11 +121,14 @@ const TakeActionForm = ({
     }
     const fileType=['application/pdf'];
     const pdfUpload =(e)=>{
-        let selectedFile=e.target.files[0];
-        if(selectedFile){
-        if(selectedFile&&fileType.includes(selectedFile.type)){
+        
+        console.log("pdf1",e.target.files[0]);
+
+        if(e.target.files[0]){
+            console.log("ssssssssss",e.target.files[0].type)
+        if(e.target.files[0]&&fileType.includes(e.target.files[0].type)){
             let reader = new FileReader();
-                reader.readAsDataURL(selectedFile);
+                reader.readAsDataURL(e.target.files[0]);
                 reader.onloadend = (e) =>{
                 setPdfFile(e.target.result);
                 setPdfFileError('');
@@ -139,7 +142,7 @@ const TakeActionForm = ({
         else{
         console.log('select your file');
         }
-
+        console.log("pdfFile",pdfFile)
         setUserData({ ...userData, [e.target.name]: pdfFile })
 
     }

@@ -24,7 +24,6 @@ app.use(function(req, res, next) {
 app.use('/api/users', users);
 
 // const db = 'mongodb://localhost:27017/userlist';
-// const db = 'https://cloud.mongodb.com/v2/6291323ed7eba700568bdcaf#clusters';
 
 // mongoose
 //   .connect(db, {
