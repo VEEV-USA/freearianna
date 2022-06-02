@@ -9,7 +9,7 @@ import states from "./states.json";
 import { useDispatch,connect } from 'react-redux';
 import { findProfile } from '../../../../redux/action-creators/users';
 import {Link,useNavigate} from "react-router-dom";
-
+import state_address from "../../../Profileview/components/hero2/address.json"
     
 
 
@@ -29,8 +29,8 @@ const AriannaMain = () => {
     const mapHandler = async(event) => {
         const address = event.target.dataset.name;
         await dispatch(findProfile(address,setUserData));
-       
-        navigate('/profilelist/'+address,{ state: address })
+        var result=state_address.filter(obj=> obj.abbreviation == address );
+        navigate('/profilelist/'+result[0].name,{ state: address })
         
     };
     const statesFilling = () => {
