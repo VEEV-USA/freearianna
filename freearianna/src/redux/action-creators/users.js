@@ -96,7 +96,8 @@ export const createProfile = (userData, navigate) => dispatch => {
     .post('http://localhost:5000/api/users/createprofile', userData, config)
     .then(res => {
       dispatch(createProfileSuccess(res.data)); 
-      const username = res.data.full_name
+      const username = res.data.full_name.split(" ")[0]+res.data.full_name.split(" ")[1]
+
       navigate('/recallnow'+username,{ state: res.data })
     })
     .catch(err => dispatch(createProfileError(err)));

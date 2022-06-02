@@ -14,7 +14,8 @@ const {Item, useForm} = Form;
 const TakeActionForm = ({person,getUser}) => {
     const navigate = useNavigate();
     const person_id = person._id;
-    const username = person.full_name;
+    const username = person.full_name.split(" ")[0]+person.full_name.split(" ")[1]
+
     const [form] = useForm();
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);

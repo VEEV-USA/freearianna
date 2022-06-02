@@ -18,7 +18,8 @@ const TakeActionForm = ({person,getUser}) => {
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
     const [success, setSuccess] = useState(false);
-    const username = person.full_name;
+    const username = person.full_name.split(" ")[0]+person.full_name.split(" ")[1]
+    
 
     const finishHandler = (data) => {
         setLoading(true)
