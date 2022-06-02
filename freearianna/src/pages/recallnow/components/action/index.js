@@ -1,16 +1,13 @@
 import React, {Fragment,useState, useEffect} from 'react';
 import { connect } from 'react-redux';
-import TakeActionWrap from "./style/wrap";
-import Wrap, {Wrap1} from "./style/wrap";
+import {Wrap1} from "./style/wrap";
 import {Avatar, Card, Col, Row} from "antd";
 import Media from "../../../../components/media";
 import P1 from "../../../../components/paragraph";
 import Container from "../../../../components/paper/container";
-import TakeActionItem from "./item";
-import Image1 from '../../../../assets/img/cynthialie.png'
 import TakeActionForm from "./form";
 import CardTitle from "../../../../components/heading/card";
-import { getProfile, setUserList } from '../../../../redux/action-creators/users';
+import { getProfile } from '../../../../redux/action-creators/users';
 
 
 
@@ -45,15 +42,6 @@ const TakeActionContent = ({person}) => {
       
 return (
         <Fragment>
-            {/* <Wrap>
-                <Container>
-                    <SectionTitle>
-                        Cynthia Lie Runs A Criminal Enterprise Using The Courts Profiting From Pedophiles & False
-                        Domestic Violence
-                    </SectionTitle>
-                </Container>
-            </Wrap> 
-            <img src={Image} alt="" style={{width: '100%', height: 200}}/> */}
             <Wrap1>
                 <Container>
                     <Row gutter={[40, 52]} >

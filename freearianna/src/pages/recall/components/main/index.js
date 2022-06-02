@@ -53,7 +53,6 @@ const AriannaMain = () => {
           })
           
         });
-        console.log("fsdfsdf",something)
 
         return { something };
       };

@@ -14,7 +14,6 @@ const createProfile = (state = initState, action) => {
     case 'GET_USER_START':
       return { ...state, isLoading: true };
     case 'CREATE_PROFILE_SUCCESS':
-      // console.log(payload._id, ' in reducer');
       return {
         ...state,
         ...payload,

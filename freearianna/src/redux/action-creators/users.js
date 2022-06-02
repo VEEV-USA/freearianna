@@ -7,8 +7,6 @@ const setUserListStart = () => {
 };
 
 const setUserListSuccess = data => {
-  // data: Array of user obj
-  //   console.log(data[0]);
   return {
     type: 'SET_USER_LIST_SUCCESS',
     payload: { users: data }
@@ -98,7 +96,7 @@ export const createProfile = (userData, navigate) => dispatch => {
       dispatch(createProfileSuccess(res.data)); 
       const username = res.data.full_name.split(" ")[0]+res.data.full_name.split(" ")[1]
 
-      navigate('/recallnow'+username,{ state: res.data })
+      navigate('/recallnow/'+username,{ state: res.data })
     })
     .catch(err => dispatch(createProfileError(err)));
     
@@ -223,10 +221,8 @@ const deleteUserStart = () => {
 };
 
 const deleteUserSuccess = () => {
-  // console.log(userData);
   return {
     type: 'DELETE_USER_SUCCESS'
-    // payload: userData
   };
 };
 
@@ -270,14 +266,12 @@ const findProfileStart = () => {
 };
 
 const getUserSuccess = userData => {
-  // console.log(userData);
   return {
     type: 'GET_USER_SUCCESS',
     payload: { user: userData }
   };
 };
 const getProfileSuccess = userData => {
-  // console.log(userData);
   return {
     type: 'GET_PROFILE_SUCCESS',
     payload: { profile: userData }

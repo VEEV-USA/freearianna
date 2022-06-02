@@ -65,9 +65,6 @@ const TakeActionForm = ({person,getUser}) => {
 
     }
 
-//    useEffect(()=>{
-//     getUser(person)
-//    })
     return (
         <ActionFormCard>
             {
