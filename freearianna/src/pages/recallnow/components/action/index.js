@@ -70,7 +70,7 @@ return (
                             </P1>
                         </div>
                     </Media>
-                    <P1>
+                    <P1 style={{paddingTop: '20px'}}>
                         {person.page_contents}
                     </P1>
                     </Col>

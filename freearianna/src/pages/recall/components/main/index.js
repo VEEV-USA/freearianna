@@ -10,6 +10,7 @@ import { useDispatch,connect } from 'react-redux';
 import { findProfile } from '../../../../redux/action-creators/users';
 import {Link,useNavigate} from "react-router-dom";
 import state_address from "../../../Profileview/components/hero2/address.json"
+import P1 from "../../../../components/paragraph"
     
 
 
@@ -109,17 +110,16 @@ const AriannaMain = () => {
                                             }}
                                         />
                                         <div style={{width:'100%'}}>
-                                            <PersonName>
-                                                {person.full_name}
-                                            </PersonName>
-                                            <Space>
-                                                <PersonFullName>
-                                                    {person.full_name}
-                                                </PersonFullName>
-                                                <LicenseString>
-                                                    ({person.lmft && 'LMFT '}License # {person.license})
-                                                </LicenseString>
-                                            </Space>
+                                            <div>
+                                                <h3>{person.full_name}</h3>
+                                                <P1></P1>
+                                                <P1>{person.country},&nbsp;{person.state}</P1>
+                                                <P1>Licence #: {person.license}</P1>
+                                                <P1>Case: {person.case_name}</P1>
+                                                {/* <P1>
+                                                    {person.page_title}
+                                                </P1> */}
+                                            </div>
                                             <ActionContent>
                                                 {person.page_contents.slice(0, 200)}... ... ...
                                             </ActionContent>
