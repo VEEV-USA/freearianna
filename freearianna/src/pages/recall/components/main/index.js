@@ -30,11 +30,14 @@ const AriannaMain = () => {
         const address = event.target.dataset.name;
         await dispatch(findProfile(address,setUserData));
        
-        navigate('/profilelist',{ state: address })
+        navigate('/profilelist/'+address,{ state: address })
         
     };
     const statesFilling = () => {
+
         usa.map((state, i) => {
+       
+
           const { abbreviation, name } = state.attributes;
           let fill = "#C8102E";
           if (name.includes("k")) {
@@ -42,14 +45,15 @@ const AriannaMain = () => {
           } else if (name.includes("x")) {
             fill = "#DDAC04";
           }
+
           setSomething(something[abbreviation] = {
-            fill,
+            fill:fill,
             clickHandler: () => alert(`Hey This is sam! ${name} is your hfghfghfgh`)
           })
           
         });
+        console.log("fsdfsdf",something)
 
-    
         return { something };
       };
 

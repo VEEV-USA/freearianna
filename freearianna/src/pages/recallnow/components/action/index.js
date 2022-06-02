@@ -30,6 +30,19 @@ const data = [
 ]
 
 const TakeActionContent = ({person}) => {
+    const pdf1 = person.pdf1
+    const pdf2 = person.pdf2
+    const pdf3 = person.pdf3
+    const pdf4 = person.pdf4
+    const open_data_url_window = (base64Data) => {
+
+            var iframe = "<iframe width='100%' height='100%' src='" + base64Data + "'></iframe>"
+            var x = window.open();
+            x.document.open();
+            x.document.write(iframe);
+            x.document.close();
+    }  
+      
 return (
         <Fragment>
             {/* <Wrap>
@@ -90,23 +103,9 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle>
-                                        <a
-                                            rel="noreferrer"
-                                            href={person.pdf1}
-                                            target='_blank'
-                                        >
+                                    <CardTitle onClick={ () => open_data_url_window(pdf1)}>
                                             {person.pdf1_title}
-                                        </a>
                                     </CardTitle>
-                                    
-                                    {/* {
-                                        dat.items.map((item, index) => (
-                                            <p key={`index${index}`}>
-                                                {item}
-                                            </p>
-                                        ))
-                                    } */}
                                 </Card>
                             </Col>
                             <Col lg={6} md={12} sm={12} span={24} >
@@ -126,24 +125,9 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle>
-                                    
-                                        <a
-                                            rel="noreferrer"
-                                            href={person.pdf2}
-                                            target='_blank'
-                                        >
+                                    <CardTitle onClick={ () => open_data_url_window(pdf2)}>
                                             {person.pdf2_title}
-                                        </a>
                                     </CardTitle>
-                                    
-                                    {/* {
-                                        dat.items.map((item, index) => (
-                                            <p key={`index${index}`}>
-                                                {item}
-                                            </p>
-                                        ))
-                                    } */}
                                 </Card>
                             </Col>
                             <Col lg={6} md={12} sm={12} span={24} >
@@ -163,23 +147,9 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle >
-                                        <a
-                                            rel="noreferrer"
-                                            href={person.pdf3}
-                                            target='iframe_a'
-                                        >
+                                    <CardTitle onClick={ () => open_data_url_window(pdf3)}>
                                             {person.pdf3_title}
-                                        </a>
                                     </CardTitle>
-                                    
-                                    {/* {
-                                        dat.items.map((item, index) => (
-                                            <p key={`index${index}`}>
-                                                {item}
-                                            </p>
-                                        ))
-                                    } */}
                                 </Card>
                             </Col>
                             <Col lg={6} md={12} sm={12} span={24} >
@@ -199,25 +169,12 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle>
-                                        <a
-                                            rel="noreferrer"
-                                            href={person.pdf4}
-                                            target='_blank'
-                                        >
+                                    <CardTitle onClick={ () => open_data_url_window(pdf4)}>
                                             {person.pdf4_title}
-                                        </a>
                                     </CardTitle>
-                                    
-                                    {/* {
-                                        dat.items.map((item, index) => (
-                                            <p key={`index${index}`}>
-                                                {item}
-                                            </p>
-                                        ))
-                                    } */}
                                 </Card>
                             </Col>
+                            
                         {/* ))
                     } */}
                 </Row>

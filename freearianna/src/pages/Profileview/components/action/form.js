@@ -18,6 +18,7 @@ const TakeActionForm = ({person,getUser}) => {
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
     const [success, setSuccess] = useState(false);
+    const username = person.full_name;
 
     const finishHandler = (data) => {
         setLoading(true)
@@ -89,7 +90,7 @@ const TakeActionForm = ({person,getUser}) => {
                             block
                             htmlType='submit'
                             loading={loading}
-                            onClick={()=>{navigate('/recallnow',{ state: person })}} 
+                            onClick={()=>{navigate('/recallnow/'+username,{ state: person })}} 
                             //disabled={!checked}
                         >
                             <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>

@@ -9,7 +9,7 @@ import Banner1 from '../../../../assets/img/arianna-poster300.jpg'
 import {useNavigate} from "react-router-dom";
 import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import addressData from './address.json';
+import addressData from './state.json';
 import Donate from '../../../donate'
 // import toast, { Toaster } from "https://cdn.skypack.dev/react-hot-toast@2.2.0";
 // toast.success('Successfully Create!');

@@ -14,6 +14,7 @@ const {Item, useForm} = Form;
 const TakeActionForm = ({person,getUser}) => {
     const navigate = useNavigate();
     const person_id = person._id;
+    const username = person.full_name;
     const [form] = useForm();
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
@@ -89,7 +90,8 @@ const TakeActionForm = ({person,getUser}) => {
                             block
                             htmlType='submit'
                             loading={loading}
-                            onClick={()=>{navigate('/recallnow',{ state: person })}} 
+                            onClick={()=>{navigate('/recallnow/'+username,{ state: person })}} 
+                            
                             //disabled={!checked}
                         >
                             <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>

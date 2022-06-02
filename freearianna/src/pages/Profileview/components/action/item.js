@@ -27,10 +27,10 @@ const TakeActionItem = ({person}) => {
                 </PersonName>
                 <Space>
                     <PersonFullName>
-                        {person.full_name}
                     </PersonFullName>
                     <LicenseString>
-                        ({person.lmft && 'LMFT '}License # {person.license})
+                    {person.state}&nbsp;&nbsp;&nbsp;{person.country}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;{person.case_name}
+
                     </LicenseString>
                 </Space>
                 <ActionContent>
