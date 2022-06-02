@@ -170,11 +170,7 @@ return (
                                     className='pdf-card'
                                 >
                                     <CardTitle onClick={ () => open_data_url_window(pdf4)}>
-                                           {/* <a rel="noreferrer">{person.pdf4_title}</a>  */}
-                                           <a
-                                            rel="noreferrer"
-                                            target='_blank'
-                                        ></a>
+                                            {person.pdf4_title}
                                     </CardTitle>
                                 </Card>
                             </Col>

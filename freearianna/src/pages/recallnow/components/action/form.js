@@ -202,13 +202,13 @@ const TakeActionForm = ({  setAlert,
                     <div style={{textAlign: 'center'}}>
                         <SectionTitle>
                             <Progress
-                                percent={person.current_sign+1/person.signatures_Require*100}
+                                percent={(person.current_sign+1)/person.signatures_Require*100}
                                 strokeWidth={20}
                                 showInfo={false}
                                 strokeColor='#CE3DAF'
                             />
+                            <p style={{textAlign: 'center'}}>{person.current_sign+1} of {person.signatures_Require} signatures</p> 
                         </SectionTitle>
-                        <p style={{textAlign: 'center'}}>{person.current_sign+1} of {person.signatures_Require} signatures</p> 
                         {/* <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
                             Love Arianna
                         </LogoText> */}
