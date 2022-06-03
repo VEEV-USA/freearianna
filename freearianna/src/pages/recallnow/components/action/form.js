@@ -168,11 +168,11 @@ const phoneValue = (value, event) => {
                                     rules={[
                                         {
                                             required: true,
-                                            message: 'phone is required'
+                                            message: 'Phone is required'
                                         }
                                     ]}
                                 >
-                                    <InputNumber size='large'maxLength={9} style={{width: '100%',height:44}}  name='phone'  value={phone} onChange={e => phoneValue(e)} placeholder='Phone Number'/>
+                                    <InputNumber size='large'maxLength={10} style={{width: '100%',height:44}}  name='phone'  value={phone} onChange={e => phoneValue(e)} placeholder='Phone Number'/>
                                 </Item>
                                 <Item
                                     name='address'
@@ -201,12 +201,7 @@ const phoneValue = (value, event) => {
                                         }
                                         
                                     </AntSelect>
-
-                                </Item>
-                                    
-                              
-                                
-                               
+                                </Item> 
                                 <Item>
                                     <Checkbox
                                         onChange={(event) => {setChecked(event.target.checked)}}

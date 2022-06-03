@@ -11,9 +11,6 @@ import { findProfile } from '../../../../redux/action-creators/users';
 import {Link,useNavigate} from "react-router-dom";
 import state_address from "../../../Profileview/components/hero2/address.json"
 import P1 from "../../../../components/paragraph"
-    
-
-
 
 const AriannaMain = () => {
     // const color = "red"
@@ -63,36 +60,23 @@ const AriannaMain = () => {
                 <Space
                     direction='vertical'
                     size={32}
-                    style={{width: '100%'}}
-                >
-                    {/* <SectionTitle>
-                        The Free Arianna Movement
-                    </SectionTitle> */}
-                    <Row
-                        gutter={[32, 32]}
-                    >
-                        <Col lg={{span: 12}} span={24}>
-                            <ActionFormCard>
-                                <CardTitle>
-                                    {/* 20,904,371 */}
-                                </CardTitle>
+                    style={{width: '100%'}}>
+                    <Row gutter={[32, 32]}>
+                        <Col lg={{span: 17}} span={24}>
+                            <ActionFormCard style={{backgroundColor: 'white'}}>
                                 <CardTitle style={{marginBottom: 32}}>
-                                    Ongoing Recalls<br/><br/>
+                                    Ongoing Recalls
                                     {/* <img src="https://happywall-img-gallery.imgix.net/8533/usa_map_in_fun_colors_display.jpg"></img> */}
                                     <USAMap customize={something} onClick={mapHandler}  />
                                 </CardTitle>
                             </ActionFormCard>
                         </Col>
-                        <Col lg={{span: 12}} span={24}>
+                        <Col lg={{span: 7}} span={24}>
                             <ActionFormCard>
-                                <CardTitle>
-                                    {/* 20,904,371 */}
-                                </CardTitle>
                                 <CardTitle style={{marginBottom: 32}}>
                                     <Link to='/profileeditor'>
                                     Start Recall
                                     </Link>
-                                  
                                 </CardTitle>
                                
                                 <CardTitle style={{marginBottom: 32}}>
