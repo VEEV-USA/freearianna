@@ -35,8 +35,8 @@ const TakeActionItem = ({person}) => {
 
                     </LicenseString>
                 </Space>
-                <ActionContent>
-                    {person.page_contents.slice(0, 260)} ... ...
+                <ActionContent style={{fontSize:16}}>
+                    <p>{person.page_contents.slice(0, 260)} ... ...</p>
                 </ActionContent>
             </div>
             <div style={{width:'*'}}><TakeActionForm person={person}/></div>

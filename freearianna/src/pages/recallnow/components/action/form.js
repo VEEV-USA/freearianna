@@ -13,7 +13,7 @@ import addressData from './state.json';
 import Donate from '../../../donate'
 // import toast, { Toaster } from "https://cdn.skypack.dev/react-hot-toast@2.2.0";
 // toast.success('Successfully Create!');
-import { createUser,updateUser, initUser ,getProfile} from '../../../../redux/action-creators/users';
+import { createUser,updateUser,findSigner,findEmailSignUser,findPhoneSignUser, initUser ,getProfile} from '../../../../redux/action-creators/users';
 import { setAlert } from '../../../../redux/action-creators/alert';
 
 // import { Loading, Alert } from './utils';
@@ -33,7 +33,10 @@ const TakeActionForm = ({  setAlert,
     const [form] = useForm();
     const [loading, setLoading] = useState(false);
     const [checked, setChecked] = useState(false);
+    const [profileUsers, setProfileUsers] = useState([]);
     const [success, setSuccess] = useState(false);
+    const [emailStatue, setEmailStatue] = useState(false)
+    const [phoneStatue, setPhoneStatue] = useState(false)
     const [userData, setUserData] = useState({
         firstname: '',
         lastname: '',
@@ -52,19 +55,30 @@ const TakeActionForm = ({  setAlert,
     if(person.current_sign){
         userData.current_sign = person.current_sign;
     }
-
-    },[])
+    dispatch(findSigner(person._id,setProfileUsers))
+    if(userData.email!==""){
+        dispatch(findEmailSignUser(userData,setEmailStatue))
+    }
+    if(userData.phone!==0){
+        dispatch(findPhoneSignUser(userData,setPhoneStatue))
+    }
+    },[userData])
+   
+   
     const { firstname, lastname, email,zipcode,user_state, address, current_sign, phone} = userData;
   
   const handleCreate = (e) => {
     e.preventDefault();
-    dispatch(updateUser(userData,navigate));
-    setSuccess(true);
+    if(!emailStatue && !phoneStatue){
+        dispatch(createUser(userData,navigate));
+        setSuccess(true);
+    }
+
 
   };
-
   
   const handleChange = e => {
+    
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 //   const handleSelect = e => {
@@ -72,6 +86,12 @@ const TakeActionForm = ({  setAlert,
 //   };
   const handleOnChange = (value, event) => {
     setUserData({ ...userData, user_state: value });      
+}
+const zipValue = (value, event) => {
+    setUserData({ ...userData, zipcode: value });      
+}
+const phoneValue = (value, event) => {
+    setUserData({ ...userData, phone: value });      
 }
 
     return (
@@ -83,12 +103,12 @@ const TakeActionForm = ({  setAlert,
                         size={12}
                         style={{width: '100%'}}>
                             <Progress
-                            percent={person.current_sign/person.signatures_Require*100}
+                            percent={profileUsers.length/person.signatures_Require*100}
                             strokeWidth={20}
                             showInfo={false}
                             strokeColor='#CE3DAF'
                         />
-                        <p style={{textAlign: 'center'}}>{person.current_sign} of {person.signatures_Require} signatures</p> 
+                        <p style={{textAlign: 'center'}}>{profileUsers.length} of {person.signatures_Require} signatures</p> 
                         <div>
                             <h2>Sign Petition</h2>
                             <Form
@@ -117,6 +137,8 @@ const TakeActionForm = ({  setAlert,
                                 >
                                     <Input size='large' name='lastname'  value={lastname} onChange={e => handleChange(e)} placeholder='Last Name'/>
                                 </Item>
+                                {(emailStatue) && <p style={{color:"red"}}>*This email is already signed</p>}
+
                                 <Item
                                     name='email'
                                     rules={[
@@ -137,8 +159,10 @@ const TakeActionForm = ({  setAlert,
                                         }
                                     ]}
                                 >
-                                    <InputNumber size='large' name='zipcode' style={{width: '100%'}}  value={zipcode} onChange={e => handleChange(e)} placeholder='Zip Code'/>
+                                    
+                                    <InputNumber size='large' name='zipcode' style={{width: '100%',height:44}}  value={zipcode} onChange={e => zipValue(e)} placeholder='Zip Code'/>
                                 </Item>
+                                {(phoneStatue) && <p style={{color:"red"}}>*This phone number is already signed</p>}
                                 <Item
                                     name='phone'
                                     rules={[
@@ -148,7 +172,7 @@ const TakeActionForm = ({  setAlert,
                                         }
                                     ]}
                                 >
-                                    <InputNumber size='large' style={{width: '100%'}}  name='phone'  value={phone} onChange={e => handleChange(e)} placeholder='Phone Number'/>
+                                    <InputNumber size='large' style={{width: '100%',height:44}}  name='phone'  value={phone} onChange={e => phoneValue(e)} placeholder='Phone Number'/>
                                 </Item>
                                 <Item
                                     name='address'
@@ -202,12 +226,12 @@ const TakeActionForm = ({  setAlert,
                     <div style={{textAlign: 'center'}}>
                         <SectionTitle>
                             <Progress
-                                percent={(person.current_sign+1)/person.signatures_Require*100}
+                                percent={(profileUsers.length+1)/person.signatures_Require*100}
                                 strokeWidth={20}
                                 showInfo={false}
                                 strokeColor='#CE3DAF'
                             />
-                            <p style={{textAlign: 'center'}}>{person.current_sign+1} of {person.signatures_Require} signatures</p> 
+                            <p style={{textAlign: 'center'}}>{profileUsers.length+1} of {person.signatures_Require} signatures</p> 
                         </SectionTitle>
                         {/* <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
                             Love Arianna

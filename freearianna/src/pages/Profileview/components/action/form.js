@@ -6,8 +6,10 @@ import { SubscribeCommand} from "@aws-sdk/client-sns";
 import SectionTitle from "../../../../components/heading/section";
 import LogoText from "../../../../layouts/styles/header/logo";
 import Banner1 from '../../../../assets/img/arianna-poster300.jpg'
+import {findSigner} from '../../../../redux/action-creators/users';
 
 import {useNavigate} from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 const {Item, useForm} = Form;
 
@@ -19,7 +21,13 @@ const TakeActionForm = ({person,getUser}) => {
     const [checked, setChecked] = useState(false);
     const [success, setSuccess] = useState(false);
     const username = person.full_name.split(" ")[0]+person.full_name.split(" ")[1]
-    
+
+    const dispatch = useDispatch();
+    const [profileUsers, setProfileUsers] = useState([]);
+    useEffect(()=>{
+       
+        dispatch(findSigner(person_id,setProfileUsers))
+        },[])
 
     const finishHandler = (data) => {
         setLoading(true)
@@ -75,12 +83,12 @@ const TakeActionForm = ({person,getUser}) => {
                         style={{width: '100%'}}
                     >
                         <Progress
-                            percent={person.current_sign/person.signatures_Require*100}
+                            percent={profileUsers.length/person.signatures_Require*100}
                             strokeWidth={20}
                             showInfo={false}
                             strokeColor='#CE3DAF'
                         />
-                        <p style={{textAlign: 'center'}}>{person.current_sign} of {person.signatures_Require} signatures</p>
+                        <p style={{textAlign: 'center'}}>{profileUsers.length} of {person.signatures_Require} signatures</p>
                         <Button
                             
                             type='primary'

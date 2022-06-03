@@ -7,7 +7,9 @@ const RecallUserSchema = new Schema({
   email: { type: String},
   phone: { type: Number },
   zipcode: { type: Number },
-  address: { type: String }
+  address: { type: String },
+  state: { type: String },
+  profile_id:{type:String}
 });
 
 const RecallUser = mongoose.model('recalluser', RecallUserSchema);

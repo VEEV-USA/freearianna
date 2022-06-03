@@ -70,7 +70,7 @@ const createProfileError = err => {
   };
 };
 
-export const createUser = userData => dispatch => {
+export const createUser = (userData) => dispatch => {
   dispatch(createUserStart());
   const config = {
     headers: {
@@ -322,4 +322,43 @@ export const findProfile = (address, setUserData) => dispatch => {
       return res.data
     })
     .catch(err => dispatch(getUserError(err)));
+};
+
+export const findSigner = (profile_id, setProfileUsers) => dispatch => {
+  // dispatch(findProfileStart());
+  axios
+    .get(`http://localhost:5000/api/users/findsigner/${profile_id}`)
+    .then(res => {
+
+      setProfileUsers(res.data);
+      return res.data
+    })
+    .catch(err => dispatch(getUserError(err)));
+};
+
+export const findEmailSignUser = (userEmail, setEmailStatue) => dispatch => {
+  // dispatch(findProfileStart());
+  axios
+    .get(`http://localhost:5000/api/users/findemailsigner/${userEmail.email}&${userEmail.person}`)
+    .then(res => {
+      if(res.data.length!==0){setEmailStatue(true);}
+      if(res.data.length===0){setEmailStatue(false);}
+      return res.data
+    })
+    .catch(err => dispatch(getUserError(err)));
+   
+};
+export const findPhoneSignUser = (userPhone, setPhoneStatue) => dispatch => {
+  // dispatch(findProfileStart());
+  console.log("user",userPhone)
+  axios
+    .get(`http://localhost:5000/api/users/findphonesigner/${userPhone.phone}&${userPhone.person}`)
+    .then(res => {
+      if(res.data.length!==0){setPhoneStatue(true);}
+      if(res.data.length===0){setPhoneStatue(false);}
+      
+      return res.data
+    })
+    .catch(err => dispatch(getUserError(err)));
+   
 };

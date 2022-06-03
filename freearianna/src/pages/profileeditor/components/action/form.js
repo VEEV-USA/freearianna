@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import ActionFormCard from "./style/form-card";
+import {ActionFormCard,AntSelect} from "./style/form-card";
 import {Button, Checkbox,Popconfirm, Form, Input, Col, Row, Space,Modal, Upload , Select,message , } from "antd";
 import {useNavigate} from "react-router-dom";
 import { connect } from 'react-redux';
@@ -86,14 +86,12 @@ const TakeActionForm = ({
     if(fileList[0]){
         setUserData({ ...userData, user_avatar: fileList[0].thumbUrl });
     }
-    console.log("fileList",fileList[0])
     
 
 }
   
     const { firstname, lastname,full_name, email,case_name, license,zipcode, address,signatures_Require, phone, state, country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4} = userData;
     const handleCreate = async(e) => {
-        console.log("ssss",userData)
         e.preventDefault();
         const createprofile = await dispatch(createProfile({ firstname, lastname,full_name,license,signatures_Require, case_name, email, address, zipcode, phone, state,country,user_avatar,page_title,page_contents,pdf1_title,pdf2_title,pdf3_title,pdf4_title,pdf1,pdf2,pdf3,pdf4 },navigate));
     };
@@ -115,7 +113,7 @@ const TakeActionForm = ({
         </div>
     );
     const handleOnChange = (value, event) => {
-        setUserData({ ...userData, address: value });      
+        setUserData({ ...userData, state: value });      
     }
     const handleTextareaChange =(e)=>{
         setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -192,7 +190,7 @@ const TakeActionForm = ({
                         >
                             <Input size='large' name='country'  value={country} onChange={e => handleChange(e)} placeholder='Country'/>
                         </Item>
-                        <Item
+                        {/* <Item
                             name='state'
                             rules={[
                                 {
@@ -202,7 +200,14 @@ const TakeActionForm = ({
                             ]}
                         >
                             <Input size='large' name='state'  value={state} onChange={e => handleChange(e)} placeholder='State'/>
-                        </Item>
+                        </Item> */}
+                        <AntSelect name="user_state" style={{ width: "200px",height:"44px" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
+                                    { addressData.map((data,index) =>(
+                                            <Option value={data.name} name="user_state" key={index}>{data.name}</Option>
+                                        ))
+                                    }
+                                        
+                        </AntSelect>
                         </Space>
                             <Space >
                             <Item

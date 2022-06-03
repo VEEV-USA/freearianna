@@ -161,6 +161,8 @@ router.post('/recall', (req, res) => {
     email: req.body.email,
     phone: req.body.phone,
     zipcode: req.body.zipcode,
+    state: req.body.user_state,
+    profile_id: req.body.person,
     address: req.body.address
   });
   newRecallUser
@@ -254,6 +256,61 @@ router.get('/findprofile/:query', (req, res) => {
   const query = req.params.query;
   Profile.find({
       'state': query
+  }, function(err, result) {
+      if (err) throw err;
+      if (result) {
+          res.json(result)
+      } else {
+          res.send(JSON.stringify({
+              error : 'Error'
+          }))
+      }
+  })
+})
+
+router.get('/findsigner/:query', (req, res) => {
+  const query = req.params.query;
+  RecallUser.find({
+      'profile_id': query
+  }, function(err, result) {
+      if (err) throw err;
+      if (result) {
+          res.json(result)
+      } else {
+          res.send(JSON.stringify({
+              error : 'Error'
+          }))
+      }
+  })
+})
+
+
+router.get('/findemailsigner/:query', (req, res) => {
+  const query = req.params.query;
+  const email = query.split('&')[0]
+  const profileid = query.split('&')[1]
+
+  RecallUser.find({
+      'email': email,
+      'profile_id':profileid
+  }, function(err, result) {
+      if (err) throw err;
+      if (result) {
+          res.json(result)
+      } else {
+          res.send(JSON.stringify({
+              error : 'Error'
+          }))
+      }
+  })
+})
+router.get('/findphonesigner/:query', (req, res) => {
+  const query = req.params.query;
+  const phone = query.split('&')[0]
+  const profileid = query.split('&')[1]
+  RecallUser.find({
+      'phone': phone,
+      'profile_id':profileid
   }, function(err, result) {
       if (err) throw err;
       if (result) {

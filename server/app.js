@@ -34,6 +34,8 @@ app.use('/api/users', users);
 //   .then(console.log('MongoDB connected'))
 //   .catch(err => console.log(err)); // Maybe return res code 500
 
+
+
 const url = `mongodb+srv://arianna:freearianna@cluster0.lbdtqsd.mongodb.net/test`;
 
 

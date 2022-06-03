@@ -1,7 +1,7 @@
-import {Card} from "antd";
+import {Card,Select} from "antd";
 import styled from "styled-components";
 
-const ActionFormCard = styled(Card)`
+export const ActionFormCard = styled(Card)`
   width:1024px;
   margin:auto;
   min-height: 100%;
@@ -25,4 +25,15 @@ const ActionFormCard = styled(Card)`
   }
 `
 
-export default ActionFormCard
+export const AntSelect = styled(Select)`
+  &.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:-14px;
+  }
+  .ant-select-arrow{
+    margin-top: -19px !important;
+  }
+`

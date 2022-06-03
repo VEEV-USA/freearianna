@@ -91,7 +91,7 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle onClick={ () => open_data_url_window(pdf1)}>
+                                    <CardTitle onClick={ () => open_data_url_window(pdf1)} style={{color: "rgb(206, 61, 175)",cursor: "pointer"}}>
                                             {person.pdf1_title}
                                     </CardTitle>
                                 </Card>
@@ -113,7 +113,7 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle onClick={ () => open_data_url_window(pdf2)}>
+                                    <CardTitle onClick={ () => open_data_url_window(pdf2)} style={{color: "rgb(206, 61, 175)",cursor: "pointer"}}>
                                             {person.pdf2_title}
                                     </CardTitle>
                                 </Card>
@@ -135,7 +135,7 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle onClick={ () => open_data_url_window(pdf3)}>
+                                    <CardTitle onClick={ () => open_data_url_window(pdf3)} style={{color: "rgb(206, 61, 175)",cursor: "pointer"}}>
                                             {person.pdf3_title}
                                     </CardTitle>
                                 </Card>
@@ -157,7 +157,7 @@ return (
                                     bordered={false}
                                     className='pdf-card'
                                 >
-                                    <CardTitle onClick={ () => open_data_url_window(pdf4)}>
+                                    <CardTitle onClick={ () => open_data_url_window(pdf4)} style={{color: "rgb(206, 61, 175)",cursor: "pointer"}}>
                                             {person.pdf4_title}
                                     </CardTitle>
                                 </Card>
