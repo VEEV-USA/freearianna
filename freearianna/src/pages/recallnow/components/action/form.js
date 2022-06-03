@@ -69,7 +69,7 @@ const TakeActionForm = ({  setAlert,
   
   const handleCreate = (e) => {
     e.preventDefault();
-    if(!emailStatue && !phoneStatue){
+    if(!emailStatue && !phoneStatue&& userData.user_state!==""){
         dispatch(createUser(userData,navigate));
         setSuccess(true);
     }
@@ -185,23 +185,13 @@ const phoneValue = (value, event) => {
                                 >
                                     <Input size='large' name='address'  value={address} onChange={e => handleChange(e)} placeholder='Address'/>
                                 </Item>
-                                <Item
-                                    name='user_state'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'phone is required'
-                                        }
-                                    ]}
-                                 >
-                                    <AntSelect name="user_state" style={{ width: "100%" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
-                                        { addressData.map((data,index) =>(
-                                                <Option value={data.name} name="user_state" key={index}>{data.name}</Option>
-                                            ))
-                                        }
-                                        
-                                    </AntSelect>
-                                </Item> 
+                                {(!userData.user_state) && <p style={{color:"red"}}>*Please select a State</p>}
+                                <AntSelect name="user_state" style={{ width: "100%" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
+                                    { addressData.map((data,index) =>(
+                                            <Option value={data.name} name="user_state" key={index}>{data.name}</Option>
+                                        ))
+                                    }
+                                </AntSelect>
                                 <Item>
                                     <Checkbox
                                         onChange={(event) => {setChecked(event.target.checked)}}
