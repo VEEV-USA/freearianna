@@ -4,11 +4,12 @@ import {BackTop, Layout} from "antd";
 import LayoutHeader from "./components/header";
 import LayoutFooter from "./components/footer";
 import HomePage from "../pages/home";
+import AboutPage from "../pages/about";
+import EventsPage from "../pages/events";
 import TakeActionPage from "../pages/takeAction";
 import KidsPage from "../pages/kids";
 import RecallnowPage from "../pages/recallnow";
 import RecallPage from "../pages/recall";
-import FightPage from "../pages/fight";
 import {ArrowUpOutlined} from "@ant-design/icons";
 import CircleButton from "../components/button/circle";
 import DonatePage from "../pages/donate";
@@ -27,10 +28,11 @@ const LandingLayout = () => {
             <Content style={{minHeight: 'calc(100vh - 154px)'}}>
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
+                    <Route path='/about' element={<AboutPage/>}/>
+                    <Route path='/events' element={<EventsPage/>}/>
                     <Route path='/kids' element={<KidsPage/>}/>
                     <Route path='/recallnow/:username' element={<RecallnowPage/>}/>
                     <Route path='/recall' element={<RecallPage/>}/>
-                    <Route path='/fight' element={<FightPage/>}/>
                     <Route path='/take-action' element={<TakeActionPage/>}/>
                     <Route path='/donate' element={<DonatePage/>}/>
                     <Route path='/arianna' element={<AriannaPage/>}/>

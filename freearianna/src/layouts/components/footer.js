@@ -54,8 +54,18 @@ const LayoutFooter = () => {
                             style={{justifyContent: breakpoints.lg ? "flex-start" : "center"}}
                         >
                             <Col>
-                                <Button type='text' onClick={() => { navigate('/fight') }}>
+                                <Button type='text' onClick={() => { navigate('/') }}>
+                                Home
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button type='text' onClick={() => { navigate('/about') }}>
                                 About
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button type='text' onClick={() => { navigate('/events') }}>
+                                Events
                                 </Button>
                             </Col>
                             <Col>

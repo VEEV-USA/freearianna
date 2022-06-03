@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react';
-import AriannaMain from "./components/main";
+import AboutMain from "./components/main";
 import KidsHero from "./components/hero";
 
-const AriannaPage = () => {
+const AboutPage = () => {
     return (
         <Fragment>
             <KidsHero/>
-            <AriannaMain/>
+            <AboutMain/>
         </Fragment>
     );
 };
 
-export default AriannaPage;
+export default AboutPage;

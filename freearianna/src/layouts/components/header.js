@@ -95,7 +95,7 @@ const LayoutHeader = () => {
                                             PROFITING FROM KIDS
                                         </Button>
                                     </Col>
-                                    <Col>
+                                    {/* <Col>
                                         <Button
                                             type='link'
                                             onClick={() => {
@@ -105,7 +105,7 @@ const LayoutHeader = () => {
                                         >
                                             THE FIGHT
                                         </Button>
-                                    </Col>
+                                    </Col> */}
                                     {/* <Col>
                                         <Button
                                             type='link'
