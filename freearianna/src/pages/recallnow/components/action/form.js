@@ -172,7 +172,7 @@ const phoneValue = (value, event) => {
                                         }
                                     ]}
                                 >
-                                    <InputNumber size='large' style={{width: '100%',height:44}}  name='phone'  value={phone} onChange={e => phoneValue(e)} placeholder='Phone Number'/>
+                                    <InputNumber size='large'maxLength={9} style={{width: '100%',height:44}}  name='phone'  value={phone} onChange={e => phoneValue(e)} placeholder='Phone Number'/>
                                 </Item>
                                 <Item
                                     name='address'
@@ -185,15 +185,26 @@ const phoneValue = (value, event) => {
                                 >
                                     <Input size='large' name='address'  value={address} onChange={e => handleChange(e)} placeholder='Address'/>
                                 </Item>
-                                <div>
+                                <Item
+                                    name='user_state'
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'phone is required'
+                                        }
+                                    ]}
+                                 >
                                     <AntSelect name="user_state" style={{ width: "100%" }}  onSelect={(value, event) => handleOnChange(value, event)} placeholder="Please select a State">
-                                    { addressData.map((data,index) =>(
-                                            <Option value={data.name} name="user_state" key={index}>{data.name}</Option>
-                                        ))
-                                    }
+                                        { addressData.map((data,index) =>(
+                                                <Option value={data.name} name="user_state" key={index}>{data.name}</Option>
+                                            ))
+                                        }
                                         
                                     </AntSelect>
-                                </div>
+
+                                </Item>
+                                    
+                              
                                 
                                
                                 <Item>
