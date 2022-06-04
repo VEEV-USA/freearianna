@@ -10,6 +10,7 @@ import TakeActionPage from "../pages/takeAction";
 import KidsPage from "../pages/kids";
 import RecallnowPage from "../pages/recallnow";
 import RecallPage from "../pages/recall";
+import CreateAccountPage from "../pages/createaccount";
 import {ArrowUpOutlined} from "@ant-design/icons";
 import CircleButton from "../components/button/circle";
 import DonatePage from "../pages/donate";
@@ -33,6 +34,7 @@ const LandingLayout = () => {
                     <Route path='/kids' element={<KidsPage/>}/>
                     <Route path='/recallnow/:username' element={<RecallnowPage/>}/>
                     <Route path='/recall' element={<RecallPage/>}/>
+                    <Route path='/createaccount' element={<CreateAccountPage/>}/>
                     <Route path='/take-action' element={<TakeActionPage/>}/>
                     <Route path='/donate' element={<DonatePage/>}/>
                     <Route path='/arianna' element={<AriannaPage/>}/>

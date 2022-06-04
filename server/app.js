@@ -36,7 +36,8 @@ app.use('/api/users', users);
 
 
 
-const url = `mongodb+srv://arianna:freearianna@cluster0.lbdtqsd.mongodb.net/test`;
+// const url = `mongodb+srv://arianna:freearianna@cluster0.lbdtqsd.mongodb.net/test`;
+const url = 'mongodb+srv://superhollywood:Password123!@#@cluster0.kwk4fdy.mongodb.net/userList?retryWrites=true&w=majority'
 
 
 const connectionParams={
@@ -51,9 +52,6 @@ mongoose.connect(url,connectionParams)
     .catch( (err) => {
         console.error(`Error connecting to the database. n${err}`);
     })
-
-
-
 
 
 const PORT = process.env.PORT || 5000;

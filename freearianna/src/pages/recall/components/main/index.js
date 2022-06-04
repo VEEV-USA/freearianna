@@ -74,7 +74,8 @@ const AriannaMain = () => {
                         <Col lg={{span: 7}} span={24}>
                             <ActionFormCard>
                                 <CardTitle style={{marginBottom: 32}}>
-                                    <Link to='/profileeditor'>
+                                    {/* <Link to='/profileeditor'> */}
+                                    <Link to='/createaccount'>
                                     Start Recall
                                     </Link>
                                 </CardTitle>
