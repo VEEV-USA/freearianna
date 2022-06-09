@@ -127,8 +127,7 @@ const LayoutHeader = () => {
                                         >
                                             RECALL
                                         </Button>
-                                    </Col>
-                                
+                                    </Col>       
                                     <Col>
                                         <Button
                                             type='primary'
@@ -137,6 +136,17 @@ const LayoutHeader = () => {
                                             }}
                                         >
                                             DONATE
+                                        </Button>
+                                    </Col>
+                                    <Col>
+                                        <Button
+                                            type='link'
+                                            onClick={() => {
+                                                navigate('/login')
+                                            }}
+                                            className={location.pathname === '/login' && 'active'}
+                                        >
+                                            Login
                                         </Button>
                                     </Col>
                                 </Row>
@@ -186,20 +196,23 @@ const LayoutHeader = () => {
                                             <Menu.Item key='kids'>
                                                 PROFITING FROM KIDS
                                             </Menu.Item>
-                                            <Menu.Item key='fight'>
+                                            {/* <Menu.Item key='fight'>
                                                 THE FIGHT
-                                            </Menu.Item>
+                                            </Menu.Item> */}
                                             {/* <Menu.Item key='take-action'>
                                                 TAKE ACTION
                                             </Menu.Item> */}
                                             <Menu.Item key='recall'>
                                                 RECALL
                                             </Menu.Item>
-                                            <Menu.Item key='profileeditor'>
+                                            {/* <Menu.Item key='profileeditor'>
                                                 PROFILEEDITOR
-                                            </Menu.Item>
+                                            </Menu.Item> */}
                                             <Menu.Item key='donate' className='btn'>
                                                 DONATE
+                                            </Menu.Item>
+                                            <Menu.Item key='login'>
+                                                Login
                                             </Menu.Item>
                                         </Menu>
                                     </Drawer>
