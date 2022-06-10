@@ -75,7 +75,7 @@ const AriannaMain = () => {
                             <ActionFormCard>
                                 <CardTitle style={{marginBottom: 32}}>
                                     {/* <Link to='/profileeditor'> */}
-                                    <Link to='/createaccount'>
+                                    <Link to='/create'>
                                     Start Recall
                                     </Link>
                                 </CardTitle>
@@ -112,8 +112,6 @@ const AriannaMain = () => {
                                         {/* <div style={{width:'*'}}><TakeActionForm person={person}/></div> */}
                                         </UserList>
                                     ))}
-                                
-                               
                                 </CardTitle>
                             </ActionFormCard>
                         </Col>
