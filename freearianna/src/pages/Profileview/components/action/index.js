@@ -22,7 +22,6 @@ const TakeActionContent = ({
 }) => {
     const dispatch = useDispatch();
     
-
     const [userData, setUserData] = useState([])
 
   useEffect(()=>{

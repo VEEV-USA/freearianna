@@ -9,7 +9,7 @@ import states from "./states.json";
 import { useDispatch,connect } from 'react-redux';
 import { findProfile } from '../../../../redux/action-creators/users';
 import {Link,useNavigate} from "react-router-dom";
-import state_address from "../../../Profileview/components/hero2/address.json"
+import state_address from "../../../profileview/components/hero2/address.json"
 import P1 from "../../../../components/paragraph"
 
 const AriannaMain = () => {

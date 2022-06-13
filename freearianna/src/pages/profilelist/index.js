@@ -7,8 +7,8 @@ import HomeMine from "./components/mine";
 import HomeShare from "./components/share";
 import HomeTable from "./components/table";
 import HomeLast from "./components/last";
-import TakeActionContent from '../Profileview/components/action';
-import TakeActionHero2 from "../Profileview/components/hero2";
+import TakeActionContent from '../profileview/components/action';
+import TakeActionHero2 from "../profileview/components/hero2";
 import { useLocation } from "react-router-dom";
 
 

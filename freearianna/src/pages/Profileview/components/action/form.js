@@ -7,7 +7,6 @@ import SectionTitle from "../../../../components/heading/section";
 import LogoText from "../../../../layouts/styles/header/logo";
 import Banner1 from '../../../../assets/img/arianna-poster300.jpg'
 import {findSigner} from '../../../../redux/action-creators/users';
-
 import {useNavigate} from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
