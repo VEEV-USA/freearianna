@@ -27,20 +27,14 @@ const TakeActionForm = () => {
   }, []);
   const onFinish = values => {
     setError(null);
-    axios
-      .post(config.base_url + `/login`, values, {
-        headers: {
-          authorization: config.auth,
-        },
-      })
-      .then(resp => {
-        if (resp.data.status) {
-          window.localStorage.setItem("@ari_id", resp.data.user._id);
-          window.location.reload();
-        } else {
-          setError(resp.data.message);
-        }
-      });
+    axios.post(config.base_url + `/login`, values).then(resp => {
+      if (resp.data.status) {
+        window.localStorage.setItem("@ari_id", resp.data.user._id);
+        window.location.reload();
+      } else {
+        setError(resp.data.message);
+      }
+    });
   };
 
   return (

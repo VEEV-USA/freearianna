@@ -33,11 +33,7 @@ const LayoutHeader = () => {
     const id = window.localStorage.getItem("@ari_id");
     if (id) {
       axios
-        .get(`${config.base_url}/${id}`, {
-          headers: {
-            authorization: `${config.auth}`,
-          },
-        })
+        .get(`${config.base_url}/${id}`)
         .then(resp => {
           setUser(resp.data.user);
         })

@@ -33,19 +33,9 @@ const AriannaMain = () => {
   const [something, setSomething] = useState({});
   useEffect(() => {
     setUsa(states);
-    axios
-      .post(
-        config.base_url + "/getRecalls",
-        {},
-        {
-          headers: {
-            authorization: `${config.auth}`,
-          },
-        }
-      )
-      .then(resp => {
-        setRecalls(resp.data.recalls);
-      });
+    axios.get(config.base_url + "/api/getRecalls").then(resp => {
+      setRecalls(resp.data.recalls);
+    });
   }, [usa]);
   const mapHandler = async event => {
     const address = event.target.dataset.name;

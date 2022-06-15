@@ -26,21 +26,17 @@ const TakeActionForm = () => {
     checkLogin();
   }, []);
   const onFinish = values => {
+    setError(null);
+    console.log(values);
     // create a user
-    axios
-      .post(config.base_url + "/signup", values, {
-        headers: {
-          authorization: config.auth,
-        },
-      })
-      .then(resp => {
-        if (resp.data.status) {
-          window.localStorage.setItem("@ari_id", resp.data.userId);
-          window.location.reload();
-        } else {
-          setError(resp.data.message);
-        }
-      });
+    axios.post(config.base_url + "/signup", values).then(resp => {
+      if (resp.data.status) {
+        window.localStorage.setItem("@ari_id", resp.data.userId);
+        window.location.reload();
+      } else {
+        setError(resp.data.message);
+      }
+    });
   };
 
   return (
@@ -86,11 +82,19 @@ const TakeActionForm = () => {
                 ]}
               >
                 <Input size="large" placeholder="Email" />
-                {error && (
-                  <p style={{ textAlign: "left", color: "red" }}>{error}</p>
-                )}
               </Item>
-
+              {error && (
+                <p
+                  style={{
+                    marginTop: -20,
+                    marginLeft: 4,
+                    textAlign: "left",
+                    color: "red",
+                  }}
+                >
+                  {error}
+                </p>
+              )}
               <Item
                 name="phone"
                 rules={[

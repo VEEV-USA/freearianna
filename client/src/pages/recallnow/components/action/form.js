@@ -69,6 +69,7 @@ const TakeActionForm = ({
   });
 
   useEffect(() => {
+    console.log(userData);
     userData.person = person._id;
     if (person.current_sign) {
       userData.current_sign = person.current_sign;
