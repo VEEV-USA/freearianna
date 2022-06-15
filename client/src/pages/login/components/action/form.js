@@ -3,7 +3,7 @@ import ActionFormCard from "./style/form-card";
 import { Button, Checkbox, Form, Input, Progress, Space, message } from "antd";
 import { snsClient } from "../../../../untils/aws";
 import { SubscribeCommand } from "@aws-sdk/client-sns";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import config from "../../../../config";
 const { Item, useForm } = Form;
@@ -14,6 +14,8 @@ const TakeActionForm = () => {
   const [loading, setLoading] = useState(false);
   const [checked, setChecked] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     async function checkLogin() {
       const id = window.localStorage.getItem("@ari_id");
@@ -24,14 +26,21 @@ const TakeActionForm = () => {
     checkLogin();
   }, []);
   const onFinish = values => {
-    axios.post(config.base_url + "/login", values).then(resp => {
-      if (resp.data.status) {
-        window.localStorage.setItem("@ari_id", resp.data.user._id);
-        window.location.reload();
-      } else {
-        alert(resp.data.message);
-      }
-    });
+    setError(null);
+    axios
+      .post(config.base_url + `/login`, values, {
+        headers: {
+          authorization: config.auth,
+        },
+      })
+      .then(resp => {
+        if (resp.data.status) {
+          window.localStorage.setItem("@ari_id", resp.data.user._id);
+          window.location.reload();
+        } else {
+          setError(resp.data.message);
+        }
+      });
   };
 
   return (
@@ -67,6 +76,9 @@ const TakeActionForm = () => {
               >
                 <Input size="large" placeholder="Password" />
               </Item>
+              {error && (
+                <h3 style={{ textAlign: "center", color: "red" }}>{error}</h3>
+              )}
               <Item>
                 <Button
                   type="primary"

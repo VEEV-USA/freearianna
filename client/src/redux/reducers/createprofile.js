@@ -5,21 +5,21 @@ const initState = {
   //   sex: null,
   //   age: null,
   user: {},
-  isLoading: false
+  isLoading: false,
 };
 
 const createProfile = (state = initState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case 'GET_USER_START':
+    case "GET_USER_START":
       return { ...state, isLoading: true };
-    case 'CREATE_PROFILE_SUCCESS':
+    case "CREATE_PROFILE_SUCCESS":
       return {
         ...state,
         ...payload,
-        success: true
+        success: true,
       };
-    case 'GET_USER_ERROR':
+    case "GET_USER_ERROR":
       return { ...state, ...payload, isLoading: false };
     // case 'INIT_DELETE':
     //   return { ...state, ...payload };

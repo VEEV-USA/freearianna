@@ -32,9 +32,18 @@ const LayoutHeader = () => {
     // find logged in user
     const id = window.localStorage.getItem("@ari_id");
     if (id) {
-      axios.get(config.base_url + `/${id}`).then(resp => {
-        setUser(resp.data);
-      });
+      axios
+        .get(`${config.base_url}/${id}`, {
+          headers: {
+            authorization: `${config.auth}`,
+          },
+        })
+        .then(resp => {
+          setUser(resp.data.user);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
 
     window.addEventListener("scroll", () => {
@@ -146,6 +155,18 @@ const LayoutHeader = () => {
                     DONATE
                   </Button>
                 </Col>
+                {user && (
+                  <Col>
+                    <Button
+                      type="primary"
+                      onClick={() => {
+                        navigate("/profileeditor");
+                      }}
+                    >
+                      MY ACCOUNT
+                    </Button>
+                  </Col>
+                )}
                 <Col>
                   {user ? (
                     <h1
@@ -160,7 +181,7 @@ const LayoutHeader = () => {
                         }
                       }}
                     >
-                      {user.firstname}
+                      Logout
                     </h1>
                   ) : (
                     <Button
