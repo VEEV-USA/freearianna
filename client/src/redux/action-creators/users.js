@@ -33,7 +33,7 @@ const setUserListError = err => {
 export const setUserList = () => dispatch => {
   dispatch(setUserListStart());
   axios
-    .post(`${config.base_url}/api/users`, {}, HEADERS)
+    .get(`${config.base_url}/api/users`)
     .then(res => {
       dispatch(setUserListSuccess(res.data.recalls));
     })
@@ -86,7 +86,6 @@ export const createUser = userData => dispatch => {
   dispatch(createUserStart());
   const __config = {
     headers: {
-      authorization: `${config.auth}`,
       "Content-Type": "application/json",
     },
   };
@@ -98,14 +97,8 @@ export const createUser = userData => dispatch => {
 
 export const createProfile = (userData, navigate) => dispatch => {
   dispatch(createProfileStart());
-  const __config = {
-    headers: {
-      authorization: `${config.auth}`,
-      "Content-Type": "application/json",
-    },
-  };
   axios
-    .post(`${config.base_url}/api/users/createprofile`, userData, __config)
+    .post(`${config.base_url}/api/users/createprofile`, userData)
     .then(res => {
       dispatch(createProfileSuccess(res.data));
       console.log(res.data);
@@ -309,7 +302,7 @@ const getUserError = err => {
 export const getUser = (id, setUserData) => dispatch => {
   dispatch(getUserStart());
   axios
-    .post(`${config.base_url}/api/users/${id}`, {}, HEADERS)
+    .get(`${config.base_url}/api/users/${id}`)
     .then(res => {
       console.log(res);
       const { firstname, lastname, sex, age } = res.data;
@@ -323,7 +316,7 @@ export const getProfile = (id, setUserData) => dispatch => {
   dispatch(getProfileStart());
 
   axios
-    .get(`${config.base_url}/api/users/profile/${id}`)
+    .get(`${config.base_url}/api/users/profile?id=${id}`)
     .then(res => {
       const {
         firstname,
@@ -398,9 +391,8 @@ export const findProfile = (address, setUserData) => dispatch => {
 export const findSigner = (profile_id, setProfileUsers) => dispatch => {
   dispatch(findProfileStart());
   axios
-    .post(`${config.base_url}/api/users/findsigner/${profile_id}`, {}, HEADERS)
+    .get(`${config.base_url}/api/users/findsigner?id=${profile_id}`)
     .then(res => {
-      console.log(res.data);
       setProfileUsers(res.data);
       return res.data;
     })
@@ -408,7 +400,7 @@ export const findSigner = (profile_id, setProfileUsers) => dispatch => {
 };
 
 export const findEmailSignUser = (userEmail, setEmailStatue) => dispatch => {
-  // dispatch(findProfileStart());
+  dispatch(findProfileStart());
   axios
     .post(
       `${config.base_url}/api/users/findemailsigner/${userEmail.email}&${userEmail.person}`,
@@ -416,10 +408,10 @@ export const findEmailSignUser = (userEmail, setEmailStatue) => dispatch => {
       HEADERS
     )
     .then(res => {
-      if (res.data.length !== 0) {
+      if (res.data.users.length !== 0) {
         setEmailStatue(true);
       }
-      if (res.data.length === 0) {
+      if (res.data.users.length === 0) {
         setEmailStatue(false);
       }
       return res.data;
@@ -427,8 +419,7 @@ export const findEmailSignUser = (userEmail, setEmailStatue) => dispatch => {
     .catch(err => dispatch(getUserError(err)));
 };
 export const findPhoneSignUser = (userPhone, setPhoneStatue) => dispatch => {
-  // dispatch(findProfileStart());
-  console.log("user", userPhone);
+  dispatch(findProfileStart());
   axios
     .post(
       `${config.base_url}/api/users/findphonesigner/${userPhone.phone}&${userPhone.person}`,
@@ -436,10 +427,10 @@ export const findPhoneSignUser = (userPhone, setPhoneStatue) => dispatch => {
       HEADERS
     )
     .then(res => {
-      if (res.data.length !== 0) {
+      if (res.data.users.length !== 0) {
         setPhoneStatue(true);
       }
-      if (res.data.length === 0) {
+      if (res.data.users.length === 0) {
         setPhoneStatue(false);
       }
 

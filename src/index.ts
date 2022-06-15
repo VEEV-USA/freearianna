@@ -1,5 +1,6 @@
 import * as Realm from "realm-web";
 import { Router } from "itty-router";
+import { handleCors, wrapCorsHeader } from "./corsHelper";
 const router = Router();
 // The Worker's environment bindings. See `wrangler.toml` file.
 interface Bindings {
@@ -9,10 +10,26 @@ interface Bindings {
 
 // Define type alias; available via `realm-web`
 type Document = globalThis.Realm.Services.MongoDB.Document;
+const corsHeaders = {
+  Allow: "GET, HEAD, POST, OPTIONS",
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "*",
+  "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+  "Access-Control-Max-Age": "86400",
+};
+
+const optionsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "*",
+  "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+};
 
 function createResponse(o: any) {
   const body = JSON.stringify(o);
-  const headers = { "Content-type": "application/json" };
+  const headers = {
+    ...corsHeaders,
+    "Content-type": "application/json",
+  };
   return new Response(body, { headers });
 }
 
@@ -72,19 +89,23 @@ const worker: ExportedHandler<Bindings> = {
     const url = new URL(req.url);
     App = App || new Realm.App(env.REALM_APPID);
 
-    const token = req.headers.get("authorization");
-    console.log("****");
-    console.log(token);
-    console.log("****");
-
-    if (!token) {
-      const body = JSON.stringify({ message: "missing or wrong auth token" });
-      const headers = { "Content-type": "application/json" };
-      return new Response(body, { headers });
+    if (req.method === "OPTIONS") {
+      return new Response("ok", { headers: corsHeaders });
     }
 
+    // const token = req.headers.get("authorization");
+    // console.log("****");
+    // console.log(token);
+    // console.log("****");
+
+    // if (!token) {
+    //   const body = JSON.stringify({ message: "missing or wrong auth token" });
+    //   const headers = { "Content-type": "application/json" };
+    //   return new Response(body, { headers });
+    // }
+
     try {
-      const credentials = Realm.Credentials.apiKey(token);
+      const credentials = Realm.Credentials.anonymous();
       // Attempt to authenticate
       var user = await App.logIn(credentials);
       var client = user.mongoClient("mongodb-atlas");
@@ -98,6 +119,10 @@ const worker: ExportedHandler<Bindings> = {
     const User = client.db("test").collection<Users>("users");
     const Profile = client.db("test").collection<Profile>("profiles");
     const RecallUser = client.db("test").collection<RecallUsers>("recallusers");
+
+    // if (req.method === "OPTIONS") {
+    //   return new Response("ok", { headers: corsHeaders });
+    // }
 
     // router.post("/api/users/findprofile/:id", async (req: any, res: any) => {
     //   // const col = await User.insertOne({ firstname: "sam@sam.com" });
@@ -113,23 +138,26 @@ const worker: ExportedHandler<Bindings> = {
       });
       delete user?.password;
       const body = JSON.stringify({ status: true, user });
-      const headers = { "Content-type": "application/json" };
+      const headers = {
+        ...corsHeaders,
+        "Content-type": "application/json",
+      };
       return new Response(body, { headers });
     });
 
     router.post("/login", async (req: any, res: any) => {
+      console.log("logging in =>");
       const content = await req.json();
       const user: any = await User.findOne(content);
       if (user) {
         return createResponse({ status: true, user });
       } else {
-        return createResponse({ message: "wrong email or password" });
+        return createResponse({ message: "Wrong email or password" });
       }
     });
 
     router.post("/signup", async (req: any, res: any) => {
       const content = await req.json();
-      console.log(content);
       // check for user
       const user = await User.findOne({
         email: content.email,
@@ -137,7 +165,7 @@ const worker: ExportedHandler<Bindings> = {
       if (user) {
         return createResponse({
           status: false,
-          message: "email already in use",
+          message: "Email already in use",
         });
       } else {
         const u = await User.insertOne(content);
@@ -145,12 +173,12 @@ const worker: ExportedHandler<Bindings> = {
       }
     });
 
-    router.post("/getRecalls", async (req: any, res: any) => {
+    router.get("/api/getRecalls", async (req: any, res: any) => {
       const recalls: any = await Profile.find({});
       return createResponse({ recalls });
     });
 
-    router.post("/api/users", async (req: any, res: any) => {
+    router.get("/api/users", async (req: any, res: any) => {
       const recalls: any = await Profile.find({});
       return createResponse({ recalls });
     });
@@ -279,17 +307,19 @@ const worker: ExportedHandler<Bindings> = {
     });
 
     // Create recall User
-    router.post("/recall", async (req: any, res: any) => {
+    router.post("/api/users/recall", async (req: any, res: any) => {
+      const content = await req.json();
       const newRecallUser = await RecallUser.insertOne({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        phone: req.body.phone,
-        zipcode: req.body.zipcode,
-        state: req.body.user_state,
-        profile_id: req.body.person,
-        address: req.body.address,
+        firstname: content.firstname,
+        lastname: content.lastname,
+        email: content.email,
+        phone: content.phone,
+        zipcode: content.zipcode,
+        state: content.user_state,
+        profile_id: content.person,
+        address: content.address,
       });
+      console.log(newRecallUser);
       if (newRecallUser) {
         return createResponse(newRecallUser);
       } else {
@@ -321,7 +351,7 @@ const worker: ExportedHandler<Bindings> = {
 
     router.post("/api/users/createprofile", async (req: any, res: any) => {
       const content = await req.json();
-
+      console.log("creating profile ==>");
       const newProfile = await Profile.insertOne({
         userId: content.userId,
         firstname: content.firstname,
@@ -381,24 +411,20 @@ const worker: ExportedHandler<Bindings> = {
       return createResponse(results);
     });
 
-    router.post("/api/users/findsigner/:query", async (req: any, res: any) => {
-      const query = req.params.query;
-      const content = await req.json();
+    router.get("/api/users/findsigner", async (req: any, res: any) => {
+      const profile_id = req.url.split("?id=")[1];
       var r = await RecallUser.find({
-        profile_id: query,
+        profile_id,
       });
-      if (r) {
-        return createResponse(r);
-      } else {
-        var _r = await RecallUser.find({
-          profile_id: content.profile_id,
-        });
-        if (_r) {
-          return createResponse(_r);
-        } else {
-          return createResponse({});
-        }
-      }
+      return createResponse(r);
+    });
+
+    router.get("/api/users/profile", async (req: any, res: any) => {
+      const profile_id = req.url.split("?id=")[1];
+      var r = await RecallUser.findOne({
+        profile_id,
+      });
+      return createResponse(r);
     });
 
     router.post(
@@ -407,34 +433,24 @@ const worker: ExportedHandler<Bindings> = {
         const query = req.params.query;
         const email = query.split("&")[0];
         const profileid = query.split("&")[1];
-        var r = await RecallUser.find({
+        var users = await RecallUser.find({
           email: email,
           profile_id: profileid,
         });
-        console.log("*****");
-        console.log(query);
-        console.log(r);
-        console.log("*****");
-
-        return createResponse({});
+        return createResponse({ users });
       }
     );
     router.post(
       "/api/users/findphonesigner/:query",
       async (req: any, res: any) => {
         const query = req.params.query;
-
         const phone = query.split("&")[0];
         const profileid = query.split("&")[1];
-        var r = await RecallUser.find({
+        var users = await RecallUser.find({
           phone: phone,
           profile_id: profileid,
         });
-        console.log("*****");
-        console.log(query);
-        console.log(r);
-        console.log("*****");
-        return createResponse({});
+        return createResponse({ users });
       }
     );
     router.get("*", () => new Response("Not found", { status: 404 }));
