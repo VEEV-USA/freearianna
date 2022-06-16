@@ -65,11 +65,10 @@ const AriannaMain = () => {
       <Container>
         <Space direction="vertical" size={32} style={{ width: "100%" }}>
           <Row gutter={[32, 32]}>
-            <Col lg={{ span: 17 }} span={24}>
+            <Col lg={{ span: 14 }} span={24}>
               <ActionFormCard style={{ backgroundColor: "white" }}>
                 <CardTitle style={{ marginBottom: 32 }}>
                   Ongoing Recalls
-                  {/* <img src="https://happywall-img-gallery.imgix.net/8533/usa_map_in_fun_colors_display.jpg"></img> */}
                   {usa && recalls && (
                     <USAMap
                       customize={statesCustomConfig()}
@@ -79,14 +78,13 @@ const AriannaMain = () => {
                 </CardTitle>
               </ActionFormCard>
             </Col>
-            <Col lg={{ span: 7 }} span={24}>
+            <Col lg={{ span: 10 }} span={24}>
               <ActionFormCard>
                 <CardTitle style={{ marginBottom: 32 }}>
-                  {/* <Link to='/profileeditor'> */}
                   <Link to="/create">Start Recall</Link>
                 </CardTitle>
 
-                <CardTitle style={{ marginBottom: 32 }}>
+                {/* <CardTitle style={{ marginBottom: 32 }}>
                   {userData.map((person, index) => (
                     <UserList key={index}>
                       <img
@@ -108,19 +106,16 @@ const AriannaMain = () => {
                           </P1>
                           <P1>Licence #: {person.license}</P1>
                           <P1>Case: {person.case_name}</P1>
-                          {/* <P1>
-                                                    {person.page_title}
-                                                </P1> */}
+                          <P1>{person.page_title}</P1>
                         </div>
                         <ActionContent>
                           {person.page_contents.slice(0, 200)}... ... ...
                         </ActionContent>
                       </div>
                       <div> </div>
-                      {/* <div style={{width:'*'}}><TakeActionForm person={person}/></div> */}
                     </UserList>
                   ))}
-                </CardTitle>
+                </CardTitle> */}
               </ActionFormCard>
             </Col>
           </Row>

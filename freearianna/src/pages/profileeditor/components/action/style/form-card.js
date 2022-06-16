@@ -2,7 +2,6 @@ import {Card,Select} from "antd";
 import styled from "styled-components";
 
 export const ActionFormCard = styled(Card)`
-  width:1024px;
   margin:auto;
   min-height: 100%;
   box-shadow: none;

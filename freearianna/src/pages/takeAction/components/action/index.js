@@ -43,7 +43,7 @@ const TakeActionContent = ({
                         </Space>
                     </Col>
                     {/* <Col lg={{span: 7}} span={24}>
-                        <TakeActionForm/>
+                        // <TakeActionForm/>
                     </Col> */}
                 </Row>
             </Container>

@@ -37,6 +37,7 @@ const TakeActionContent = () => {
             </Col>
             <Col lg={{ span: 4 }} span={24}>
               <h2>Submitted Recalls</h2>
+              <br></br>
               {recalls.map(r => {
                 return (
                   <div

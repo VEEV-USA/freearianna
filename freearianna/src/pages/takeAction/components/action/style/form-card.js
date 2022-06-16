@@ -2,7 +2,6 @@ import {Card} from "antd";
 import styled from "styled-components";
 
 const ActionFormCard = styled(Card)`
-  //min-height: 100%;
   box-shadow: none;
   border: none;
   background-color: #F7E3E4;

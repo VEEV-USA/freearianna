@@ -205,12 +205,12 @@ const TakeActionForm = ({
 
   return (
     <ActionFormCard>
-      <Space direction="vertical" size={100} style={{ width: "100%" }}>
+      <Space direction="vertical" size={12} style={{ width: "100%" }}>
         <div>
-          <h2>Recall Entry Form</h2>
+          <h2>Recall Submission Form</h2>
           <Form layout="vertical">
             <div>
-              <h2>Banner Text</h2>
+              <h2>Top Banner Text</h2>
               <textarea
                 name="page_title"
                 value={page_title}
@@ -408,7 +408,7 @@ const TakeActionForm = ({
                   setChecked(event.target.checked);
                 }}
               >
-                Receive mobile alerts from VEEV App on behalf of
+                Receive mobile alerts on behalf of
                 FreeArianna.org. Recurring messages. Msg & data rates may apply.
                 Text STOP to 668366 to stop receiving messages. Text HELP to
                 668366 for more information. &nbsp;<a>Privacy</a>

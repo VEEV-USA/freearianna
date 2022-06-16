@@ -121,9 +121,7 @@ const KidsCriminal1 = () => {
                 </Container>
             </Wrap1>
             <Container style={{marginTop: 21}}>
-                <Row
-                    gutter={[40, 40]}
-                >
+                <Row gutter={[40, 40]}>
                     {
                         data.map((dat, key) => (
                             <Col lg={6} md={12} sm={12} span={24} key={key}>

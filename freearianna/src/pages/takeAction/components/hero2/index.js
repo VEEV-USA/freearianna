@@ -8,10 +8,10 @@ const KidsHero = () => {
     return (
         <KidsHeroWrap>
             <Container>
+                <h4>Recall, Prosecute & Lockup</h4>
                 <SectionTitle>
-                    Criminals Covering Up Sexual Abuse of Arianna for Profit
+                    Corruput Elected Officials, Judges, DAs, School Boards Profiting by Destroying Kids & Families  
                 </SectionTitle>
-                <h4>Recall, Prosecute & Lockup Them Up</h4>
                 {/* <P1>
                     Text
                 </P1> */}

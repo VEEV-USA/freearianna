@@ -21,9 +21,6 @@ const TakeActionItem = ({person}) => {
                     objectFit: 'cover'
                 }}
             />
-            {/* <ItemContent>
-
-            </ItemContent> */}
             <div style={{width:'100%'}}>
                 <PersonName>
                     {person.full_name}
@@ -39,7 +36,8 @@ const TakeActionItem = ({person}) => {
                     <p>{person.page_contents.slice(0, 260)} ... ...</p>
                 </ActionContent>
             </div>
-            <div style={{width:'*'}}><TakeActionForm person={person}/></div>
+            <div style={{width:'*'}}></div>
+            <TakeActionForm person={person}/>
         </ActionItemWrap>
     );
 };
