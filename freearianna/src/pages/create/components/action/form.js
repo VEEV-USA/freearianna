@@ -141,7 +141,6 @@ const TakeActionForm = () => {
               </Item>
             </Form>
           </div>
-          <br />
         </Space>
       ) : (
         <div></div>

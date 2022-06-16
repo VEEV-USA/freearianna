@@ -69,8 +69,8 @@ const LayoutFooter = () => {
                                 </Button>
                             </Col>
                             <Col>
-                                <Button type='text' onClick={() => { navigate('/take-action') }}> 
-                                Take Action
+                                <Button type='text' onClick={() => { navigate('/recall') }}> 
+                                Recall
                                 </Button>
                             </Col>
                             <Col>
