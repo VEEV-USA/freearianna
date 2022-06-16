@@ -93,7 +93,8 @@ const TakeActionForm = ({ person, getUser }) => {
             htmlType="submit"
             loading={loading}
             onClick={() => {
-              navigate(`/recallnow/${person._id}/${person.full_name}`);
+              console.log("hey");
+              //navigate(`/recallnow/${person._id}/${person.full_name}`);
             }}
             //disabled={!checked}
           >

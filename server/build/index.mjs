@@ -7691,7 +7691,16 @@ var worker = {
       return createResponse({ recalls });
     });
     router.get("/profile/:userId", (req2, res) => {
-      Profile.findOne({ _id: req2.params.userId }).then((user2) => res.status(200).json(user2)).catch((err) => res.status(404).json({ error: "No user found by this id" }));
+      Profile.findOne({ _id: req2.params.userId }).then((user2) => {
+        console.log(user2);
+        return createResponse(user2);
+      }).catch((err) => res.status(404).json({ error: "No user found by this id" }));
+    });
+    router.post("/api/users/profile", async (req2, res) => {
+      console.log("find profile");
+      const content = await req2.json();
+      const p = await Profile.findOne({ _id: new ObjectId2(content.id) });
+      return createResponse(p);
     });
     router.post("/search", (req2, res) => {
       User2.find().then((users) => users.filter((user2) => user2.firstname.toLowerCase().indexOf(req2.body.query.toString().toLowerCase()) !== -1 || user2.lastname.toLowerCase().indexOf(req2.body.query.toString().toLowerCase()) !== -1 || user2.sex.toLowerCase().indexOf(req2.body.query.toString().toLowerCase()) !== -1 || user2.age.toString().indexOf(req2.body.query.toString()) !== -1)).then((users) => res.status(200).json(users)).catch((err) => res.status(404).json({ error: "No user found" }));
@@ -7724,7 +7733,6 @@ var worker = {
         profile_id: content.person,
         address: content.address
       });
-      console.log(newRecallUser);
       if (newRecallUser) {
         return createResponse(newRecallUser);
       } else {

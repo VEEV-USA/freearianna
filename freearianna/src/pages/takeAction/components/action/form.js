@@ -74,13 +74,10 @@ const TakeActionForm = ({ person, getUser }) => {
       });
   };
 
-  //    useEffect(()=>{
-  //     getUser(person)
-  //    })
   return (
     <ActionFormCard>
       {!success ? (
-        <Space direction="vertical" size={12} style={{ width: "100%" }}>
+        <Space direction="vertical" size={24} style={{ width: "100%" }}>
           <Progress
             percent={(profileUsers.length / person.signatures_Require) * 100}
             strokeWidth={20}
@@ -97,164 +94,19 @@ const TakeActionForm = ({ person, getUser }) => {
             htmlType="submit"
             loading={loading}
             onClick={() => {
-              navigate(`/recallnow/${person._id}/${person.full_name}`);
+              navigate("/recallnow/" + person._id + "/" + person.full_name);
             }}
 
-<<<<<<< HEAD
-//    useEffect(()=>{
-//     getUser(person)
-//    })
-    return (
-        <ActionFormCard>
-            {
-                !success ? (
-                    <Space
-                        direction='vertical'
-                        size={24}
-                        style={{width: '100%'}}
-                    >
-                        <Progress
-                            percent={profileUsers.length/person.signatures_Require*100}
-                            strokeWidth={20}
-                            showInfo={false}
-                            strokeColor='#CE3DAF'
-                        />
-                        <p style={{textAlign: 'center'}}>{profileUsers.length} of {person.signatures_Require} signatures</p>
-                        <Button
-                            
-                            type='primary'
-                            size='large'
-                            block
-                            htmlType='submit'
-                            loading={loading}
-                            onClick={()=>{navigate('/recallnow/'+username,{ state: person })}} 
-                            
-                            //disabled={!checked}
-                        >
-                            <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>
-                            
-                        </Button>
-                    </Space>
-                ) :(
-                    <div>
-                        
-                    </div>
-                )
-            }
-        </ActionFormCard>
-    );
-=======
             //disabled={!checked}
           >
             <p style={{ textAlign: "center", color: "black" }}>Sign Petition</p>
           </Button>
-          {/* <div>
-                            <h2>Sign This Petition</h2>
-                            <Form
-                                layout='vertical'
-                                onFinish={finishHandler}
-                                form={form}
-                            >
-                                <Item
-                                    name='firstName'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Firstname is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' placeholder='First Name'/>
-                                </Item>
-                                <Item
-                                    name='lastName'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Lastname is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' placeholder='Last Name'/>
-                                </Item>
-                                <Item
-                                    name='email'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Email is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' placeholder='Email'/>
-                                </Item>
-                                <Item
-                                    name='zipcode'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Zipcode is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' placeholder='Zip Code'/>
-                                </Item>
-                                <Item
-                                    name='phone'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Phone number is required'
-                                        }
-                                    ]}
-                                >
-                                    <Input size='large' placeholder='Phone'/>
-                                </Item>
-                                <Item>
-                                    <Checkbox
-                                        onChange={(event) => {setChecked(event.target.checked)}}
-                                    >
-                                        Receive mobile alerts from VEEV App on behalf of FreeArianna.org. Recurring messages.
-                                        Msg & data rates may apply. Text STOP to 668366 to stop receiving messages. Text HELP to
-                                        668366 for more information.
-                                        &nbsp;<a>Privacy</a>
-                                    </Checkbox>
-                                </Item>
-                                <Item>
-                                    <Button
-                                        type='primary'
-                                        size='large'
-                                        block
-                                        htmlType='submit'
-                                        loading={loading}
-                                        disabled={!checked}
-                                    >
-                                        Sign
-                                    </Button>
-                                </Item>
-                            </Form>
-                        </div> */}
         </Space>
       ) : (
-        <div>
-          {/* <SectionTitle>
-                            <b>Thank You</b>
-                        </SectionTitle> */}
-          {/* <h3>
-                            For signing my petition, I will send you periodic updates.
-                        </h3> */}
-          {/* <LogoText style={{color: '#CE3DAF', marginBottom: 24}}>
-                            Love Arianna
-                        </LogoText> */}
-          {/* <img src={Banner1} alt="" style={{marginBottom: 32}}/>
-                        <Button type='primary' size='large' onClick={()=>{navigate('/donate')}}>
-                            DONATE
-                        </Button> */}
-        </div>
+        <div></div>
       )}
     </ActionFormCard>
   );
->>>>>>> 633b57dfa7d02b4da196bf1df559e5fde10d31e7
 };
 
 export default TakeActionForm;

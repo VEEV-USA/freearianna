@@ -191,10 +191,20 @@ const worker: ExportedHandler<Bindings> = {
 
     router.get("/profile/:userId", (req: any, res: any) => {
       Profile.findOne({ _id: req.params.userId })
-        .then(user => res.status(200).json(user))
+        .then(user => {
+          console.log(user);
+          return createResponse(user);
+        })
         .catch(err =>
           res.status(404).json({ error: "No user found by this id" })
         );
+    });
+
+    router.post("/api/users/profile", async (req: any, res: any) => {
+      console.log("find profile");
+      const content = await req.json();
+      const p = await Profile.findOne({ _id: new ObjectId(content.id) });
+      return createResponse(p);
     });
 
     // search by Fname, Lname, Sex, and Age -- { query: input }
@@ -325,7 +335,7 @@ const worker: ExportedHandler<Bindings> = {
         profile_id: content.person,
         address: content.address,
       });
-      console.log(newRecallUser);
+
       if (newRecallUser) {
         return createResponse(newRecallUser);
       } else {
