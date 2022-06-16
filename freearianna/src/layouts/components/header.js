@@ -8,6 +8,7 @@ import HamburgerButton from "../../components/button/hamburger";
 import { MenuOutlined } from "@ant-design/icons";
 import axios from "axios";
 import config from "../../config";
+import Swal from "sweetalert2";
 
 const { useBreakpoint } = Grid;
 const { Header } = Layout;
@@ -16,6 +17,7 @@ const LayoutHeader = () => {
   const [visible, setVisible] = useState(false);
   const [scroll, setScroll] = useState(0);
   const [user, setUser] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const breakpoints = useBreakpoint();
   const navigate = useNavigate();
   const location = useLocation();
@@ -170,11 +172,18 @@ const LayoutHeader = () => {
                         cursor: "pointer",
                       }}
                       onClick={() => {
-                        var c = window.confirm("logout?");
-                        if (c) {
-                          window.localStorage.removeItem("@ari_id");
-                          window.location.href = "/";
-                        }
+                        Swal.fire({
+                          title: "Do you want to logout?",
+                          showDenyButton: false,
+                          showCancelButton: true,
+                          confirmButtonText: "Yes",
+                        }).then(result => {
+                          /* Read more about isConfirmed, isDenied below */
+                          if (result.isConfirmed) {
+                            window.localStorage.removeItem("@ari_id");
+                            window.location.href = "/";
+                          }
+                        });
                       }}
                     >
                       Logout

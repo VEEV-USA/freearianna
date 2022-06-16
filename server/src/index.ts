@@ -145,6 +145,12 @@ const worker: ExportedHandler<Bindings> = {
       return new Response(body, { headers });
     });
 
+    router.post("/api/users/getRecallsByUser", async (req: any, res: any) => {
+      const content = await req.json();
+      const recalls = await Profile.find({ userId: content.userId });
+      return createResponse({ recalls });
+    });
+
     router.post("/login", async (req: any, res: any) => {
       console.log("logging in =>");
       const content = await req.json();

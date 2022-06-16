@@ -30,6 +30,7 @@
     "save-dev": "^0.0.1-security",
     "stream": "^0.0.2",
     "styled-components": "^5.3.3",
+    "sweetalert2": "^11.4.17",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
