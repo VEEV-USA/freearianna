@@ -2,9 +2,8 @@ import React from 'react';
 import HomeMineWrap from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import SectionTitle from "../../../../components/heading/section";
-
 import Image1 from '../../../../assets/img/dayabaranpoison.png'
-// import Image2 from '../../../../assets/img/dayabaranabuse.png'
+import Image2 from '../../../../assets/img/dayabaranabuse.png'
 
 const HomeMine = () => {
     return (
@@ -17,7 +16,7 @@ const HomeMine = () => {
                 <SectionTitle>
                     I Was an Abused Spouse
                 </SectionTitle>
-                {/* <img src={Image2} alt=""/> */}
+                <img src={Image2} alt=""/>
             </Container>
         </HomeMineWrap>
     );
