@@ -3,7 +3,7 @@
   "name": "test-realm",
   "scripts": {
     "start": "npx wrangler@beta dev --local src/index.ts",
-    "build-server": "worktop build src/index.ts",
+    "build": "worktop build src/index.ts",
     "types": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
