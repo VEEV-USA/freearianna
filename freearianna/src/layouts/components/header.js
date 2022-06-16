@@ -158,9 +158,9 @@ const LayoutHeader = () => {
                     <Button 
                       type="link"
                       onClick={() => {
-                        navigate("/profileeditor");
+                        navigate("/dashboard");
                       }}
-                      className={location.pathname === "/profileeditor" && "active"}
+                      className={location.pathname === "/dashboard" && "active"}
                     >
                       MY ACCOUNT
                     </Button>
@@ -254,9 +254,6 @@ const LayoutHeader = () => {
                                                 TAKE ACTION
                                             </Menu.Item> */}
                     <Menu.Item key="recall">RECALL</Menu.Item>
-                    {/* <Menu.Item key='profileeditor'>
-                                                PROFILEEDITOR
-                                            </Menu.Item> */}
                     <Menu.Item key="donate" className="btn">
                       DONATE
                     </Menu.Item>
