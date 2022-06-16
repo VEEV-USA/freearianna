@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 const { Item, useForm } = Form;
 
 const TakeActionForm = ({ person, getUser }) => {
+  console.log("working");
   const navigate = useNavigate();
   const person_id = person._id;
   const username =
