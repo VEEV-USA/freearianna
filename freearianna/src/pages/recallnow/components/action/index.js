@@ -25,10 +25,10 @@ const data = [
 ];
 
 const TakeActionContent = ({ person }) => {
-  const pdf1 = person.pdf1;
-  const pdf2 = person.pdf2;
-  const pdf3 = person.pdf3;
-  const pdf4 = person.pdf4;
+  const pdf1 = person && person.pdf1;
+  const pdf2 = person && person.pdf2;
+  const pdf3 = person && person.pdf3;
+  const pdf4 = person && person.pdf4;
   const open_data_url_window = base64Data => {
     var iframe =
       "<iframe width='100%' height='100%' src='" + base64Data + "'></iframe>";
@@ -37,7 +37,6 @@ const TakeActionContent = ({ person }) => {
     x.document.write(iframe);
     x.document.close();
   };
-
   return (
     <Fragment>
       <Wrap1>

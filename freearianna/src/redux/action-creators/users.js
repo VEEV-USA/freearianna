@@ -105,7 +105,9 @@ export const createProfile = (userData, navigate) => dispatch => {
       const username =
         res.data.content.full_name.split(" ")[0] +
         res.data.content.full_name.split(" ")[1];
-      navigate("/recallnow/" + username, { state: res.data.content });
+      navigate(
+        `/recallnow/${res.data.content._id}/${res.data.content.full_name}`
+      );
     })
     .catch(err => dispatch(createProfileError(err)));
 };
