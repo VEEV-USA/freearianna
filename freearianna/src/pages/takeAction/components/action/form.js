@@ -100,50 +100,6 @@ const TakeActionForm = ({ person, getUser }) => {
               navigate(`/recallnow/${person._id}/${person.full_name}`);
             }}
 
-<<<<<<< HEAD
-//    useEffect(()=>{
-//     getUser(person)
-//    })
-    return (
-        <ActionFormCard>
-            {
-                !success ? (
-                    <Space
-                        direction='vertical'
-                        size={24}
-                        style={{width: '100%'}}
-                    >
-                        <Progress
-                            percent={profileUsers.length/person.signatures_Require*100}
-                            strokeWidth={20}
-                            showInfo={false}
-                            strokeColor='#CE3DAF'
-                        />
-                        <p style={{textAlign: 'center'}}>{profileUsers.length} of {person.signatures_Require} signatures</p>
-                        <Button
-                            
-                            type='primary'
-                            size='large'
-                            block
-                            htmlType='submit'
-                            loading={loading}
-                            onClick={()=>{navigate('/recallnow/'+username,{ state: person })}} 
-                            
-                            //disabled={!checked}
-                        >
-                            <p style={{textAlign: 'center', color: 'black'}}>Sign Petition</p>
-                            
-                        </Button>
-                    </Space>
-                ) :(
-                    <div>
-                        
-                    </div>
-                )
-            }
-        </ActionFormCard>
-    );
-=======
             //disabled={!checked}
           >
             <p style={{ textAlign: "center", color: "black" }}>Sign Petition</p>
@@ -254,7 +210,6 @@ const TakeActionForm = ({ person, getUser }) => {
       )}
     </ActionFormCard>
   );
->>>>>>> 633b57dfa7d02b4da196bf1df559e5fde10d31e7
 };
 
 export default TakeActionForm;
