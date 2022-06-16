@@ -153,11 +153,12 @@ const LayoutHeader = () => {
                 </Col>
                 {user && (
                   <Col>
-                    <Button
-                      type="primary"
+                    <Button 
+                      type="link"
                       onClick={() => {
                         navigate("/profileeditor");
                       }}
+                      className={location.pathname === "/profileeditor" && "active"}
                     >
                       MY ACCOUNT
                     </Button>
@@ -165,7 +166,8 @@ const LayoutHeader = () => {
                 )}
                 <Col>
                   {user ? (
-                    <h1
+                    <Button 
+                    type="link"
                       style={{
                         cursor: "pointer",
                       }}
@@ -178,7 +180,7 @@ const LayoutHeader = () => {
                       }}
                     >
                       Logout
-                    </h1>
+                      </Button>
                   ) : (
                     <Button
                       type="link"
