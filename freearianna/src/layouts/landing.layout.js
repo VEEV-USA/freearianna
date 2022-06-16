@@ -33,7 +33,7 @@ const LandingLayout = () => {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/kids" element={<KidsPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/recallnow/:username" element={<RecallnowPage />} />
+          <Route path="/recallnow/:id/:username" element={<RecallnowPage />} />
           <Route path="/recall" element={<RecallPage />} />
           <Route path="/createaccount" element={<CreateAccountPage />} />
           <Route path="/create" element={<CreatePage />} />

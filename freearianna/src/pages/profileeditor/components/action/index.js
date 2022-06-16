@@ -41,12 +41,11 @@ const TakeActionContent = () => {
                 return (
                   <div
                     key={r._id}
-                    to={`/recallnow/${r.full_name}undefined`}
                     style={{
                       cursor: "pointer",
                     }}
                     onClick={() => {
-                      navigate("/recallnow/" + r.full_name, { state: r });
+                      navigate(`/recallnow/${r._id}/${r.full_name}`);
                     }}
                   >
                     <P1>{r.full_name}</P1>
