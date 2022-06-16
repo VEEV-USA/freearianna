@@ -78,16 +78,16 @@ const LayoutHeader = () => {
             {breakpoints.lg ? (
               <Row gutter={20}>
                 {/* <Col>
-                                        <NavHashLink
-                                            to="/#arianna"
-                                        >
-                                            <Button
-                                                type='link'
-                                                className={location.hash === '#arianna' && 'active'}>
-                                                ARIANNA'S STORY
-                                            </Button>
-                                        </NavHashLink>
-                                    </Col> */}
+                    <NavHashLink
+                        to="/#arianna"
+                    >
+                        <Button
+                            type='link'
+                            className={location.hash === '#arianna' && 'active'}>
+                            ARIANNA'S STORY
+                        </Button>
+                    </NavHashLink>
+                </Col> */}
                 <Col>
                   <Button
                     type="link"
@@ -111,27 +111,27 @@ const LayoutHeader = () => {
                   </Button>
                 </Col>
                 {/* <Col>
-                                        <Button
-                                            type='link'
-                                            onClick={() => {
-                                                navigate('/fight')
-                                            }}
-                                            className={location.pathname === '/fight' && 'active'}
-                                        >
-                                            THE FIGHT
-                                        </Button>
-                                    </Col> */}
+                    <Button
+                        type='link'
+                        onClick={() => {
+                            navigate('/fight')
+                        }}
+                        className={location.pathname === '/fight' && 'active'}
+                    >
+                        THE FIGHT
+                    </Button>
+                </Col> */}
                 {/* <Col>
-                                        <Button
-                                            type='link'
-                                            onClick={() => {
-                                                navigate('/take-action')
-                                            }}
-                                            className={location.pathname === '/take-action' && 'active'}
-                                        >
-                                            TAKE ACTION
-                                        </Button>
-                                    </Col> */}
+                    <Button
+                        type='link'
+                        onClick={() => {
+                            navigate('/take-action')
+                        }}
+                        className={location.pathname === '/take-action' && 'active'}
+                    >
+                        TAKE ACTION
+                    </Button>
+                </Col> */}
                 <Col>
                   <Button
                     type="link"
