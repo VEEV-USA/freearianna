@@ -9,20 +9,20 @@ import TakeActionForm from "./form";
 import CardTitle from "../../../../components/heading/card";
 import { getProfile } from "../../../../redux/action-creators/users";
 
-const data = [
-  {
-    title: "Rape Charges",
-  },
-  {
-    title: "Extortion Charges",
-  },
-  {
-    title: "Bribery Charges",
-  },
-  {
-    title: "Sexual Abuse",
-  },
-];
+// const data = [
+//   {
+//     title: "Rape Charges",
+//   },
+//   {
+//     title: "Extortion Charges",
+//   },
+//   {
+//     title: "Bribery Charges",
+//   },
+//   {
+//     title: "Sexual Abuse",
+//   },
+// ];
 
 const TakeActionContent = ({ person }) => {
   const pdf1 = person && person.pdf1;
@@ -47,12 +47,12 @@ const TakeActionContent = ({ person }) => {
                 <Avatar src={person.user_avatar} size={200} />
                 <div>
                   <h3>{person.full_name}</h3>
-                  <p>
+                  <P1>
                     {person.state}&nbsp;&nbsp;&nbsp;{person.county}
                     &nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;
                     {person.case_name}
-                  </p>
-                  <P1>{person.page_title}</P1>
+                  </P1>
+                  {/* <P1>{person.page_title}</P1> */}
                 </div>
               </Media>
               <P1 style={{ paddingTop: "20px" }}>{person.page_contents}</P1>

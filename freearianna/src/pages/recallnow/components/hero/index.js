@@ -48,6 +48,7 @@ const RecallHero = ({ person, getProfile }) => {
             {userData &&
               userData.page_title &&
               userData.page_title.slice(0, 200)}
+              {person.page_title}
           </RecallHeroText>
         </Container>
       </RecallHeroWrap>

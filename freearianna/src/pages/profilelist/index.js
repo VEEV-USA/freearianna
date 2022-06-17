@@ -3,7 +3,7 @@ import TakeActionContent from "../profileview/components/action";
 import TakeActionHero2 from "../profileview/components/hero2";
 import { useLocation } from "react-router-dom";
 
-const ProfileList = () => {
+const RecallbyState = () => {
   const location = useLocation();
   const person = location.state;
   return (
@@ -14,4 +14,4 @@ const ProfileList = () => {
   );
 };
 
-export default ProfileList;
+export default RecallbyState;

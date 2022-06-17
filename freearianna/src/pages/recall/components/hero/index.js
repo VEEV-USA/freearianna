@@ -9,9 +9,6 @@ const KidsHero = () => {
     <KidsHeroWrap>
       <Container>
         <h4>Start A Recall</h4>
-        {/* <SectionTitle>
-                It is Your duty to Recall corrupt frauds, profiting by destroying lives under the pretense of serving the public. 
-                </SectionTitle> */}
         <h5>
           It's your duty to recall corrupt frauds profiting by destroying lives
           under the pretense of serving them.
