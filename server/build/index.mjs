@@ -7748,18 +7748,13 @@ var worker = {
       console.log("creating profile ==>");
       const newProfile = await Profile.insertOne({
         userId: content.userId,
-        firstname: content.firstname,
-        lastname: content.lastname,
         full_name: content.full_name,
         license: content.license,
         signatures_Require: content.signatures_Require,
         current_sign: 0,
         case_name: content.case_name,
-        email: content.email,
-        phone: content.phone,
-        zipcode: content.zipcode,
         state: content.state,
-        country: content.country,
+        county: content.county,
         user_avatar: content.user_avatar,
         page_title: content.page_title,
         page_contents: content.page_contents,
@@ -7770,8 +7765,7 @@ var worker = {
         pdf1_title: content.pdf1_title,
         pdf2_title: content.pdf2_title,
         pdf3_title: content.pdf3_title,
-        pdf4_title: content.pdf4_title,
-        address: content.address
+        pdf4_title: content.pdf4_title
       });
       if (newProfile) {
         return createResponse({ content });

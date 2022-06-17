@@ -55,29 +55,29 @@ const TakeActionForm = ({
   const [pdfFile, setPdfFile] = useState(null);
   const [pdfFileError, setPdfFileError] = useState("");
   const [userData, setUserData] = useState({
-    firstname: "",
-    lastname: "",
+    //firstname: "",
+    //lastname: "",
     full_name: "",
     license: "",
     signatures_Require: "",
     case_name: "",
-    email: "",
-    zipcode: 0,
-    address: "",
-    phone: 0,
+    //email: "",
+    //zipcode: 0,
+    //address: "",
+    //phone: 0,
     state: "",
-    country: "",
+    county: "",
     user_avatar: "",
     page_title: "",
     page_contents: "",
     pdf1: "",
+    pdf2: "",
+    pdf3: "",
+    pdf4: "",
     pdf1_title: "",
     pdf2_title: "",
     pdf3_title: "",
     pdf4_title: "",
-    pdf2: "",
-    pdf3: "",
-    pdf4: "",
   });
 
   const handleCancel = () => setPreviewVisible(false);
@@ -102,18 +102,18 @@ const TakeActionForm = ({
   };
 
   const {
-    firstname,
-    lastname,
+    //firstname,
+    //lastname,
     full_name,
-    email,
+    //email,
     case_name,
     license,
-    zipcode,
-    address,
+    //zipcode,
+    //address,
     signatures_Require,
-    phone,
+    //phone,
     state,
-    country,
+    county,
     user_avatar,
     page_title,
     page_contents,
@@ -132,29 +132,29 @@ const TakeActionForm = ({
       createProfile(
         {
           userId: window.localStorage.getItem("@ari_id"),
-          firstname,
-          lastname,
+          //firstname,
+          //lastname,
           full_name,
           license,
           signatures_Require,
           case_name,
-          email,
-          address,
-          zipcode,
-          phone,
+          //email,
+          //address,
+          //zipcode,
+          //phone,
           state,
-          country,
+          county,
           user_avatar,
           page_title,
           page_contents,
-          pdf1_title,
-          pdf2_title,
-          pdf3_title,
-          pdf4_title,
           pdf1,
           pdf2,
           pdf3,
           pdf4,
+          pdf1_title,
+          pdf2_title,
+          pdf3_title,
+          pdf4_title,
         },
         navigate
       )
@@ -244,7 +244,7 @@ const TakeActionForm = ({
                 />
               </Modal>
               <Item
-                name="country"
+                name="county"
                 rules={[
                   {
                     required: true,
@@ -254,10 +254,10 @@ const TakeActionForm = ({
               >
                 <Input
                   size="large"
-                  name="country"
-                  value={country}
+                  name="county"
+                  value={county}
                   onChange={e => handleChange(e)}
-                  placeholder="Country"
+                  placeholder="County"
                 />
               </Item>
               {/* <Item

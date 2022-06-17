@@ -43,18 +43,18 @@ interface Users extends Document {
 }
 interface Profile extends Document {
   userId: string;
-  firstname: string;
-  lastname: string;
+  //firstname: string;
+  //lastname: string;
   full_name: string;
   license: string;
   signatures_Require: string;
   current_sign: number;
   case_name: string;
-  email: string;
-  phone: string;
-  zipcode: string;
+  //email: string;
+  //phone: string;
+  //zipcode: string;
   state: string;
-  country: string;
+  county: string;
   user_avatar: string;
   page_title: string;
   page_contents: string;
@@ -66,7 +66,7 @@ interface Profile extends Document {
   pdf2_title: string;
   pdf3_title: string;
   pdf4_title: string;
-  address: string;
+  //address: string;
 }
 
 interface RecallUsers extends Document {
@@ -370,18 +370,18 @@ const worker: ExportedHandler<Bindings> = {
       console.log("creating profile ==>");
       const newProfile = await Profile.insertOne({
         userId: content.userId,
-        firstname: content.firstname,
-        lastname: content.lastname,
+        // firstname: content.firstname,
+        // lastname: content.lastname,
         full_name: content.full_name,
         license: content.license,
         signatures_Require: content.signatures_Require,
         current_sign: 0,
         case_name: content.case_name,
-        email: content.email,
-        phone: content.phone,
-        zipcode: content.zipcode,
+        // email: content.email,
+        // phone: content.phone,
+        // zipcode: content.zipcode,
         state: content.state,
-        country: content.country,
+        county: content.county,
         user_avatar: content.user_avatar,
         page_title: content.page_title,
         page_contents: content.page_contents,
@@ -393,7 +393,7 @@ const worker: ExportedHandler<Bindings> = {
         pdf2_title: content.pdf2_title,
         pdf3_title: content.pdf3_title,
         pdf4_title: content.pdf4_title,
-        address: content.address,
+        // address: content.address
       });
       if (newProfile) {
         return createResponse({ content });
