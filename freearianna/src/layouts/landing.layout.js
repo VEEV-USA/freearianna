@@ -13,12 +13,10 @@ import DonatePage from "../pages/donate";
 import EventsPage from "../pages/events";
 import KidsPage from "../pages/kids";
 import RecallPage from "../pages/recall";
-// import RecallsPage from "../pages/recalls";
 import RecallnowPage from "../pages/recallnow";
 import TakeActionPage from "../pages/takeAction";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import CircleButton from "../components/button/circle";
-// import ProfileEditor from "../pages/profileeditor";
 import Profilelist from "../pages/profilelist";
 
 const { Content } = Layout;
@@ -39,10 +37,8 @@ const LandingLayout = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/recall" element={<RecallPage />} />
-          {/* <Route path="/recalls" element={<RecallsPage />} /> */}
           <Route path="/recallnow/:id/:username" element={<RecallnowPage />} />
           <Route path="/take-action" element={<TakeActionPage />} />
-          {/* <Route path="/profileeditor" element={<ProfileEditor />} /> */}
           <Route path="/profilelist/:address" element={<Profilelist />} />
         </Routes>
       </Content>

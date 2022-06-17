@@ -23,21 +23,21 @@ const data = [
             'Rape charges',
         ]
     }, {
-        cover: `pdf/bjfadem1.pdf`,
+        cover: `pdf/nathalieferro2.pdf`,
         pdf: `${window.location.origin}/pdf/nathalieferro2.pdf`,
         title: 'Extortion Charges',
         items: [
             'test',
         ]
     }, {
-        cover: `pdf/bjfadem1.pdf`,
+        cover: `pdf/nathalieferro1.pdf`,
         pdf: `${window.location.origin}/pdf/nathalieferro1.pdf`,
         title: 'Bribery Charges',
         items: [
             'test',
         ]
     }, {
-        cover: `pdf/bjfadem1.pdf`,
+        cover: `pdf/reshmakumar-fraud.pdf`,
         pdf: `${window.location.origin}/pdf/reshmakumar-fraud.pdf`,
         title: 'Sexual Abuse',
         items: [

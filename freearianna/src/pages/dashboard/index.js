@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import RecallContent from "./components/action";
 
-export const ProfileEditor = () => {
+export const Dashboard = () => {
   return (
     <Fragment>
       <RecallContent />
@@ -9,4 +9,4 @@ export const ProfileEditor = () => {
   );
 };
 
-export default ProfileEditor;
+export default Dashboard;

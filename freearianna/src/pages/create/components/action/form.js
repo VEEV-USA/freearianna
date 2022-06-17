@@ -20,7 +20,7 @@ const TakeActionForm = () => {
     async function checkLogin() {
       const id = window.localStorage.getItem("@ari_id");
       if (id) {
-        navigate("/profileeditor");
+        navigate("/dashboard");
       }
     }
     checkLogin();
