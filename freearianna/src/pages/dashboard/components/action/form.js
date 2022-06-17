@@ -275,7 +275,7 @@ const TakeActionForm = ({
                 name="user_state"
                 style={{ width: "200px", height: "44px" }}
                 onSelect={(value, event) => handleOnChange(value, event)}
-                placeholder="Please select a State"
+                placeholder="State"
               >
                 {addressData.map((data, index) => (
                   <Option value={data.name} name="user_state" key={index}>

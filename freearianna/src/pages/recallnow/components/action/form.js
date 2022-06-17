@@ -255,7 +255,7 @@ const TakeActionForm = ({
                 name="user_state"
                 style={{ width: "100%" }}
                 onSelect={(value, event) => handleOnChange(value, event)}
-                placeholder="Please select a State"
+                placeholder="State"
               >
                 {addressData.map((data, index) => (
                   <Option value={data.name} name="user_state" key={index}>
@@ -269,8 +269,7 @@ const TakeActionForm = ({
                     setChecked(event.target.checked);
                   }}
                 >
-                  Receive mobile alerts from VEEV App on behalf of
-                  FreeArianna.org. Recurring messages. Msg & data rates may
+                  Receive mobile alerts from FreeArianna.org. Recurring messages. Msg & data rates may
                   apply. Text STOP to 668366 to stop receiving messages. Text
                   HELP to 668366 for more information. &nbsp;<a>Privacy</a>
                 </Checkbox>
