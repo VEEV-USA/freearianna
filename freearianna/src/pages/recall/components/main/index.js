@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  AriannaMainWrap,
-  UserList,
-  PersonName,
-  PersonFullName,
-  LicenseString,
-  ActionContent,
-} from "./style/wrap";
+import { AriannaMainWrap, UserList, PersonName, PersonFullName, LicenseString, ActionContent } from "./style/wrap";
 import Container from "../../../../components/paper/container";
 import { Card, Col, Row, Space } from "antd";
 import CardTitle from "../../../../components/heading/card";
@@ -116,6 +109,7 @@ const AriannaMain = () => {
                     </UserList>
                   ))}
                 </CardTitle> */}
+
               </ActionFormCard>
             </Col>
           </Row>

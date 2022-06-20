@@ -20,7 +20,7 @@ const TakeActionForm = () => {
     async function checkLogin() {
       const id = window.localStorage.getItem("@ari_id");
       if (id) {
-        navigate("/profileeditor");
+        navigate("/dashboard");
       }
     }
     checkLogin();
@@ -55,7 +55,7 @@ const TakeActionForm = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Firstname is required",
+                    message: "First name is required",
                   },
                 ]}
               >
@@ -66,22 +66,11 @@ const TakeActionForm = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Lastname is required",
+                    message: "Last name is required",
                   },
                 ]}
               >
                 <Input size="large" placeholder="Last Name" />
-              </Item>
-              <Item
-                name="email"
-                rules={[
-                  {
-                    required: true,
-                    message: "Email is required",
-                  },
-                ]}
-              >
-                <Input size="large" placeholder="Email" />
               </Item>
               {error && (
                 <p
@@ -104,7 +93,18 @@ const TakeActionForm = () => {
                   },
                 ]}
               >
-                <Input size="large" placeholder="Phone" />
+                <Input size="large" maxLength={10} type="number" placeholder="Phone" />
+              </Item>
+              <Item
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: "Email is required",
+                  },
+                ]}
+              >
+                <Input size="large" placeholder="Email" />
               </Item>
               <Item
                 name="password"
