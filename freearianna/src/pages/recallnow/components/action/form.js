@@ -189,24 +189,6 @@ const TakeActionForm = ({
                   placeholder="Email"
                 />
               </Item>
-              <Item
-                name="zipcode"
-                rules={[
-                  {
-                    required: true,
-                    message: "Zipcode is required",
-                  },
-                ]}
-              >
-                <InputNumber
-                  size="large"
-                  name="zipcode"
-                  style={{ width: "100%", height: 44 }}
-                  value={zipcode}
-                  onChange={e => zipValue(e)}
-                  placeholder="Zip Code"
-                />
-              </Item>
               {phoneStatue && (
                 <p style={{ color: "red" }}>
                   *This phone number is already signed
@@ -225,6 +207,7 @@ const TakeActionForm = ({
                   size="large"
                   maxLength={10}
                   style={{ width: "100%", height: 44 }}
+                  type="number"
                   name="phone"
                   value={phone}
                   onChange={e => phoneValue(e)}
@@ -248,21 +231,42 @@ const TakeActionForm = ({
                   placeholder="Address"
                 />
               </Item>
+              <Item>
               {!userData.user_state && (
                 <p style={{ color: "red" }}>*Please select a State</p>
               )}
-              <AntSelect
-                name="user_state"
-                style={{ width: "100%" }}
-                onSelect={(value, event) => handleOnChange(value, event)}
-                placeholder="State"
+                <AntSelect
+                  name="user_state"
+                  style={{ width: "100%" }}
+                  onSelect={(value, event) => handleOnChange(value, event)}
+                  placeholder="State"
+                >
+                  {addressData.map((data, index) => (
+                    <Option value={data.name} name="user_state" key={index}>
+                      {data.name}
+                    </Option>
+                  ))}
+                </AntSelect>
+              </Item>
+              <Item
+                name="zipcode"
+                rules={[
+                  {
+                    required: true,
+                    message: "Zipcode is required",
+                  },
+                ]}
               >
-                {addressData.map((data, index) => (
-                  <Option value={data.name} name="user_state" key={index}>
-                    {data.name}
-                  </Option>
-                ))}
-              </AntSelect>
+                <InputNumber
+                  size="large"
+                  name="zipcode"
+                  type="number"
+                  style={{ width: "100%", height: 44 }}
+                  value={zipcode}
+                  onChange={e => zipValue(e)}
+                  placeholder="Zip Code"
+                />
+              </Item>
               <Item>
                 <Checkbox
                   onChange={event => {
