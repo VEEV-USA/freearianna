@@ -115,8 +115,7 @@ const KidsCriminal1 = () => {
                         2) invesitgate Cynthia Lie, BJ Fadem, Nathalie Ferro Scott Reno, Kevin Boileau, Joe Perez,
                         Katrina Ohde, Reshma Kumar for false prosectution, coverup sexual abuse of a minor using
                         domestic violence laws intented to protect real victims not shield pedophiles and profit from
-                        it, cover up
-                        attempted murder, false billing, child trafficking using the courts.
+                        it, cover up attempted murder, false billing, child trafficking using the courts.
                     </P1>
                 </Container>
             </Wrap1>
