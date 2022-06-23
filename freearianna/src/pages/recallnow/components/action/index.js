@@ -48,7 +48,7 @@ const TakeActionContent = ({ person }) => {
                 <div>
                   <h3>{person.full_name}</h3>
                   <P1>
-                    {person.state}&nbsp;&nbsp;&nbsp;{person.country}
+                    {person.state}&nbsp;&nbsp;&nbsp;{person.county}
                     &nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;
                     {person.case_name}
                   </P1>
