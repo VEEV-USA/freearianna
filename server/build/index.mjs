@@ -7754,7 +7754,7 @@ var worker = {
         current_sign: 0,
         case_name: content.case_name,
         state: content.state,
-        county: content.county,
+        country: content.country,
         user_avatar: content.user_avatar,
         page_title: content.page_title,
         page_contents: content.page_contents,

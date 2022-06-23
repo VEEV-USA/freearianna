@@ -28,7 +28,7 @@ const TakeActionItem = ({person}) => {
                 <Space>
                    
                     <LicenseString>
-                    {person.state}&nbsp;&nbsp;&nbsp;{person.county}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;{person.case_name}
+                    {person.state}&nbsp;&nbsp;&nbsp;{person.country}&nbsp;&nbsp;&nbsp;{person.license}&nbsp;&nbsp;{person.case_name}
 
                     </LicenseString>
                 </Space>

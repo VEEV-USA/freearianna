@@ -3978,7 +3978,7 @@ const HomeTable = () => {
                             </div>
                         </div>
                         <div>
-                            <div>County
+                            <div>country
                                 of Santa Clara,
                             </div>
                         </div>
@@ -3995,7 +3995,7 @@ const HomeTable = () => {
                             </div>
                         </div>
                         <div>
-                            <div>County
+                            <div>country
                                 of Santa Clara,
                             </div>
                         </div>
@@ -4096,7 +4096,7 @@ const HomeTable = () => {
                             </div>
                         </div>
                         <div>
-                            <div>County
+                            <div>country
                                 of Santa Clara,
                             </div>
                         </div>
@@ -4249,7 +4249,7 @@ const HomeTable = () => {
                             <div>Proof of Service: Mail</div>
                         </div>
                         <div>
-                            <div>County of Santa Clara,</div>
+                            <div>country of Santa Clara,</div>
                         </div>
                         <div>
                             <div>sfoah (p; r; Natalie Ferro)</div>
@@ -4263,7 +4263,7 @@ const HomeTable = () => {
                             <div>Proof of Service: Mail</div>
                         </div>
                         <div>
-                            <div>County of Santa Clara,</div>
+                            <div>country of Santa Clara,</div>
                         </div>
                         <div>
                             <div>rfo (p; Natalie Ferro)</div>
@@ -4277,7 +4277,7 @@ const HomeTable = () => {
                             <div>Responsive Declaration to Request for Order</div>
                         </div>
                         <div>
-                            <div>County of Santa Clara,</div>
+                            <div>country of Santa Clara,</div>
                         </div>
                         <div>
                         </div>
@@ -4290,7 +4290,7 @@ const HomeTable = () => {
                             <div>Proof of Service: Mail</div>
                         </div>
                         <div>
-                            <div>County of Santa Clara,</div>
+                            <div>country of Santa Clara,</div>
                         </div>
                         <div>
                             <div>resp decl; notice to produce &amp; appear (p; r; Nathlie Lezama)</div>
@@ -4550,7 +4550,7 @@ const HomeTable = () => {
                             <div>Order After Hearing</div>
                         </div>
                         <div>
-                            <div>County of Santa Clara,</div>
+                            <div>country of Santa Clara,</div>
                         </div>
                         <div>
                             <div>heard on 11/05/18</div>
@@ -4576,7 +4576,7 @@ const HomeTable = () => {
                             <div>Proof of Service: Mail</div>
                         </div>
                         <div>
-                            <div>County of Santa Clara,</div>
+                            <div>country of Santa Clara,</div>
                         </div>
                         <div>
                             <div>OAH</div>

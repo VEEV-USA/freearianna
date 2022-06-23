@@ -66,7 +66,7 @@ const TakeActionForm = ({
     //address: "",
     //phone: 0,
     state: "",
-    county: "",
+    country: "",
     user_avatar: "",
     page_title: "",
     page_contents: "",
@@ -113,7 +113,7 @@ const TakeActionForm = ({
     signatures_Require,
     //phone,
     state,
-    county,
+    country,
     user_avatar,
     page_title,
     page_contents,
@@ -143,7 +143,7 @@ const TakeActionForm = ({
           //zipcode,
           //phone,
           state,
-          county,
+          country,
           user_avatar,
           page_title,
           page_contents,
@@ -244,7 +244,7 @@ const TakeActionForm = ({
                 />
               </Modal>
               <Item
-                name="county"
+                name="country"
                 rules={[
                   {
                     required: true,
@@ -254,10 +254,10 @@ const TakeActionForm = ({
               >
                 <Input
                   size="large"
-                  name="county"
-                  value={county}
+                  name="country"
+                  value={country}
                   onChange={e => handleChange(e)}
-                  placeholder="County"
+                  placeholder="country"
                 />
               </Item>
               {/* <Item

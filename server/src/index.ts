@@ -54,7 +54,7 @@ interface Profile extends Document {
   //phone: string;
   //zipcode: string;
   state: string;
-  county: string;
+  country: string;
   user_avatar: string;
   page_title: string;
   page_contents: string;
@@ -381,7 +381,7 @@ const worker: ExportedHandler<Bindings> = {
         // phone: content.phone,
         // zipcode: content.zipcode,
         state: content.state,
-        county: content.county,
+        country: content.country,
         user_avatar: content.user_avatar,
         page_title: content.page_title,
         page_contents: content.page_contents,

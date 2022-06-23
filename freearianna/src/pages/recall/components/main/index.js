@@ -95,7 +95,7 @@ const AriannaMain = () => {
                           <h3>{person.full_name}</h3>
                           <P1></P1>
                           <P1>
-                            {person.county},&nbsp;{person.state}
+                            {person.country},&nbsp;{person.state}
                           </P1>
                           <P1>Licence #: {person.license}</P1>
                           <P1>Case: {person.case_name}</P1>
