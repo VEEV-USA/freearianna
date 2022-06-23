@@ -71,7 +71,7 @@ const KidsCriminal1 = () => {
                             <P1>
                                 Cynthia Lie, is in serious and egregious civil rights and color of law violations. Lie
                                 was promoted to judge of the California 6th District Court of Appeal in July 9, 2021.
-                                Previously, Lie was a judge at the Superior Court of Santa Clara county in California.
+                                Previously, Lie was a judge at the Superior Court of Santa Clara, California.
                                 Lie, has consistently used her position and abused her power and the power of the courts
                                 for personal, financial and political gain to the detriment of the public. Lie colluded
                                 with corrupt unscrupulous lawyers, district attorneys and used the law to cover up child
