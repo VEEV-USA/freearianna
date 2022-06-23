@@ -13,9 +13,9 @@ const HomeMine = () => {
                     I Was Poisoned to Prevent The Truth Getting Out
                 </SectionTitle>
                 <img src={Image1} alt=""/>
-                <SectionTitle>
+                {/* <SectionTitle>
                     I Was an Abused Spouse
-                </SectionTitle>
+                </SectionTitle> */}
                 <img src={Image2} alt=""/>
             </Container>
         </HomeMineWrap>
