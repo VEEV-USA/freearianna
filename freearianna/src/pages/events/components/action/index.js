@@ -50,7 +50,7 @@ const data = [
     //     license: '',
     //     content: (
     //         <p>
-    //             A corrupt district attorney in San Jose, Santa Clara county, California that has betrayed the public
+    //             A corrupt district attorney in San Jose, Santa Clara, California that has betrayed the public
     //             trust. Must be&nbsp;
     //             <a href='https://apps.calbar.ca.gov/attorney/Licensee/Detail/254049' target='_blank'>
     //                 disbarred
