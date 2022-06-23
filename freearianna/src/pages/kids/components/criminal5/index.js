@@ -58,7 +58,7 @@ const KidsCriminal5 = () => {
                                 Katrina Ohde
                             </h3>
                             <P1>
-                                A corrupt district attorney in San Jose, Santa Clara country, California that has betrayed the public trust. Must be disbarred.
+                                A corrupt district attorney in San Jose, Santa Clara county, California that has betrayed the public trust. Must be disbarred.
                             </P1>
                         </div>
                     </Media>

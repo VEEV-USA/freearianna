@@ -38,7 +38,7 @@ const KidsPage = () => {
     //     {
     //         img: Image7,
     //         name: 'Katrina Ohde',
-    //         action: "A corrupt district attorney in San Jose, Santa Clara country, California that has betrayed the public trust. Must be disbarred."
+    //         action: "A corrupt district attorney in San Jose, Santa Clara county, California that has betrayed the public trust. Must be disbarred."
     //     },
     //     {
     //         img: Image8,

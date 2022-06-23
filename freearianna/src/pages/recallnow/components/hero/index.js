@@ -23,7 +23,7 @@ const RecallHero = ({ person, getProfile }) => {
     //address: "",
     //phone: 0,
     state: "",
-    country: "",
+    county: "",
     user_avatar: "",
     page_title: "",
     page_contents: "",

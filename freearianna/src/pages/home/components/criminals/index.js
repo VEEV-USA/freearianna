@@ -48,7 +48,7 @@ const criminals = [
     {
         img: Image7,
         name: 'Katrina Ohde',
-        action: <p>A corrupt district attorney in San Jose, Santa Clara country, California that has betrayed the public trust. Must be disbarred.<br/><a href='recallnow'>Sign Petition</a></p>
+        action: <p>A corrupt district attorney in San Jose, Santa Clara county, California that has betrayed the public trust. Must be disbarred.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image8,
