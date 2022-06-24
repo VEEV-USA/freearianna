@@ -65,7 +65,7 @@ const AboutMain = () => {
                                         #CrimesAgainstChildren LIVE from Hollywood Blvd & Vine St. Horrifying reports
                                         from Daya Baran about his daughter Arianna's child sex abuse and the cover up by
                                         California AG Rob Bonta, corrupt judge Cynthia Lie, unscrupulous fraudster BJ
-                                        Fadem, Kathrina Ohde, extortionists Nathalie Ferro Da Costa, Kevin Boileau, Joe
+                                        Fadem, Kathrina Ohde, Jeff Rosen, extortionists Nathalie Ferro Da Costa, Kevin Boileau, Joe
                                         Perez, Shalini Venktash, child abusers Reshma Kumar, Vikaash Kumar & Canadian
                                         pedophile Ganraj Kumar.
                                     </P1>
