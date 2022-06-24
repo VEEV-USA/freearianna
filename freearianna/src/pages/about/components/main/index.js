@@ -83,7 +83,7 @@ const AboutMain = () => {
                                                 Daddy Daughter Visit
                                             </CardTitle>
                                             <P1>
-                                                Arianna's mother dropped off a little girl in the middle of a massive
+                                                 Arianna's mother dropped off a little girl in the middle of a massive
                                                 noisy Whole Foods and left. She was lost searching. Arianna is being
                                                 used by her mother, Cynthia Lie, BJ Fadem, Nathelie Ferro and others as
                                                 their ATM to extort money from her dad.
