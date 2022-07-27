@@ -132,7 +132,7 @@ const LayoutHeader = () => {
                         TAKE ACTION
                     </Button>
                 </Col> */}
-                <Col>
+                {/* <Col>
                   <Button
                     type="link"
                     onClick={() => {
@@ -142,7 +142,7 @@ const LayoutHeader = () => {
                   >
                     RECALL
                   </Button>
-                </Col>
+                </Col> */}
                 <Col>
                   <Button
                     type="primary"
@@ -154,17 +154,17 @@ const LayoutHeader = () => {
                   </Button>
                 </Col>
                 {user && (
-                  <Col>
-                    <Button 
-                      type="link"
-                      onClick={() => {
-                        navigate("/dashboard");
-                      }}
-                      className={location.pathname === "/dashboard" && "active"}
-                    >
-                      MY ACCOUNT
-                    </Button>
-                  </Col>
+                <Col>
+                  <Button 
+                    type="link"
+                    onClick={() => {
+                      navigate("/dashboard");
+                    }}
+                    className={location.pathname === "/dashboard" && "active"}
+                  >
+                    MY ACCOUNT
+                  </Button>
+                </Col>
                 )}
                 <Col>
                   {user ? (
@@ -198,7 +198,7 @@ const LayoutHeader = () => {
                       }}
                       className={location.pathname === "/login" && "active"}
                     >
-                      Login
+                      {/* Login */}
                     </Button>
                   )}
                 </Col>
