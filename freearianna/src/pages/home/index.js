@@ -10,20 +10,19 @@ import HomeLast from "./components/last";
 import TakeActionContent from '../takeAction/components/action';
 import TakeActionHero2 from "../takeAction/components/hero2";
 
-
 const HomePage = () => {
     return (
         <Fragment>
             <HomeHero/>
             <TakeActionHero2/>
-            <TakeActionContent/>
-            {/* <HomeStory/>
+            {/* <TakeActionContent/> */}
+            <HomeStory/>
             <HomeCriminals/>
             <HomeExtortion/>
             <HomeMine/>
             <HomeShare/>
             <HomeTable/>
-            <HomeLast/> */}
+            <HomeLast/>
         </Fragment>
     );
 };

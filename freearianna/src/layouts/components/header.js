@@ -145,6 +145,17 @@ const LayoutHeader = () => {
                 </Col> */}
                 <Col>
                   <Button
+                    type="link"
+                    onClick={() => {
+                      navigate("/recallnow/62b4b95cb548442ca6c51337/Cynthia%20Lie");
+                    }}
+                    className={location.pathname === "/recall" && "active"}
+                  >
+                    RECALL
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
                     type="primary"
                     onClick={() => {
                       navigate("/donate");
