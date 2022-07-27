@@ -63,7 +63,7 @@ const LayoutFooter = () => {
                                 About
                                 </Button>
                             </Col>
-                            <Col>
+                            {/* <Col>
                                 <Button type='text' onClick={() => { navigate('/events') }}>
                                 Events
                                 </Button>
@@ -72,7 +72,7 @@ const LayoutFooter = () => {
                                 <Button type='text' onClick={() => { navigate('/recall') }}> 
                                 Recall
                                 </Button>
-                            </Col>
+                            </Col> */}
                             <Col>
                                 <Button type='text' onClick={() => { navigate('/donate') }} >
                                 Donate

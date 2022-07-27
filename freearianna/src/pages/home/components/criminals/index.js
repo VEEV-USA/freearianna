@@ -16,34 +16,19 @@ import Image10 from '../../../../assets/img/shalinivenktash.png'
 
 const criminals = [
     {
-        img: Image1,
-        name: 'Ganraj Kumar',
-        action: <p>Pedophile and Arianna's abuser. Claims to be a victim and hiding using domestic violence protection.<br/><a href='recall'>Sign Petition</a></p>
-    },
-    {
-        img: Image2,
-        name: 'Reshma Kumar',
-        action: <p>Arianna's mother falsely claiming domestic violence to keep Ganraj Kumar out of jail to keep her inheritence.<br/><a href='recall'>Sign Petition</a></p>
-    },
-    {
-        img: Image3,
-        name: 'Vikaash Kumar',
-        action: <p>Poisoned Arianna's dad Daya Baran so he would die and would not be able to testify against Ganraj Kumar.<br/><a href='recallnow'>Sign Petition</a></p>
-    },
-    {
         img: Image4,
         name: 'Cynthia Lie',
         action: <p>Corrupt judge colluded with pedophile's attorney & DA to cover up sexual abuse of Arianna for personal gain.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
-        img: Image5,
-        name: 'BJ Fadem',
-        action: <p>BJ's mom wanted a man. Has regular sex surgeries to be a man. Despises men, spends his life destroying men.<br/><a href='recallnow'>Sign Petition</a></p>
-    },
-    {
         img: Image6,
         name: 'Nathalie Ferro',
         action: <p>Extortionist that profits by trolling family courts. Goes by numerous names to hide her fraudulent schemes.<br/><a href='recallnow'>Sign Petition</a></p>
+    },
+    {
+        img: Image5,
+        name: 'BJ Fadem',
+        action: <p>BJ's mom wanted a man. Has regular sex surgeries to be a man. Despises men, spends his life destroying men.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image7,
@@ -59,6 +44,21 @@ const criminals = [
         img: Image9,
         name: 'Kevin Boileau',
         action: <p>Disbarred in Washington but licensed in California as an expert in women for raping and extorting money from women.<br/><a href='recallnow'>Sign Petition</a></p>
+    },
+    {
+        img: Image1,
+        name: 'Ganraj Kumar',
+        action: <p>Pedophile and Arianna's abuser. Claims to be a victim and hiding using domestic violence protection.<br/><a href='recall'>Sign Petition</a></p>
+    },
+    {
+        img: Image2,
+        name: 'Reshma Kumar',
+        action: <p>Arianna's mother falsely claiming domestic violence to keep Ganraj Kumar out of jail to keep her inheritence.<br/><a href='recall'>Sign Petition</a></p>
+    },
+    {
+        img: Image3,
+        name: 'Vikaash Kumar',
+        action: <p>Poisoned Arianna's dad Daya Baran so he would die and would not be able to testify against Ganraj Kumar.<br/><a href='recallnow'>Sign Petition</a></p>
     },
     {
         img: Image10,

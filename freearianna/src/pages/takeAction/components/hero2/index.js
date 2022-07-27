@@ -10,7 +10,7 @@ const KidsHero = () => {
             <Container>
                 <h4>Recall, Prosecute & Lockup</h4>
                 <SectionTitle>
-                    Corruput Elected Officials, Judges, DAs, School Boards Profiting by Destroying Kids & Families  
+                Corrupt Judges, DAs, Lawyers & The Family Court Industy Profiting by Destroying Families & Kids Lives  
                 </SectionTitle>
                 {/* <P1>
                     Text
